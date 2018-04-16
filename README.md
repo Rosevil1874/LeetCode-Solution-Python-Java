@@ -1,4 +1,4 @@
-[toc]
+[TOC]
 
 # LeetCode
 solution of LeetCode by Python
