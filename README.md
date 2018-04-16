@@ -12,7 +12,7 @@ Summary：一些小结。
 ### 1-100
 题序-Squence  |  题目-Problem  |  难度-Level  
 -------- | ------------------------------- | ------ 
-1 | <a href="">两数之和</a> | 简单 
+1 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/1.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C">两数之和</a> | 简单 
 2 | <a href="">两数相加</a> | 中等 
 3 | <a href="">无重复字符的最长子串</a> | 中等 
 4 | <a href="">两个排序数组的中位数</a> | 困难 
