@@ -8,7 +8,7 @@ categories: LeetCode
 ---
 
 ## 题目描述
-![problem](/images/15.png)
+![problem](images/15.png)
 
 <!-- more -->
 
@@ -45,7 +45,7 @@ class Solution:
         return ret
 ```
 超时啦啊啊啊啊啊(눈‸눈)
-![overtime](/images/overtime.png)
+![overtime](images/overtime.png)
 
 ## 方法二：双指针
 1. 将数组排序；
@@ -91,7 +91,7 @@ class Solution:
 ```
 
 还是超时，黑人问号.jpg
-![黑人问号.jpg](/images/黑人问号.jpg.png)
+![黑人问号.jpg](images/黑人问号.jpg.png)
 
 问题出在哪里，，，我把l = len(nums)去掉了，所有需要用到l的地方直接使用len(nums)就AC了，excuse me？？？把它暂存起来不是更快吗？？？看看这个卡住的测试用例吧：
-![overtime2](/images/overtime2.png)
+![overtime2](images/overtime2.png)

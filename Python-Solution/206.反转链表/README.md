@@ -9,7 +9,7 @@ categories: LeetCode
 ---
 
 ## 题目描述
-![problem](/images/206.png)
+![problem](images/206.png)
 
 <!-- more -->
 
@@ -50,11 +50,11 @@ class Solution:
 >cr:[全面分析再动手的习惯：链表的反转问题（递归和非递归方式）](http://www.cnblogs.com/kubixuesheng/p/4394509.html)
 思路：
 1. 递归先走到链表末端；
-![step1](/images/step1.png)
+![step1](images/step1.png)
 2. 更新每个结点的next值，即将指针反向；
-![step2](/images/step2.png)
+![step2](images/step2.png)
 3. 每个指针反向就链表反转了。
-![step3](/images/step3.png)
+![step3](images/step3.png)
 
 ```python
 if head is None or head.next is None:

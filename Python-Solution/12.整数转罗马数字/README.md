@@ -8,7 +8,7 @@ categories: LeetCode
 ---
 
 ## 题目描述
-![problem](/images/12.png)
+![problem](images/12.png)
 
 <!-- more -->
 
@@ -16,7 +16,7 @@ categories: LeetCode
 
 ## 罗马数字
 我觉得这位兄台的和百科差不多，又比百科美观，就借过来用用嘻嘻。
-![RomanNumber](/images/RomanNumber.png)
+![RomanNumber](images/RomanNumber.png)
 ## 整数转罗马数字
 cr: [leetcode 罗马数字与整数的转换算法](https://blog.csdn.net/net_wolf_007/article/details/51770112)
 

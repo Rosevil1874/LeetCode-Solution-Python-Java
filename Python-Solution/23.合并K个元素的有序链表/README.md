@@ -8,7 +8,7 @@ categories: LeetCode
 ---
 
 ## 题目描述
-![problem](/images/23.png)
+![problem](images/23.png)
 
 <!-- more -->
 
@@ -63,7 +63,7 @@ class Solution:
                 return l2
 ```
 递归深度超限了orz,Python中默认的最大递归深度是989，当尝试递归第990时便出现递归深度超限的错误:
-![error](/images/error.png)
+![error](images/error.png)
 
 虽然可以手动设置递归调用深度：
 ```python

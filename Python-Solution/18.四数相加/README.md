@@ -8,7 +8,7 @@ categories: LeetCode
 ---
 
 ## 题目描述
-![problem](/images/18.png)
+![problem](images/18.png)
 
 <!-- more -->
 
@@ -64,5 +64,5 @@ class Solution:
 
 ## debug
 list赋值错误
-![error](/images/error.png)
+![error](images/error.png)
 li是空数组，使用li[0]=xx这样赋值当然越界了，改用append。

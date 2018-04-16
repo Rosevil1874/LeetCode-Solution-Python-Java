@@ -11,7 +11,7 @@ categories: LeetCode
 ---
 
 ## 题目描述
-![problem](/images/109.png)
+![problem](images/109.png)
 
 <!-- more -->
 

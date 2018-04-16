@@ -10,7 +10,7 @@ categories: LeetCode
 ---
 
 ## 题目描述
-![problem](/images/1.png)
+![problem](images/1.png)
 
 <!-- more -->
 
@@ -24,7 +24,7 @@ categories: LeetCode
 3. 相遇后fast指针不动，slow指针回到起点，两指针同时以相同步长前进，第二次相遇的节点即为环入口。
 
 >示意图：
-![principle](/images/principle.png)
+![principle](images/principle.png)
 变量：
 1. head到环路起点的距离为K，
 2. 环路起点到两指针相遇点的距离为M，

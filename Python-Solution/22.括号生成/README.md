@@ -8,7 +8,7 @@ categories: LeetCode
 ---
 
 ## 题目描述
-![problem](/images/22.png)
+![problem](images/22.png)
 
 <!-- more -->
 
@@ -25,7 +25,7 @@ cr:[leetcode-22-生成括号](https://blog.csdn.net/zjc_game_coder/article/detai
 回溯指的是一种**此路不通，绕道迂回**的算法思想，递归是代码层次上的一种组织结构。
 
 回到此题中来，下图可以说是非常直观了。这个选择过程就是一种树结构。最开始的时候肯定只能选 (，因此，分析是从 ( 开始的。
-![backtracking](/images/backtracking.png)
+![backtracking](images/backtracking.png)
 
 **私以为以下代码可以说是超级棒了**
 ```python

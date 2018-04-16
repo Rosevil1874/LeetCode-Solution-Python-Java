@@ -8,13 +8,13 @@ categories: LeetCode
 ---
 
 ## 题目描述
-![problem](/images/11.png)
+![problem](images/11.png)
 
 <!-- more -->
 
 >审题：这个题目从字面意思上理解还是不太直观的，在纸上画画图就一目了然了。懒得慢慢画个好看的图，去人家的文章里找找，找到啦，还是个动图啊厉害厉害，不过这个图直接泄露了解题方法啊~~
 
-![maxArea](/images/maxArea.png)
+![maxArea](images/maxArea.png)
 
 ## 方法
 思路【这个和CCF有一题‘最大的矩形’异曲同工啊】：
@@ -53,4 +53,4 @@ class Solution:
 ## 新技能get
 没有思路的时候，可以悄悄点开这个相关话题，下面列出来的点一般就是解题方法啊哈哈哈，我可真聪明(〃ﾉωﾉ)
 
-![idea](/images/idea.png)
+![idea](images/idea.png)

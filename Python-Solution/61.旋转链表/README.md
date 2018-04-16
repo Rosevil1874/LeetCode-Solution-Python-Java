@@ -10,7 +10,7 @@ categories: LeetCode
 ---
 
 ## 题目描述
-![problem](/images/61.png)
+![problem](images/61.png)
 
 <!-- more -->
 
@@ -78,7 +78,7 @@ if n == 0 or n == 1 or k % n == 0:
 	return head
 ```
 否则会出现以下错误：
-![error](/images/error.png)
+![error](images/error.png)
 
 链表长度为0的情况必须单独判断（1的就随意了）
 ```python

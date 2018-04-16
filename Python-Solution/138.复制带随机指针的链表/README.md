@@ -10,7 +10,7 @@ categories: LeetCode
 ---
 
 ## 题目描述
-![problem](/images/138.png)
+![problem](images/138.png)
 
 <!-- more -->
 
@@ -68,7 +68,7 @@ class Solution(object):
 1. 第一次：在原链表的每个结点后拷贝一个新结点；
 2. 第二次：依次添加random指针；
 3. 删除原结点，将新链表拆分出来。
-![copy](/images/copy.png)
+![copy](images/copy.png)
 
 ```python
 # Definition for singly-linked list with a random pointer.

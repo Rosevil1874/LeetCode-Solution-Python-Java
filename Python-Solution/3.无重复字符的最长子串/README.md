@@ -8,7 +8,7 @@ categories: LeetCode
 ---
 
 ## 题目描述
-![problem](/images/3.png)
+![problem](images/3.png)
 
 <!-- more -->
 

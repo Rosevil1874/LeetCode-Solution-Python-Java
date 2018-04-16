@@ -8,7 +8,7 @@ categories: LeetCode
 ---
 
 ## 题目描述
-![problem](/images/2.png)
+![problem](images/2.png)
 
 <!-- more -->
 
@@ -76,7 +76,7 @@ class Solution:
 
 
 ## debug
-![problem](/images/wrong.png)
+![problem](images/wrong.png)
 原因：链表转数字的时候判断有误，看到人家头结点val==0直接就一票否决返回0了。
 ```python
 if head.val == 0:

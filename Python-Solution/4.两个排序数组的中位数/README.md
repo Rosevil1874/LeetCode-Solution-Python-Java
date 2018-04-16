@@ -8,7 +8,7 @@ categories: LeetCode
 ---
 
 ## 题目描述
-![problem](/images/4.png)
+![problem](images/4.png)
 
 <!-- more -->
 
@@ -50,7 +50,7 @@ i+j==halflen,(halflen=(m+n+1)/2)（在奇数情况下左边的数比右边多一
 j=halflen−i，然后判断是否能满足中位数的条件。
 为了方便起见，同时减少运算次数，我们把数组size小的放到nums1，大的放到nums2，然后从nums1中查找i。
 进一步缩小查找范围？对于任意取的值i，我们能得到下面这张图中的关系。绿色的代表左边的数字，黄色的代表的是右边的数字。
-![problem](/images/idea.png)
+![problem](images/idea.png)
 
 ```python
 class Solution:

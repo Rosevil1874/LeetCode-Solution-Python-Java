@@ -10,7 +10,7 @@ categories: LeetCode
 ---
 
 ## 题目描述
-![problem](/images/143.png)
+![problem](images/143.png)
 
 <!-- more -->
 
@@ -77,5 +77,5 @@ class Solution(object):
 ```
 
 ## Error
-![error](/images/error.png)
+![error](images/error.png)
 人家说了不需要返回值嘛，最后检验的还是head为头结点的链表是否已经重排，So...只要保证在原链表重排就行，不要return一个ListNode。

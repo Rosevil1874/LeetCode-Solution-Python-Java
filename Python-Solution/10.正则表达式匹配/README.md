@@ -10,7 +10,7 @@ categories: LeetCode
 **此题有待深究 哦哦哦**
 
 ## 题目描述
-![problem](/images/10.png)
+![problem](images/10.png)
 
 <!-- more -->
 

@@ -10,7 +10,7 @@ categories: LeetCode
 ---
 
 ## 题目描述
-![problem](/images/83.png)
+![problem](images/83.png)
 
 <!-- more -->
 

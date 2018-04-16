@@ -8,17 +8,17 @@ categories: LeetCode
 ---
 
 ## 题目描述
-{% asset_img 6.png %}
+![problem](images/6.png)
 
 <!-- more -->
 
 看到题目的时候一脸懵逼，这啥呀，啥Z字形啊咋排的呀，怪不得这么多人给了unlike嚯嚯嚯。。。
 
-{% asset_img down.png %}
+![problem](images/down.png)
 
 事实证明，只有行数多了才能看出这个z，下图是直接用下标排的，一共5行。
 
-{% asset_img Z字形.png %}
+![problem](images/Z字形.png)
 
 
 ## 思路：
