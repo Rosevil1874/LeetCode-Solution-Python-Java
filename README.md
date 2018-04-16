@@ -1,3 +1,9 @@
+<style type="text/css">
+	table {
+		width: 80%;
+	}
+</style>
+
 # LeetCode
 solution of LeetCode by Python
 
@@ -11,91 +17,96 @@ Summary：一些小结。
 ## 按题序
 ### 1-100
 题序-Squence  |  题目-Problem  |  难度-Level  
--------- | ------------------------------- | ------ 
-1 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/1.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C">两数之和</a> | 简单 
-2 | <a href="">两数相加</a> | 中等 
-3 | <a href="">无重复字符的最长子串</a> | 中等 
-4 | <a href="">两个排序数组的中位数</a> | 困难 
-5 | <a href="">最长回文子串</a> | 中等 
-6 | <a href="">Z字形变换</a> | 中等 
-7 | <a href="">反转整数</a> | 简单 
-8 | <a href="">字符串转整数(atoi)</a> | 中等 
-9 | <a href="">回文数</a> | 简单 
-10 | <a href="">正则表达式匹配</a> | 困难 
-11 | <a href="">盛最多水的容器 </a> | 中等 
-12 | <a href="">整数转罗马数字</a> | 中等 
-13 | <a href="">罗马数字转整数</a> | 简单 
-14 | <a href="">最长公共前缀</a> | 简单
-15 | <a href="">三数之和</a> | 中等 
-16 | <a href="">最接近的三数之和</a> | 中等 
-17 | <a href="">电话号码的字母组合</a> | 中等 
-18 | <a href="">四数之和</a> | 中等 
-19 | <a href="">删除链表的倒数第N个节点</a> | 中等 
-20 | <a href="">有效的括号</a> | 简单 
-21 | <a href="">合并两个有序链表</a> | 简单 
-22 | <a href="">括号生成</a> | 中等
-23 | <a href="">合并K个排序链表</a> | 困难 
-24 | <a href="">两两交换链表中的节点</a> | 中等  
-25 | <a href="">k个一组翻转链表</a> | 困难
-
-61 | <a href="">旋转链表</a> | 中等 | 
-82 | <a href="">从分类列表中删除重复项目 II</a> | 中等 
-83 | <a href="">k个一组翻转链表</a> | 简单 
-86 | <a href="">分隔链表</a> | 中等 
-92 | <a href="">反转链表 II</a> | 中等 
-
-### 101-200
-109 | <a href="">有序链表转换二叉搜索树</a> | 中等 
-138 | <a href="">复制带随机指针的链表</a> | 中等 
-141 | <a href="">环形链表</a> | 简单 
-142 | <a href="">环形链表 II</a> | 中等 
-143 | <a href="">重排链表</a> | 中等 
-147 | <a href="">链表插入排序</a> | 中等 
+ ------------ | ------------- | ------------
+1 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/1_Two_Sum">两数之和</a> | 简单 
+2 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/2_Add_Two_Numbers">两数相加</a> | 中等 
+3 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/3_Longest_Substring_Without_Repeating_Characters">无重复字符的最长子串</a> | 中等 
+4 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/4_Median_of_Two_Sorted_Arrays">两个排序数组的中位数</a> | 困难 
+5 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/5_Longest_Palindromic_Substring">最长回文子串</a> | 中等 
+6 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/6_ZigZag_Conversion">Z字形变换</a> | 中等 
+7 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/7_Reverse_Integer">反转整数</a> | 简单 
+8 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/8_String-to-Integer(atoi)">字符串转整数(atoi)</a> | 中等 
+9 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/9_Palindrome_Number">回文数</a> | 简单 
+10 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/10_Regular_Expression_Matching">正则表达式匹配</a> | 困难 
+11 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/11_Container_With_Most_Water">盛最多水的容器 </a> | 中等 
+12 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/12_Integer_to_Roman">整数转罗马数字</a> | 中等 
+13 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/13_Roman_to_Integer">罗马数字转整数</a> | 简单 
+14 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/14_Longest_Common_Prefix">最长公共前缀</a> | 简单
+15 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/15_3Sum">三数之和</a> | 中等 
+16 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/16_3Sum_Closest">最接近的三数之和</a> | 中等 
+17 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/17_Letter_Combinationsof_a_PhoneNumber">电话号码的字母组合</a> | 中等 
+18 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/18_4Sum">四数之和</a> | 中等 
+19 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/19_Remove-Nth-Node-From-End-of-List">删除链表的倒数第N个节点</a> | 中等 
+20 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/20_Valid-Parentheses">有效的括号</a> | 简单 
+21 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/21_Merge-Two-Sorted-Lists">合并两个有序链表</a> | 简单 
+22 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/22_Generate-Parentheses">括号生成</a> | 中等
+23 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/23_Merge-k-Sorted-Lists">合并K个排序链表</a> | 困难 
+24 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/24_Swap-Nodes-in-Pairs">两两交换链表中的节点</a> | 中等  
+25 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/25_Reverse_Nodes_in_k-Group">k个一组翻转链表</a> | 困难
+61 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/61_Rotate-List">旋转链表</a> | 中等 | 
+82 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/82_Remove-Duplicates-from-Sorted-List-II">从分类列表中删除重复项目II</a> | 中等 
+83 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/83_Remove-Duplicates-from-Sorted-List">k个一组翻转链表</a> | 简单 
+86 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/86_Partition-List">分隔链表</a> | 中等 
+92 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/92_Reverse-Linked-List-II">反转链表II</a> | 中等 
 
 ### 101-200
-206 | <a href="">反转链表</a> | 简单 
+题序-Squence  |  题目-Problem  |  难度-Level  
+ ------------ | ------------- | ------------
+109 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/109_Convert-Sorted-List-to-Binary-Search-Tree">有序链表转换二叉搜索树</a> | 中等 
+138 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/138_Copy-List-with-Random-Pointer">复制带随机指针的链表</a> | 中等 
+141 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/141_Linked-List-Cycle">环形链表</a> | 简单 
+142 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/142_Linked-List-Cycle-II">环形链表II</a> | 中等 
+143 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/143_Reorder-List">重排链表</a> | 中等 
+147 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/147_Insertion-Sort-List">链表插入排序</a> | 中等 
+
+### 101-200
+题序-Squence  |  题目-Problem  |  难度-Level  
+ ------------ | ------------- | ------------
+206 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/206_Reverse-Linked-List">反转链表</a> | 简单 
 
 
 
 ## 按分类
 ## 1. 数组
-题序  |  题目  |  难度  
------- | ------ | ----- 
-1 | <a href="">两数之和</a> | 简单 
-4 | <a href="">两个排序数组的中位数</a> | 困难 
-11 | <a href="">盛最多水的容器 </a> | 中等 
-15 | <a href="">三数之和</a> | 中等 
-16 | <a href="">最接近的三数之和</a> | 中等 
-18 | <a href="">四数之和</a> | 中等 
+题序-Squence  |  题目-Problem  |  难度-Level  
+ ------------ | ------------- | ------------
+1 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/1_Two_Sum">两数之和</a> | 简单 
+4 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/4_Median_of_Two_Sorted_Arrays">两个排序数组的中位数</a> | 困难 
+11 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/11_Container_With_Most_Water">盛最多水的容器 </a> | 中等 
+15 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/15_3Sum">三数之和</a> | 中等 
+16 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/16_3Sum_Closest">最接近的三数之和</a> | 中等 
+18 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/18_4Sum">四数之和</a> | 中等 
 
 ## 2. 哈希
-1 | <a href="">两数之和</a> | 简单 
-3 | <a href="">无重复字符的最长子串</a> | 中等 
-18 | <a href="">四数之和</a> | 中等 
-138 | <a href="">复制带随机指针的链表</a> | 中等 
+题序-Squence  |  题目-Problem  |  难度-Level  
+ ------------ | ------------- | ------------
+1 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/1_Two_Sum">两数之和</a> | 简单 
+3 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/3_Longest_Substring_Without_Repeating_Characters">无重复字符的最长子串</a> | 中等 
+18 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/18_4Sum">四数之和</a> | 中等 
+138 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/138_Copy-List-with-Random-Pointer">复制带随机指针的链表</a> | 中等 
 
 
 ## 3. 链表
-题序  |  题目  |  难度  
------- | ------ | -----
-2 | <a href="">两数相加</a> | 中等 
-19 | <a href="">删除链表的倒数第N个节点</a> | 中等 
-21 | <a href="">合并两个有序链表</a> | 简单 
-22 | <a href="">括号生成</a> | 中等
-23 | <a href="">合并K个排序链表</a> | 困难 
-24 | <a href="">两两交换链表中的节点</a> | 中等  
-25 | <a href="">k个一组翻转链表</a> | 困难
-61 | <a href="">旋转链表</a> | 中等 | 
-82 | <a href="">从分类列表中删除重复项目 II</a> | 中等 
-83 | <a href="">k个一组翻转链表</a> | 简单 
-86 | <a href="">分隔链表</a> | 中等 
-92 | <a href="">反转链表 II</a> | 中等 
-109 | <a href="">有序链表转换二叉搜索树</a> | 中等 
-138 | <a href="">复制带随机指针的链表</a> | 中等 
-141 | <a href="">环形链表</a> | 简单 
-142 | <a href="">环形链表 II</a> | 中等 
-143 | <a href="">重排链表</a> | 中等 
-147 | <a href="">链表插入排序</a> | 中等 
-206 | <a href="">反转链表</a> | 简单 
+题序-Squence  |  题目-Problem  |  难度-Level  
+ ------------ | ------------- | ------------
+2 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/2_Add_Two_Numbers">两数相加</a> | 中等 
+19 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/19_Remove-Nth-Node-From-End-of-List">删除链表的倒数第N个节点</a> | 中等 
+21 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/21_Merge-Two-Sorted-Lists">合并两个有序链表</a> | 简单 
+22 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/22_Generate-Parentheses">括号生成</a> | 中等
+23 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/23_Merge-k-Sorted-Lists">合并K个排序链表</a> | 困难 
+24 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/24_Swap-Nodes-in-Pairs">两两交换链表中的节点</a> | 中等  
+25 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/25_Reverse_Nodes_in_k-Group">k个一组翻转链表</a> | 困难
+61 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/61_Rotate-List">旋转链表</a> | 中等 | 
+82 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/82_Remove-Duplicates-from-Sorted-List-II">从分类列表中删除重复项目 II</a> | 中等 
+83 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/83_Remove-Duplicates-from-Sorted-List">k个一组翻转链表</a> | 简单 
+86 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/86_Partition-List">分隔链表</a> | 中等 
+92 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/92_Reverse-Linked-List-II">反转链表II</a> | 中等
+109 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/109_Convert-Sorted-List-to-Binary-Search-Tree">有序链表转换二叉搜索树</a> | 中等 
+138 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/138_Copy-List-with-Random-Pointer">复制带随机指针的链表</a> | 中等 
+141 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/141_Linked-List-Cycle">环形链表</a> | 简单 
+142 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/142_Linked-List-Cycle-II">环形链表II</a> | 中等 
+143 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/143_Reorder-List">重排链表</a> | 中等 
+147 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/147_Insertion-Sort-List">链表插入排序</a> | 中等 
+206 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/206_Reverse-Linked-List">反转链表</a> | 简单 
 
 ## 4. 数学
