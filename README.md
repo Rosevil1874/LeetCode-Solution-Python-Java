@@ -1,8 +1,4 @@
-<style type="text/css">
-	table {
-		width: 80%;
-	}
-</style>
+[toc]
 
 # LeetCode
 solution of LeetCode by Python
