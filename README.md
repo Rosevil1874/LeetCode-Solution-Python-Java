@@ -11,7 +11,8 @@ Python Solution：解题思路以及Python代码；
 Summary：一些小结。
 
 <h2 id="title">按题序啊啊啊</h2>
-<!-- ## 按题序 -->
+
+## 按题序
 ### 1-100
 题序-Squence  |  题目-Problem  |  难度-Level  
  ------------ | ------------- | ------------
