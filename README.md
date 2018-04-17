@@ -1,5 +1,5 @@
 [按题序](#jump)
-[题目](#title)
+	[题目](#title)
 
 # LeetCode
 solution of LeetCode by Python
