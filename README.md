@@ -1,12 +1,10 @@
-[按题序](#title)
-	[1-100](#title1)
-	[101-200](#title2)
+# solution of LeetCode by Python
 
-# LeetCode
-solution of LeetCode by Python
-
-## 前言
-这是一个矫情少女对自己博客的缅怀，2018.04.15，一个平凡的夜晚，像往常一样，刷完题的我准备把解题笔记提交到博客，就在这时，满屏的Error吓住了刚刚打开bilibili想拨拨弦的我。飞速回想自己在此之前直到上一次提交成功之间都干了啥。。。。吃完午饭再写吧
+## 快速跳转
+- [按题序](#title)
+	- [1-100](#title1)
+	- [101-200](#title2)
+- [按分类](#categories)
 
 ## 文件组织
 Python Solution：解题思路以及Python代码；
@@ -70,6 +68,7 @@ Summary：一些小结。
 206 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/206_Reverse-Linked-List">反转链表</a> | 简单 
 
 
+<h2 id="categories"></h2>
 
 ## 按分类
 ## 1. 数组
@@ -115,3 +114,7 @@ Summary：一些小结。
 206 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/206_Reverse-Linked-List">反转链表</a> | 简单 
 
 ## 4. 数学
+
+
+## 一个小尾巴
+这是一个矫情少女对自己博客的缅怀，2018.04.15，一个平凡的夜晚，像往常一样，刷完题的我准备把解题笔记提交到博客，就在这时，满屏的Error吓住了刚刚打开bilibili想拨拨弦的我。飞速回想自己在此之前直到上一次提交成功之间都干了啥。。。。吃完午饭再写吧
