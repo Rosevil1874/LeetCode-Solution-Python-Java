@@ -1,4 +1,6 @@
-[题目](#title)
+[按题序](#title)
+	[1-100](#title1)
+	[101-200](#title2)
 
 # LeetCode
 solution of LeetCode by Python
@@ -10,9 +12,9 @@ solution of LeetCode by Python
 Python Solution：解题思路以及Python代码；
 Summary：一些小结。
 
-<h2 id="title">按题序啊啊啊</h2>
-
+<h2 id="title"></h2>
 ## 按题序
+<h3 id="title1"></h3>
 ### 1-100
 题序-Squence  |  题目-Problem  |  难度-Level  
  ------------ | ------------- | ------------
@@ -47,6 +49,7 @@ Summary：一些小结。
 86 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/86_Partition-List">分隔链表</a> | 中等 
 92 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/92_Reverse-Linked-List-II">反转链表II</a> | 中等 
 
+<h3 id="title2"></h3>
 ### 101-200
 题序-Squence  |  题目-Problem  |  难度-Level  
  ------------ | ------------- | ------------
