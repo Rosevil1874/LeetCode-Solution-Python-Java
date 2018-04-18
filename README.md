@@ -1,14 +1,20 @@
 # solution of LeetCode by Python
 
-## 快速跳转
+## 文件组织
+- Python Solution：解题思路以及Python代码；
+- Summary：一些小结。
+
+## 快速跳转[TOC]
 - [按题序](#title)
 	- [1-100](#title1)
 	- [101-200](#title2)
+	- [201-300](#title3)
 - [按分类](#categories)
-
-## 文件组织
-Python Solution：解题思路以及Python代码；
-Summary：一些小结。
+	- [数组](#array)
+	- [哈希表](#hash-table)
+	- [链表](#linked-list)
+	- [数学](#math)
+- [一个小尾巴](#a-little-tail)
 
 <h2 id="title"></h2>
 
@@ -62,7 +68,9 @@ Summary：一些小结。
 143 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/143_Reorder-List">重排链表</a> | 中等 
 147 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/147_Insertion-Sort-List">链表插入排序</a> | 中等 
 
-### 101-200
+<h3 id="title3"></h3>
+
+### 201-300
 题序-Squence  |  题目-Problem  |  难度-Level  
  ------------ | ------------- | ------------
 206 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/206_Reverse-Linked-List">反转链表</a> | 简单 
@@ -71,6 +79,9 @@ Summary：一些小结。
 <h2 id="categories"></h2>
 
 ## 按分类
+
+<h2 id="array"></h2>
+
 ## 1. 数组
 题序-Squence  |  题目-Problem  |  难度-Level  
  ------------ | ------------- | ------------
@@ -81,6 +92,8 @@ Summary：一些小结。
 16 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/16_3Sum_Closest">最接近的三数之和</a> | 中等 
 18 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/18_4Sum">四数之和</a> | 中等 
 
+<h2 id="hash-table"></h2>
+
 ## 2. 哈希
 题序-Squence  |  题目-Problem  |  难度-Level  
  ------------ | ------------- | ------------
@@ -89,6 +102,7 @@ Summary：一些小结。
 18 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/18_4Sum">四数之和</a> | 中等 
 138 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/138_Copy-List-with-Random-Pointer">复制带随机指针的链表</a> | 中等 
 
+<h2 id="linked-list"></h2>
 
 ## 3. 链表
 题序-Squence  |  题目-Problem  |  难度-Level  
@@ -113,8 +127,11 @@ Summary：一些小结。
 147 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/147_Insertion-Sort-List">链表插入排序</a> | 中等 
 206 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/206_Reverse-Linked-List">反转链表</a> | 简单 
 
+<h2 id="math"></h2>
+
 ## 4. 数学
 
+<h2 id="a-little-tail"></h2>
 
 ## 一个小尾巴
 这是一个矫情少女对自己博客的缅怀，2018.04.15，一个平凡的夜晚，像往常一样，刷完题的我准备把解题笔记提交到博客，就在这时，满屏的Error吓住了刚刚打开bilibili想拨拨弦的我。飞速回想自己在此之前直到上一次提交成功之间都干了啥。。。。吃完午饭再写吧

@@ -15,7 +15,7 @@ categories: LeetCode
 <!-- more -->
 
 >审题：
-类似题目：[206.反转链表]()
+类似题目：[206.反转链表](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/206_Reverse-Linked-List)
 
 ## 迭代
 思路：
