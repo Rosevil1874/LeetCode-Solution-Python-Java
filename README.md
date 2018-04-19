@@ -126,6 +126,10 @@
 143 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/143_Reorder-List">重排链表</a> | 中等 
 147 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/147_Insertion-Sort-List">链表插入排序</a> | 中等 
 206 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/206_Reverse-Linked-List">反转链表</a> | 简单 
+234 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/234_Palindrome-Linked-List">回文链表</a> | 简单 
+237 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/237_Delete-Node-in-a-Linked-List">删除链表中的节点</a> | 简单 
+328 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/328_Odd-Even-Linked-List">奇偶链表 Odd Even Linked List</a> | 中等 
+445 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/445_Add_Two_Numbers-II">两数相加 II</a> | 中等 
 
 <h2 id="math"></h2>
 
