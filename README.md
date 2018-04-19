@@ -9,12 +9,20 @@
 	- [1-100](#title1)
 	- [101-200](#title2)
 	- [201-300](#title3)
+	- [301-400](#title4)
+	- [401-500](#title5)
+	- [501-600](#title6)
+	- [601-700](#title7)
+	- [701-800](#title8)
+	- [801-900](#title9)
 - [按分类](#categories)
 	- [数组](#array)
 	- [哈希表](#hash-table)
 	- [链表](#linked-list)
 	- [数学](#math)
-- [一个小尾巴](#a-little-tail)
+- [一些小结](#summary)
+- [Vue乱入](#Vue)
+- [一个无关紧要小尾巴](#a-little-tail)
 
 <h2 id="title"></h2>
 
@@ -74,7 +82,47 @@
 题序-Squence  |  题目-Problem  |  难度-Level  
  ------------ | ------------- | ------------
 206 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/206_Reverse-Linked-List">反转链表</a> | 简单 
+234 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/234_Palindrome-Linked-List">回文链表</a> | 简单 
+237 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/237_Delete-Node-in-a-Linked-List">删除链表中的节点</a> | 简单 
 
+<h3 id="title4"></h3>
+
+### 301-400
+题序-Squence  |  题目-Problem  |  难度-Level  
+ ------------ | ------------- | ------------
+328 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/328_Odd-Even-Linked-List">奇偶链表 Odd Even Linked List</a> | 中等
+
+<h3 id="title5"></h3>
+
+### 401-500
+题序-Squence  |  题目-Problem  |  难度-Level  
+ ------------ | ------------- | ------------
+
+<h3 id="title6"></h3>
+
+### 501-600
+题序-Squence  |  题目-Problem  |  难度-Level  
+ ------------ | ------------- | ------------
+
+<h3 id="title7"></h3>
+
+### 601-700
+题序-Squence  |  题目-Problem  |  难度-Level  
+ ------------ | ------------- | ------------
+
+<h3 id="title8"></h3>
+
+### 701-800
+题序-Squence  |  题目-Problem  |  难度-Level  
+ ------------ | ------------- | ------------
+725 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/725_Split-Linked-List-in-Parts">Split Linked List in Parts 【链表分割】</a> | 中等 
+
+<h3 id="title9"></h3>
+
+### 801-900
+题序-Squence  |  题目-Problem  |  难度-Level  
+ ------------ | ------------- | ------------
+817 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/817_Linked-List-Components">Linked List Components 【链表组件】</a> | 中等 
 
 <h2 id="categories"></h2>
 
@@ -130,12 +178,37 @@
 237 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/237_Delete-Node-in-a-Linked-List">删除链表中的节点</a> | 简单 
 328 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/328_Odd-Even-Linked-List">奇偶链表 Odd Even Linked List</a> | 中等 
 445 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/445_Add_Two_Numbers-II">两数相加 II</a> | 中等 
+725 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/725_Split-Linked-List-in-Parts">Split Linked List in Parts 【链表分割】</a> | 中等 
+817 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/817_Linked-List-Components">Linked List Components 【链表组件】</a> | 中等 
+
 
 <h2 id="math"></h2>
 
 ## 4. 数学
 
+
+
+<h2 id="summary"></h2>
+
+## 一些小结
+- [LeetCode小记](https://github.com/Rosevil1874/LeetCode/blob/master/Summary/LeetCode%E5%B0%8F%E8%AE%B0.md)
+- [Python小记]()
+- [Python深拷贝与浅拷贝](https://github.com/Rosevil1874/LeetCode/blob/master/Summary/Python%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D.md)
+- [链表](https://github.com/Rosevil1874/LeetCode/blob/master/Summary/%E9%93%BE%E8%A1%A8.md)
+- [双指针](https://github.com/Rosevil1874/LeetCode/blob/master/Summary/%E5%8F%8C%E6%8C%87%E9%92%88.md)
+- [Error集锦](https://github.com/Rosevil1874/LeetCode/blob/master/Summary/Error%E9%9B%86%E9%94%A6.md)
+
+
+
+<h2 id="Vue"></h2>
+
+## Vue乱入
+[MVC-MVP-MVVM]()
+[Vue-slot实例]()
+
 <h2 id="a-little-tail"></h2>
 
 ## 一个小尾巴
-这是一个矫情少女对自己博客的缅怀，2018.04.15，一个平凡的夜晚，像往常一样，刷完题的我准备把解题笔记提交到博客，就在这时，满屏的Error吓住了刚刚打开bilibili想拨拨弦的我。飞速回想自己在此之前直到上一次提交成功之间都干了啥。。。。吃完午饭再写吧
+>这是一个矫情少女对自己博客的缅怀，2018.04.15，一个平凡的夜晚，像往常一样，刷完题的我准备把解题笔记提交到博客，就在这时，满屏的Error吓住了刚刚打开bilibili想拨拨弦的我。飞速回想自己在此之前直到上一次提交成功之间都干了啥。。。。吃完午饭再写吧
+emmm记得之前弄了让hexo支持emoji，以及文章浏览量统计，都失败了。然后倒回去把做前面两件事的操作都改回来，然鹅，彻底凉了就是凉了。
+放个链接不至于忘了它： [Rosevil1874](https://rosevil1874.github.io/)

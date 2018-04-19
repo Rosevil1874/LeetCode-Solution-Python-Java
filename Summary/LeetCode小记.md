@@ -1,9 +1,3 @@
----
-title: LeetCode小记
-date: 2018-04-10 10:33:58
-tags: LeetCode
-categories: LeetCode
----
 
 {% asset_img coding.png %}
 
