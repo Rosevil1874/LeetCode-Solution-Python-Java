@@ -1,16 +1,7 @@
----
-title: 22 - 括号生成
-date: 2018-04-11 09:24:57
-tags:
-- LeetCode
-- Python
-categories: LeetCode
----
+# 22 - 括号生成
 
 ## 题目描述
 ![problem](images/22.png)
-
-<!-- more -->
 
 >审题：
 看到括号生成不自觉会想到括号匹配的检查，在生成过程中也要注意匹配规范。

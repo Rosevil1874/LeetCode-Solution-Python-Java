@@ -1,19 +1,7 @@
----
-title: 109 - 有序链表转换二叉搜索树
-date: 2018-04-14 11:34:12
-tags:
-- LeetCode
-- Python
-- 链表
-- 树
-- 双指针
-categories: LeetCode
----
+# 109 - 有序链表转换二叉搜索树
 
 ## 题目描述
 ![problem](images/109.png)
-
-<!-- more -->
 
 >审题：
 1. 元素已经按升序排序好了；

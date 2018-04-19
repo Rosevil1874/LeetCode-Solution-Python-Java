@@ -1,12 +1,4 @@
----
-title: 1 - 两数之和 Two Sum
-date: 2018-04-05 15:57:27
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
-
+# 1 - 两数之和 Two Sum
 
 ## 题目描述
 ![problem](images/1.png)

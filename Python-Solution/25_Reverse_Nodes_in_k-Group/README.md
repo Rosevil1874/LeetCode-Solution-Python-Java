@@ -1,16 +1,7 @@
----
-title: 25 - 每k个一组翻转链表
-date: 2018-04-11 17:09:34
-tags:
-- LeetCode
-- Python
-categories: LeetCode
----
+# 25 - 每k个一组翻转链表
 
 ## 题目描述
 ![problem](images/25.png)
-
-<!-- more -->
 
 >审题：
 仔细审题说三遍啊，看到这个题目才想起来24题我的第一个蠢蠢的方法不止蠢还不符合题目要求orz

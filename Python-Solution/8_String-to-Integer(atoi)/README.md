@@ -1,11 +1,4 @@
----
-title: 8 - 字符串转整数
-date: 2018-04-09 10:57:25
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
+# 8 - 字符串转整数
 
 ## 题目描述
 ![problem](images/8.png)

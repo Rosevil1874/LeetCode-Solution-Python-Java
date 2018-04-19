@@ -1,18 +1,7 @@
----
-title: 141 - 环形链表
-date: 2018-04-14 11:42:41
-tags:
-- LeetCode
-- Python
-- 链表
-- 双指针
-categories: LeetCode
----
+# 141 - 环形链表
 
 ## 题目描述
 ![problem](images/141.png)
-
-<!-- more -->
 
 ## 双指针
 思路：使用两个移动速度不同的指针，若相遇则存在环。

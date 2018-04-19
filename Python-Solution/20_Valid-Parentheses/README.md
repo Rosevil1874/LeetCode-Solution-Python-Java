@@ -1,17 +1,7 @@
----
-title: 20 - 有效的括号
-date: 2018-04-05 19:40:39
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
-
+# 20 - 有效的括号
 
 ## 题目描述
 ![problem](images/20.png)
-
-<!-- more -->
 
 ## 方法
 数据结构经典题，用栈完美解决。

@@ -1,11 +1,4 @@
----
-title: 5 - 最长回文子串
-date: 2018-04-08 13:27:31
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
+# 5 - 最长回文子串
 
 ## 题目描述
 ![problem](images/5.png)

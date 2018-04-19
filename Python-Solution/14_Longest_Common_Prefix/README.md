@@ -1,11 +1,4 @@
----
-title: 14 - 最长公共前缀
-date: 2018-04-10 10:31:18
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
+# 14 - 最长公共前缀
 
 ## 题目描述
 ![problem](images/14.png)

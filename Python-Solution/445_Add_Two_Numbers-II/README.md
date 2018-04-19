@@ -1,16 +1,7 @@
----
-title: 445 - 两数相加 II
-date: 2018-04-18
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
+# 445 - 两数相加 II
 
 ## 题目描述
 ![problem](images/445.png)
-
-<!-- more -->
 
 >审题：
 emmm这个和第二题是相似题目，只是第二题的数字是低位在前的，思路也大同小异。

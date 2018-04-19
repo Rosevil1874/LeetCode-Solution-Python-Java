@@ -1,16 +1,7 @@
----
-title: 24 - 交换相邻结点
-date: 2018-04-11 14:25:14
-tags:
-- LeetCode
-- Python
-categories: LeetCode
----
+# 24 - 交换相邻结点
 
 ## 题目描述
 ![problem](images/24.png)
-
-<!-- more -->
 
 ## 解法一
 1. 将链表遍历一遍取出value值；

@@ -1,11 +1,4 @@
----
-title: 2 - 两数相加
-date: 2018-04-06 18:19:36
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
+# 2 - 两数相加
 
 ## 题目描述
 ![problem](images/2.png)

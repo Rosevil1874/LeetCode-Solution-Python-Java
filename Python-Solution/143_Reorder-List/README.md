@@ -1,18 +1,7 @@
----
-title: 143 - 重排链表
-date: 2018-04-15 15:50:34
-tags:
-- LeetCode
-- Python
-- 链表
-- 双指针
-categories: LeetCode
----
+# 143 - 重排链表
 
 ## 题目描述
 ![problem](images/143.png)
-
-<!-- more -->
 
 ## 双指针
 1. prev指针指向头结点，tail指针指向尾结点,tail_prev指向倒数第二个结点（辅助删除尾结点）；

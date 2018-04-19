@@ -1,11 +1,4 @@
----
-title: 17 - 电话号码的字母组合
-date: 2018-04-05 17:35:27
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
+# 17 - 电话号码的字母组合
 
 ## 题目描述
 ![problem](images/17.png)

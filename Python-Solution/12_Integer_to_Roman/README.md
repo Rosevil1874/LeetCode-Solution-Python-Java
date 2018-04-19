@@ -1,11 +1,4 @@
----
-title: 12 - 整数转罗马数字
-date: 2018-04-07 18:17:26
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
+# 12 - 整数转罗马数字
 
 ## 题目描述
 ![problem](images/12.png)

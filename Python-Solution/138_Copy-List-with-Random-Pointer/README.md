@@ -1,18 +1,7 @@
----
-title: 138 - 复制带随机指针的链表
-date: 2018-04-15 10:39:49
-tags:
-- LeetCode
-- Python
-- 链表
-- 哈希表
-categories: LeetCode
----
+# 138 - 复制带随机指针的链表
 
 ## 题目描述
 ![problem](images/138.png)
-
-<!-- more -->
 
 >审题：
 深拷贝：拷贝所有对象，这里就是值链表和每个结点上的随机指针

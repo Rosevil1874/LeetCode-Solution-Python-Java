@@ -1,17 +1,7 @@
----
-title: 203 - 删除链表中的元素
-date: 2018-04-17 
-tags:
-- LeetCode
-- Python
-- 链表
-categories: LeetCode
----
+# 203 - 删除链表中的元素
 
 ## 题目描述
 ![problem](images/203.png)
-
-<!-- more -->
 
 ## 方法
 emmm就是一个基本的链表元素删除操作呀

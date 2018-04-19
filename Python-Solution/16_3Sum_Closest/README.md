@@ -1,16 +1,7 @@
----
-title: 16 - 最接近的三数之和
-date: 2018-04-10 18:43:06
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
+# 16 - 最接近的三数之和
 
 ## 题目描述
 ![problem](images/16.png)
-
-<!-- more -->
 
 >审题：
 看到题目的我，悄悄点开了旁边的相关话题，恩又有双指针，大概知道怎么做了hiahia＼＼\٩('ω')و//／／

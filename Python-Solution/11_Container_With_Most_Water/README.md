@@ -1,11 +1,4 @@
----
-title: 11 - 盛最多水的容器
-date: 2018-04-10 09:51:39
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
+# 11 - 盛最多水的容器
 
 ## 题目描述
 ![problem](images/11.png)

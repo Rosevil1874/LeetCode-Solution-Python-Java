@@ -1,16 +1,7 @@
----
-title: 18 - 四数相加
-date: 2018-04-06 15:48:52
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
+# 18 - 四数相加
 
 ## 题目描述
 ![problem](images/18.png)
-
-<!-- more -->
 
 我是怎么也想不出来时间复杂度小一点的方法，于是只好利用搜索引擎了。
 

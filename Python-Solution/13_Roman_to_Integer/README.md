@@ -1,11 +1,4 @@
----
-title: 13 - 罗马数字转整数
-date: 2018-04-07 19:44:26
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
+# 13 - 罗马数字转整数
 
 ## 题目描述
 ![problem](images/13.png)

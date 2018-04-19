@@ -1,11 +1,4 @@
----
-title: 15 - 三数之和
-date: 2018-04-10 12:32:58
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
+# 15 - 三数之和
 
 ## 题目描述
 ![problem](images/15.png)

@@ -1,17 +1,8 @@
----
-title: 19 - 删除链表的倒数第N个节点
-date: 2018-04-06 17:42:29
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
+# 19 - 删除链表的倒数第N个节点
 
 
 ## 题目描述
 ![problem](images/19.png)
-
-<!-- more -->
 
 ## 方法
 思路一：

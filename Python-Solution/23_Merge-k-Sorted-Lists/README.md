@@ -1,16 +1,7 @@
----
-title: 23 - 合并K个元素的有序链表
-date: 2018-04-11 10:40:25
-tags:
-- LeetCode
-- Python
-categories: LeetCode
----
+# 23 - 合并K个元素的有序链表
 
 ## 题目描述
 ![problem](images/23.png)
-
-<!-- more -->
 
 >审题：
 首先吧，这个题目我就没看懂，合并有序链表并返回有序链表，excuse me？？

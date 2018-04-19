@@ -1,18 +1,7 @@
----
-title: 817 - Linked List Components 【链表组件】
-date: 2018-04-18
-tags: 
-- LeetCode
-- Python
-- 链表
-- 双指针
-categories: LeetCode
----
+# 817 - Linked List Components 【链表组件】
 
 ## 题目描述
 ![problem](images/817.png)
-
-<!-- more -->
 
 >审题：
 英文题干一定要好好审啊_(:з」∠)_ 

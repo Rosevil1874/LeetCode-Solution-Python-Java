@@ -1,17 +1,7 @@
----
-title: 237 - 删除链表中的节点
-date: 2018-04-17 
-tags:
-- LeetCode
-- Python
-- 链表
-categories: LeetCode
----
+# 237 - 删除链表中的节点
 
 ## 题目描述
 ![problem](images/237.png)
-
-<!-- more -->
 
 >审题：
 前面有道题叫做删除链表中的元素，第203题。说实话这题没看懂它要表达的是啥。

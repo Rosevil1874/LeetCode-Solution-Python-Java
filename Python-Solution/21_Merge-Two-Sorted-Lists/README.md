@@ -1,16 +1,7 @@
----
-title: 21 - 合并两个有序链表
-date: 2018-04-05 18:29:57
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
+# 21 - 合并两个有序链表
 
 ## 题目描述
 ![problem](images/21.png)
-
-<!-- more -->
 
 ## 老老实实翻开数据结构合并吧
 1. 判断链表是否为空，若链表为空则返回空链表；

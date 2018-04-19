@@ -1,11 +1,4 @@
----
-title: 4 - 两个排序数组的中位数
-date: 2018-04-08 10:21:26
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
+# 4 - 两个排序数组的中位数
 
 ## 题目描述
 ![problem](images/4.png)

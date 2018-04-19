@@ -1,18 +1,7 @@
----
-title: 142 - 环形链表 II
-date: 2018-04-14 16:15:08
-tags:
-- LeetCode
-- Python
-- 链表
-- 双指针
-categories: LeetCode
----
+# 142 - 环形链表 II
 
 ## 题目描述
 ![problem](images/1.png)
-
-<!-- more -->
 
 ## 双指针
 >cr:[[leetcode]Linked List Cycle II @ Python

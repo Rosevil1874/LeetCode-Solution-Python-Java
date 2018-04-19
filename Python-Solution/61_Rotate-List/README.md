@@ -1,18 +1,7 @@
----
-title: 61 - 旋转链表
-date: 2018-04-13 10:10:06
-tags:
-- LeetCode
-- Python
-- 链表
-- 双指针
-categories: LeetCode
----
+# 61 - 旋转链表
 
 ## 题目描述
 ![problem](images/61.png)
-
-<!-- more -->
 
 >审题：就是把单链表想象成一个循环链表，向右转k个位置。
 

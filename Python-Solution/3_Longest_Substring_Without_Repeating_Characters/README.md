@@ -1,11 +1,4 @@
----
-title: 3 - 无重复字符的最长子串
-date: 2018-04-07 15:38:59
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
+# 3 - 无重复字符的最长子串
 
 ## 题目描述
 ![problem](images/3.png)

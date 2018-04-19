@@ -1,18 +1,7 @@
----
-title: 160 - 相交链表
-date: 2018-04-17
-tags:
-- LeetCode
-- Python
-- 链表
-- 双指针
-categories: LeetCode
----
+# 160 - 相交链表
 
 ## 题目描述
 ![problem](images/160.png)
-
-<!-- more -->
 
 ## 方法
 1. 遍历两链表得到链表长度；

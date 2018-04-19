@@ -1,18 +1,7 @@
----
-title: 725 - Split Linked List in Parts 【链表分割】
-date: 2018-04-19
-tags: 
-- LeetCode
-- Python
-- 链表
-- 双指针
-categories: LeetCode
----
+# 725 - Split Linked List in Parts 【链表分割】
 
 ## 题目描述
 ![problem](images/725.png)
-
-<!-- more -->
 
 >审题：
 英文题干一定要好好审啊_(:з」∠)_ 

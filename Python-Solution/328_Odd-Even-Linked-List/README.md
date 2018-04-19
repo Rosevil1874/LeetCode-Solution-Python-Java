@@ -1,18 +1,7 @@
----
-title: 328 - Odd Even Linked List 【奇偶链表】
-date: 2018-04-17
-tags:
-- LeetCode
-- Python
-- 链表
-- 双指针
-categories: LeetCode
----
+# 328 - Odd Even Linked List 【奇偶链表】
 
 ## 题目描述
 ![problem](images/328.png)
-
-<!-- more -->
 
 >审题
 1. 将所有奇数位置的结点移动到偶数位置结点的前面

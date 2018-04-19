@@ -1,11 +1,4 @@
----
-title: 7 - 颠倒整数
-date: 2018-04-09 10:23:23
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
+# 7 - 颠倒整数
 
 ## 题目描述
 ![problem](images/7.png)

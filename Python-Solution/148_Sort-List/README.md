@@ -1,19 +1,7 @@
----
-title: 148 - 链表排序
-date: 2018-04-17
-tags:
-- LeetCode
-- Python
-- 链表
-- 排序
-- 双指针
-categories: LeetCode
----
+# 148 - 链表排序
 
 ## 题目描述
 ![problem](images/148.png)
-
-<!-- more -->
 
 >审题
 题目要求时间复杂度为O(nlogn) 且空间复杂度为常数级。

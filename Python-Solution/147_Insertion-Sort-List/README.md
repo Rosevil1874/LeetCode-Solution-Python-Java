@@ -1,18 +1,7 @@
----
-title: 147 - 链表插入排序
-date: 2018-04-15 17:58:45
-tags:
-- LeetCode
-- Python
-- 链表
-- 排序
-categories: LeetCode
----
+# 147 - 链表插入排序
 
 ## 题目描述
 ![problem](images/147.png)
-
-<!-- more -->
 
 ## 方法
 1. 插入排序

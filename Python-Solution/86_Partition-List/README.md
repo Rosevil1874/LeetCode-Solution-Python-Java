@@ -1,21 +1,7 @@
----
-title: 86 - 分隔链表
-date: 2018-04-13 16:06:05
-tags:
-- LeetCode
-- Python
-- 链表
-- 双指针
-categories: LeetCode
----
+# 86 - 分隔链表
 
 ## 题目描述
 ![problem](images/86.png)
-
-<!-- more -->
-
->审题：
-
 
 ## 双指针
 1. 指针1指向小于x的最后一个结点；

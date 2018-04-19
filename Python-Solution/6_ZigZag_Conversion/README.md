@@ -1,11 +1,4 @@
----
-title: 6 - Z字形转换
-date: 2018-04-09 09:48:51
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
+# 6 - Z字形转换
 
 ## 题目描述
 ![problem](images/6.png)

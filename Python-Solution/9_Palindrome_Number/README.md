@@ -1,11 +1,4 @@
----
-title: 9 - 回文数
-date: 2018-04-07 17:56:52
-tags: 
-- LeetCode
-- Python
-categories: LeetCode
----
+# 9 - 回文数
 
 ## 题目描述
 ![problem](images/9.png)

@@ -1,18 +1,7 @@
----
-title: 234 - 回文链表
-date: 2018-04-17
-tags:
-- LeetCode
-- Python
-- 链表
-- 双指针
-categories: LeetCode
----
+# 234 - 回文链表
 
 ## 题目描述
 ![problem](images/234.png)
-
-<!-- more -->
 
 >O(n) 的时间和 O(1) 的额外空间
 
