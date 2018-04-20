@@ -1,5 +1,6 @@
 # 10 - 正则表达式匹配
 
+**迷迷糊糊**
 **此题有待深究 哦哦哦**
 
 ## 题目描述
@@ -17,8 +18,7 @@
 
 >Think   
 carefully how you would do matching of ‘*’. Please note that ‘*’ in regular expression is different from wildcard matching, as we match the previous character 0 or more times. But, how many times? If you are stuck, recursion is your friend.
-
->1. If the next character of p is NOT ‘*’, then it must match the current character of s. Continue pattern matching with the next character of both s and p.
+1. If the next character of p is NOT ‘*’, then it must match the current character of s. Continue pattern matching with the next character of both s and p.
 2. If the next character of p is ‘\*’, then we do a brute force exhaustive matching of 0, 1, or more repeats of current character of p… Until we could not match any more characters.
 
 
@@ -28,8 +28,6 @@ carefully how you would do matching of ‘*’. Please note that ‘*’ in regu
 4. 若正则表达式第二个字符非'\*'，且字符串长度为0，不匹配。若其为'\*'，则第一个字符匹配且后面的剩余部分都匹配（这里使用递归判断子串是否匹配）就匹配。
 5. 若正则表达式第二个字符为'\*'，则字符串的第一个字符一定是匹配的。接下来递归判断字符串与表达式第三个字符开始的子串是否匹配，若匹配返回True。否则判断字符串第二个字符开始的子串与表达式是否匹配（一个个字符一次与与'\*'匹配）。
 
-
-**迷迷糊糊**
 
 ```python
 class Solution(object):
