@@ -7,6 +7,7 @@
 1. 将链表遍历一遍取出value值；
 2. 按相邻节点（奇偶下标）交换的顺序连接起来。
 虽然方法很蠢，但是过了哈哈哈哈
+>2018.01.20 review : 这个蠢蠢的方法不符合题意啊大哥༼༎ຶᴗ༎ຶ༽
 ```python
 # Definition for singly-linked list.
 class ListNode:
@@ -58,7 +59,6 @@ class Solution:
         :type head: ListNode
         :rtype: ListNode
         """
-        lists = []
         dummy = ListNode(0)
         dummy.next = head
         prev = dummy
@@ -74,7 +74,8 @@ class Solution:
 ```
 
 ## 解法三
-递归~~~还不太懂
+递归:虽然能看懂人家的代码，但是要怎么才能自己想到这样的解决办法呢，哎。递归过程如下：
+![progress](images/progress.jpg)
 ```python
 class Solution:
     def swapPairs(self, head):

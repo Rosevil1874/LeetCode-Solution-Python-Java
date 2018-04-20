@@ -33,8 +33,6 @@ class Solution:
 
         return ret
         
-        
-
 s = Solution()
 strs = [-1, 0, 1, 2, -1, -4]
 res = s.threeSum(strs)

@@ -8,29 +8,22 @@ class Solution:
         if l <= 1:
             return s
 
-        start = 0
-        max_len = 0
-        max_s = ''
+        # dp[i][j]表示s[i..j]是回文串
+        dp = [ [False] * l ] * l
+        resLeft = resRight = 0
+        dp[0][0] = True
         for i in range(1, l):
-            low = i - 1
-            high = i
-            while low>=0 and high<l and s[low]==s[high]:
-                low -= 1
-                high += 1
-            if high-low+1 > max_len:
-                max_len = high-low+1
-                max_s = s[low+1 : high]
+            dp[i][i] = True
+            dp[i][i-1] = True
 
-            low = i - 1
-            high = i + 1
-            while low>=0 and high<l and s[low]==s[high]:
-                low -= 1
-                high += 1
-            if high-low+1 > max_len:
-                max_len = high-low+1
-                max_s = s[low+1 : high]
-        return max_s
-                    
+        for i in range(2, l + 1):       # 枚举子串长度，从2开始
+            for j in range(0, l - i):   # 枚举子串起始位置
+                if s[j] == s[j + i - 1] and dp[j + 1][j + i - 2]:
+                    dp[j][j + i - 1] = True
+                    if resRight - resLeft < i:
+                        resLeft = j
+                        resRight = j + i - 1
+        return s[resLeft : resRight + 1 ]
 
 solution = Solution()
 r = solution.longestPalindrome("aaabaaaa")

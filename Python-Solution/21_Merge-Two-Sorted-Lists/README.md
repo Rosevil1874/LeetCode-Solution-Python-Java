@@ -51,7 +51,7 @@ class Solution:
 ```
 
 ## 递归
-```
+```python
 class Solution:
     def mergeTwoLists(self, l1, l2):
     	if not l1:

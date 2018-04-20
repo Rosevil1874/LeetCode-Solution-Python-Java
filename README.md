@@ -24,9 +24,12 @@
 - [Vue乱入](#Vue)
 - [一个无关紧要小尾巴](#a-little-tail)
 
+
+
 <h2 id="title"></h2>
 
 ## 按题序
+
 
 <h3 id="title1"></h3>
 
@@ -64,6 +67,7 @@
 86 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/86_Partition-List">分隔链表</a> | 中等 
 92 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/92_Reverse-Linked-List-II">反转链表II</a> | 中等 
 
+
 <h3 id="title2"></h3>
 
 ### 101-200
@@ -76,6 +80,7 @@
 143 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/143_Reorder-List">重排链表</a> | 中等 
 147 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/147_Insertion-Sort-List">链表插入排序</a> | 中等 
 
+
 <h3 id="title3"></h3>
 
 ### 201-300
@@ -85,6 +90,7 @@
 234 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/234_Palindrome-Linked-List">回文链表</a> | 简单 
 237 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/237_Delete-Node-in-a-Linked-List">删除链表中的节点</a> | 简单 
 
+
 <h3 id="title4"></h3>
 
 ### 301-400
@@ -92,11 +98,13 @@
  ------------ | ------------- | ------------
 328 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/328_Odd-Even-Linked-List">奇偶链表 Odd Even Linked List</a> | 中等
 
+
 <h3 id="title5"></h3>
 
 ### 401-500
 题序-Squence  |  题目-Problem  |  难度-Level  
  ------------ | ------------- | ------------
+
 
 <h3 id="title6"></h3>
 
@@ -104,11 +112,13 @@
 题序-Squence  |  题目-Problem  |  难度-Level  
  ------------ | ------------- | ------------
 
+
 <h3 id="title7"></h3>
 
 ### 601-700
 题序-Squence  |  题目-Problem  |  难度-Level  
  ------------ | ------------- | ------------
+
 
 <h3 id="title8"></h3>
 
@@ -117,6 +127,7 @@
  ------------ | ------------- | ------------
 725 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/725_Split-Linked-List-in-Parts">Split Linked List in Parts 【链表分割】</a> | 中等 
 
+
 <h3 id="title9"></h3>
 
 ### 801-900
@@ -124,9 +135,13 @@
  ------------ | ------------- | ------------
 817 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/817_Linked-List-Components">Linked List Components 【链表组件】</a> | 中等 
 
+
+
+
 <h2 id="categories"></h2>
 
 ## 按分类
+
 
 <h2 id="array"></h2>
 
@@ -140,6 +155,9 @@
 16 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/16_3Sum_Closest">最接近的三数之和</a> | 中等 
 18 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/18_4Sum">四数之和</a> | 中等 
 
+
+
+
 <h2 id="hash-table"></h2>
 
 ## 2. 哈希
@@ -149,6 +167,8 @@
 3 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/3_Longest_Substring_Without_Repeating_Characters">无重复字符的最长子串</a> | 中等 
 18 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/18_4Sum">四数之和</a> | 中等 
 138 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/138_Copy-List-with-Random-Pointer">复制带随机指针的链表</a> | 中等 
+
+
 
 <h2 id="linked-list"></h2>
 
@@ -203,8 +223,8 @@
 <h2 id="Vue"></h2>
 
 ## Vue乱入
-[MVC-MVP-MVVM]()
-[Vue-slot实例]()
+- [MVC-MVP-MVVM](https://github.com/Rosevil1874/LeetCode/blob/master/Summary/MVC-MVP-MVVM.md)
+- [Vue-slot实例](https://github.com/Rosevil1874/LeetCode/blob/master/Summary/Vue-slot%E5%AE%9E%E4%BE%8B.md)
 
 <h2 id="a-little-tail"></h2>
 

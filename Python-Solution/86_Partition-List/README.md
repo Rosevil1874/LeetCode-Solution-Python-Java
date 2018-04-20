@@ -6,27 +6,36 @@
 ## 双指针
 1. 指针1指向小于x的最后一个结点；
 2. 指针2依次扫描，若大于x则继续向后，若小于x则将此结点移动到指针1之后，并更新指针1。
-**还未调通**
 ```python
-class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
 
-class Solution:
+class Solution(object):
     def partition(self, head, x):
         """
         :type head: ListNode
         :type x: int
         :rtype: ListNode
         """
-
         if head is None or head.next is None:
             return head
 
+        # 从头开始找到链表前面部分小于x的最后一个结点
         dummy = ListNode(None)
         dummy.next = head 
-        tail = curr = dummy    # tail:最后一个小于x的结点
+        tail = dummy    # tail:最后一个小于x的结点
+        while tail.next and tail.next.val < x:
+            tail = tail.next
+
+        # 若所有结点都小于x，直接返回
+        if not tail.next:
+            return head
+
+        # 依次将链表后面小于x的结点移动到最后一个小于x的结点后
+        curr = tail.next    
         while curr.next: 
             if curr.next.val < x:
                 tmp = ListNode(curr.next.val)
@@ -36,7 +45,7 @@ class Solution:
                 curr.next = curr.next.next
             else:
                 curr = curr.next
-        return tail.next
+        return dummy.next
 ```
 
 ## 双链表

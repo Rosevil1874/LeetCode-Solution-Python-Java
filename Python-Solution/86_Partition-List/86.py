@@ -15,9 +15,19 @@ class Solution:
         if head is None or head.next is None:
             return head
 
+        # 从头开始找到链表前面部分小于x的最后一个结点
         dummy = ListNode(None)
         dummy.next = head 
-        tail = curr = dummy    # tail:最后一个小于x的结点
+        tail = dummy    # tail:最后一个小于x的结点
+        while tail.next and tail.next.val < x:
+            tail = tail.next
+
+        # 若所有结点都小于x，直接返回
+        if not tail.next:
+            return head
+
+        # 依次将链表后面小于x的结点移动到最后一个小于x的结点后
+        curr = tail.next    
         while curr.next: 
             if curr.next.val < x:
                 tmp = ListNode(curr.next.val)
@@ -27,30 +37,23 @@ class Solution:
                 curr.next = curr.next.next
             else:
                 curr = curr.next
-        return tail.next
+        return dummy.next
 
 head = ListNode(1)
 node = head
-node.next = ListNode(2)
-node = node.next
-node.next = ListNode(4)
-node = node.next
-node.next = ListNode(3)
-node = node.next
-node.next = ListNode(2)
-node = node.next
-node.next = ListNode(5)
-node = node.next
-node.next = ListNode(2)
-node = node.next
-node.next = ListNode(3)
-node = node.next
-node.next = ListNode(2)
-node = node.next
-node.next = ListNode(5)
+node.next = ListNode(1)
+# node = node.next
+# node.next = ListNode(3)
+# node = node.next
+# node.next = ListNode(2)
+# node = node.next
+# node.next = ListNode(5)
+# node = node.next
+# node.next = ListNode(2)
+
 
 s = Solution()
-r = s.partition(head, 3)
+r = s.partition(head, 2)
 while r:
     print(r.val)
     r = r.next       

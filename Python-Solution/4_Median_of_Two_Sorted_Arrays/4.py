@@ -9,8 +9,6 @@ class Solution:
         n = len(nums2)
 
         # 根据数组大小交换顺序，小的在前
-        # tmpn = 0
-        # tmparr = []
         if m > n:
         	tmpn = m
         	m = n

@@ -8,6 +8,8 @@ class Solution:
 
         s_len = len(s)
         p_len = len(p)
+        
+        # dp[0][0]为True，其他均为False（两个空数组match）
         dp = [[True] + [False] * s_len]
         for i in range(p_len):
             dp.append([False]*(s_len+1))
@@ -26,5 +28,5 @@ class Solution:
             
 
 s = Solution()
-res = s.isMatch("aab", "c*a*b")  
+res = s.isMatch("mississippi", "mis*is*p*.")  
 print(res)
