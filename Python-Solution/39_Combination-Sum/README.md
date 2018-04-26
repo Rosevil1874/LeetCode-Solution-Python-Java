@@ -7,6 +7,7 @@
 1. 相同元素可重复使用；
 2. 解集不包含重复解；
 3. 这是n-sum，不是之前的two-sum、three-sum、four-sum，不能用循环。
+4. 关联题目[40.组合总数II](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/40_Combination-Sum-II)，[216.组合总数III](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/216_Combination-Sum-III)
 
 ## 回溯法
 

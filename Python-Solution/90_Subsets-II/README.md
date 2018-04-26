@@ -3,7 +3,8 @@
 ## 题目描述
 ![problem](images/78.png)
 
->这个。。。我觉得和上一题没有区别呀(눈‸눈)
+>关联题目： [78. 子集](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/78_Subsets)
+>这个。。。我觉得和78题没有区别呀(눈‸눈)
 
 ## 回溯法
 ```python

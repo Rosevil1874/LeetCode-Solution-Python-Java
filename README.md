@@ -61,10 +61,24 @@
 23 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/23_Merge-k-Sorted-Lists">合并K个排序链表</a> | 困难 
 24 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/24_Swap-Nodes-in-Pairs">两两交换链表中的节点</a> | 中等  
 25 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/25_Reverse_Nodes_in_k-Group">k个一组翻转链表</a> | 困难
-61 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/61_Rotate-List">旋转链表</a> | 中等 | 
+26 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/26_Remove-Duplicates-from-Sorted-Array">删除排序数组中的重复项</a> | 简单
+27 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/27_Remove-Element">移除元素</a> | 简单
+31 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/31_Next-Permutation">下一个排列</a> | 中等
+33 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/33_Search-in-Rotated-Sorted-Array">搜索旋转排序数组</a> | 中等
+34 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/34_Search-for-a-Range">搜索范围</a> | 中等
+35 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/35_Search-Insert-Position">搜索插入位置 </a> | 简单
+39 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/39_Combination-Sum">组合总和 </a> | 中等
+40 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/40_Combination-Sum-II">组合总和 II </a> | 中等
+48 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/48_Rotate-Image">旋转图像 </a> | 中等
+53 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/53_Maximum-Subarray">最大子序和 </a> | 简单
+54 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/54_Spiral-Matrix">螺旋矩阵 </a> | 中等
+59 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/54_Spiral-Matrix">螺旋矩阵II </a> | 中等
+61 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/61_Rotate-List">旋转链表</a> | 中等 
+78 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/78_Subsets">子集</a> | 中等 
 82 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/82_Remove-Duplicates-from-Sorted-List-II">从分类列表中删除重复项目II</a> | 中等 
 83 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/83_Remove-Duplicates-from-Sorted-List">k个一组翻转链表</a> | 简单 
 86 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/86_Partition-List">分隔链表</a> | 中等 
+90 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/90_Subsets-II">子集II</a> | 中等 
 92 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/92_Reverse-Linked-List-II">反转链表II</a> | 中等 
 
 
@@ -87,6 +101,7 @@
 题序-Squence  |  题目-Problem  |  难度-Level  
  ------------ | ------------- | ------------
 206 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/206_Reverse-Linked-List">反转链表</a> | 简单 
+216 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/216_Combination-Sum-III">组合总和III </a> | 中等
 234 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/234_Palindrome-Linked-List">回文链表</a> | 简单 
 237 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/237_Delete-Node-in-a-Linked-List">删除链表中的节点</a> | 简单 
 

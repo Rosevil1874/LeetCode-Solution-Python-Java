@@ -7,7 +7,7 @@
 1. 原地操作；
 2. 要注意返回的是数组的长度而不是数组；
 3. 不必保证相对位置不变；
-4. 和26题类似。
+4. 和[26题](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/26_Remove-Duplicates-from-Sorted-Array)类似。
 
 ## 题解
 思路：

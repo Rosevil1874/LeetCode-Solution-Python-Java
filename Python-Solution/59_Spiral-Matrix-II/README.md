@@ -3,6 +3,9 @@
 ## 题目描述
 ![problem](images/59.png)
 
+>关联题目：[54. 螺旋矩阵](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/54_Spiral-Matrix)
+
+
 ## 解法一
 >类似第54题（螺旋矩阵）
 

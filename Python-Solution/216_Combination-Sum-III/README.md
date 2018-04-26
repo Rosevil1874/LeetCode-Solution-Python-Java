@@ -7,6 +7,7 @@
 1. 相同元素**不可以**重复使用，与39题类似；
 2. 解集不包含重复解；
 3. 可以在39题基础上控制每个解包含的元素个数。
+4. 关联题目[39.组合总数](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/40_Combination-Sum)，[40.组合总数II](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/216_Combination-Sum-II)
 
 ## 回溯法
 

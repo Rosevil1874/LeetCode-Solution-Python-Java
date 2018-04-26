@@ -6,6 +6,7 @@
 >审题：
 1. 返回目标索引范围，不存在则返回[-1,-1]；
 2. 时间复杂度O(log n)。
+3. 类似题目[33.搜索旋转排序数组](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/33_Search-in-Rotated-Sorted-Array)
 
 
 ## 二分查找法
