@@ -69,12 +69,27 @@
 35 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/35_Search-Insert-Position">搜索插入位置 </a> | 简单
 39 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/39_Combination-Sum">组合总和 </a> | 中等
 40 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/40_Combination-Sum-II">组合总和 II </a> | 中等
+41 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/41_First-Missing-Positive">缺失的第一个正数</a> | 困难
+42 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/42_Trapping-Rain-Water">接雨水</a> | 困难
+45 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/45_Jump-Game-II">跳跃游戏 II </a> | 困难
 48 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/48_Rotate-Image">旋转图像 </a> | 中等
 53 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/53_Maximum-Subarray">最大子序和 </a> | 简单
 54 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/54_Spiral-Matrix">螺旋矩阵 </a> | 中等
+55 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/55_Jump-Game">跳跃游戏 </a> | 中等
+56 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/56_Merge-Intervals">合并区间 </a> | 中等
+57 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/57_Insert-Interval">插入区间 </a> | 困难
 59 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/54_Spiral-Matrix">螺旋矩阵II </a> | 中等
 61 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/61_Rotate-List">旋转链表</a> | 中等 
+62 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/62_Unique-Paths">不同路径</a> | 中等 
+63 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/63_Unique-Paths-II">不同路径 II</a> | 中等 
+64 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/64_UMinimum-Path-Sum">最小路径和 </a> | 中等 
+66 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/66_Plus-One">加一</a> | 简单 
+73 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/73_Set-Matrix-Zeroes">矩阵置零</a> | 中等 
+74 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/74_Search-a-2D-Matrix">搜索二维矩阵 </a> | 中等 
+75 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/75_Sort-Colors">分类颜色 </a> | 中等 
 78 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/78_Subsets">子集</a> | 中等 
+80 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/80_Remove-Duplicates-from-Sorted-Array-II">删除排序数组中的重复项 II</a> | 中等 
+81 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/81_Search-in-Rotated-Sorted-Array-II">搜索旋转排序数组 II</a> | 中等 
 82 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/82_Remove-Duplicates-from-Sorted-List-II">从分类列表中删除重复项目II</a> | 中等 
 83 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/83_Remove-Duplicates-from-Sorted-List">k个一组翻转链表</a> | 简单 
 86 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/86_Partition-List">分隔链表</a> | 中等 
@@ -104,6 +119,7 @@
 216 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/216_Combination-Sum-III">组合总和III </a> | 中等
 234 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/234_Palindrome-Linked-List">回文链表</a> | 简单 
 237 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/237_Delete-Node-in-a-Linked-List">删除链表中的节点</a> | 简单 
+240 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/240_Search-a-2D-Matrix-II">搜索二维矩阵 II</a> | 中等 
 
 
 <h3 id="title4"></h3>
