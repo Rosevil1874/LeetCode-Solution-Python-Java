@@ -3,6 +3,8 @@
 ## 题目描述
 ![problem](images/82.png)
 
+>关联题目： [83. 从分类列表中删除重复项目](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/83_Remove-Duplicates-from-Sorted-List)
+
 >审题：
 注意注意，此题与83题的区别在于：不是说有三个1的话只保留一个1，而是只要1这个数字有重复，就一个不留。
 

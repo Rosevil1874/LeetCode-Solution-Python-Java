@@ -3,6 +3,8 @@
 ## 题目描述
 ![problem](images/26.png)
 
+>关联题目： [80. 删除排序数组中的重复项-II](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/80_Remove-Duplicates-from-Sorted-Array-II)
+
 >审题：
 1. 原地操作
 2. 要注意返回的是数组的长度而不是数组
@@ -21,7 +23,6 @@ class Solution(object):
         :rtype: int
         """
         length = len(nums)
-        newLen = length
         i = 1
         while i < length:
         	if nums[i] == nums[i-1]:

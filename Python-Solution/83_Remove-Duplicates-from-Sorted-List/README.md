@@ -2,6 +2,8 @@
 ## 题目描述
 ![problem](images/83.png)
 
+>关联题目： [82. 从分类列表中删除重复项目 II](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/82_Remove-Duplicates-from-Sorted-List-II)
+
 >审题：
 82题是此题变种，觉得82题要考虑的多一点，先写这题再写前面那题，方法都是一样的。
 
