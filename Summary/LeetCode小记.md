@@ -5,6 +5,7 @@
 10. 正则表达式匹配 → [戳](https://leetcode-cn.com/problems/regular-expression-matching/description/)  迷迷糊糊
 23. 合并K个元素的有序链表 → [戳](https://leetcode-cn.com/problems/merge-k-sorted-lists/description/)  未完成：使用最小堆解决
 34. 搜索范围
+212. 单词搜索2
 
 ## 一些小技巧
 ### 链表
