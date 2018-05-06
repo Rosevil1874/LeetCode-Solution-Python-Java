@@ -6,6 +6,8 @@
 23. 合并K个元素的有序链表 → [戳](https://leetcode-cn.com/problems/merge-k-sorted-lists/description/)  未完成：使用最小堆解决
 34. 搜索范围
 212. 单词搜索2
+828
+829
 
 ## 一些小技巧
 ### 链表
