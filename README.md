@@ -88,11 +88,16 @@
 74 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/74_Search-a-2D-Matrix">搜索二维矩阵 </a> | 中等 
 75 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/75_Sort-Colors">分类颜色 </a> | 中等 
 78 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/78_Subsets">子集</a> | 中等 
+79 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/79_Word-Search">单词搜索</a> | 中等 
 80 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/80_Remove-Duplicates-from-Sorted-Array-II">删除排序数组中的重复项 II</a> | 中等 
 81 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/81_Search-in-Rotated-Sorted-Array-II">搜索旋转排序数组 II</a> | 中等 
 82 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/82_Remove-Duplicates-from-Sorted-List-II">从分类列表中删除重复项目II</a> | 中等 
 83 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/83_Remove-Duplicates-from-Sorted-List">k个一组翻转链表</a> | 简单 
+84 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/84_Largest-Rectagel-in-Histogram">柱状图中最大的矩形</a> | 困难 
+85 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/85_Maximal-Rectangle">最大矩形</a> | 困难 
 86 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/86_Partition-List">分隔链表</a> | 中等 
+88 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/88_Merge-Sorted-Array">合并两个有序数组</a> | 简单 
+89 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/89_Gray-Code">格雷编码</a> | 中等 
 90 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/90_Subsets-II">子集II</a> | 中等 
 92 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/92_Reverse-Linked-List-II">反转链表II</a> | 中等 
 
@@ -102,12 +107,17 @@
 ### 101-200
 题序-Squence  |  题目-Problem  |  难度-Level  
  ------------ | ------------- | ------------
+105 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/105_Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal">从前序与中序遍历序列构造二叉树</a> | 中等 
+106 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/106_Construct-Binary-Tree-from-Inorder-and-Postorder-Traversal">从中序与后序遍历序列构造二叉树</a> | 中等 
 109 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/109_Convert-Sorted-List-to-Binary-Search-Tree">有序链表转换二叉搜索树</a> | 中等 
+118 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/118_Pascal-Triangle">杨辉三角</a> | 简单 
+119 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/119_Pascal-Triangle-II">杨辉三角 II</a> | 简单 
 138 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/138_Copy-List-with-Random-Pointer">复制带随机指针的链表</a> | 中等 
 141 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/141_Linked-List-Cycle">环形链表</a> | 简单 
 142 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/142_Linked-List-Cycle-II">环形链表II</a> | 中等 
 143 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/143_Reorder-List">重排链表</a> | 中等 
 147 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/147_Insertion-Sort-List">链表插入排序</a> | 中等 
+169 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/169_Majority-Element">求众数</a> | 简单 
 
 
 <h3 id="title3"></h3>
@@ -116,7 +126,12 @@
 题序-Squence  |  题目-Problem  |  难度-Level  
  ------------ | ------------- | ------------
 206 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/206_Reverse-Linked-List">反转链表</a> | 简单 
+212 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/212_Word-Search-II">单词搜索 II</a> | 困难 
 216 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/216_Combination-Sum-III">组合总和III </a> | 中等
+217 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/217_Contains-Duplicate">存在重复元素  </a> | 简单
+219 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/219_Contains-Duplicate-II">存在重复元素 II </a> | 简单
+220 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/220_Contains-Duplicate-III">存在重复元素 III </a> | 中等
+229 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/229_Majority-Element-II">求众数 II </a> | 中等
 234 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/234_Palindrome-Linked-List">回文链表</a> | 简单 
 237 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/237_Delete-Node-in-a-Linked-List">删除链表中的节点</a> | 简单 
 240 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/240_Search-a-2D-Matrix-II">搜索二维矩阵 II</a> | 中等 
@@ -156,6 +171,7 @@
 ### 701-800
 题序-Squence  |  题目-Problem  |  难度-Level  
  ------------ | ------------- | ------------
+717 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/717_1bit-and-2bit-Characters">1比特与2比特字符</a> | 简单 
 725 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/725_Split-Linked-List-in-Parts">Split Linked List in Parts 【链表分割】</a> | 中等 
 
 
@@ -165,6 +181,10 @@
 题序-Squence  |  题目-Problem  |  难度-Level  
  ------------ | ------------- | ------------
 817 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/817_Linked-List-Components">Linked List Components 【链表组件】</a> | 中等 
+828 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/828_Unique-Letter-String">	Unique Letter String 【不重复子串】</a> | 困难 
+829 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/829_Consecutive-Numbers-Sum">连续整数求和</a> | 中等 
+830 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/830_Positions-of-Large-Groups">Positions of Large Groups 【连续相同元素组位置】</a> | 简单 
+831 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/831_Masking-Personal-Information">Masking Personal Information【个人信息保护】</a> | 中等 
 
 
 
