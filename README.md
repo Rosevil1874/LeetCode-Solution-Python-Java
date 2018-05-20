@@ -112,12 +112,19 @@
 109 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/109_Convert-Sorted-List-to-Binary-Search-Tree">有序链表转换二叉搜索树</a> | 中等 
 118 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/118_Pascal-Triangle">杨辉三角</a> | 简单 
 119 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/119_Pascal-Triangle-II">杨辉三角 II</a> | 简单 
+120 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/120_Triangle">三角形最小路径和</a> | 中等 
+121 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/121_Best-Time-to-Buy-and-Sell-Stock">买卖股票的最佳时机</a> | 简单 
+122 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/122_Best-Time-to-Buy-and-Sell-Stock-II">买卖股票的最佳时机II</a> | 简单 
+123 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/123_Best-Time-to-Buy-and-Sell-Stock-III">买卖股票的最佳时机III</a> | 困难 
 138 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/138_Copy-List-with-Random-Pointer">复制带随机指针的链表</a> | 中等 
 141 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/141_Linked-List-Cycle">环形链表</a> | 简单 
 142 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/142_Linked-List-Cycle-II">环形链表II</a> | 中等 
 143 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/143_Reorder-List">重排链表</a> | 中等 
 147 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/147_Insertion-Sort-List">链表插入排序</a> | 中等 
+167 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/167_Two-Sum-II-Input-array-is-sorted">两数之和 II - 输入有序数组</a> | 简单 
 169 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/169_Majority-Element">求众数</a> | 简单 
+188 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/188_Best-Time-to-Buy-and-Sell-Stock-IV">买卖股票的最佳时机 IV</a> | 困难 
+189 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/189_Rotate-Array">旋转数组</a> | 简单 
 
 
 <h3 id="title3"></h3>
@@ -142,7 +149,9 @@
 ### 301-400
 题序-Squence  |  题目-Problem  |  难度-Level  
  ------------ | ------------- | ------------
+309 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/309_Best-Time-to-Buy-and-Sell-Stock-with-Cooldown">最佳买卖股票时机含冷冻期</a> | 中等
 328 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/328_Odd-Even-Linked-List">奇偶链表 Odd Even Linked List</a> | 中等
+341 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/341_Flatten-Nested-List-Iterator">扁平化嵌套列表迭代器</a> | 中等
 
 
 <h3 id="title5"></h3>
@@ -157,6 +166,8 @@
 ### 501-600
 题序-Squence  |  题目-Problem  |  难度-Level  
  ------------ | ------------- | ------------
+565 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/565_Array-Nesting">数组嵌套</a> | 中等
+566 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/566_Reshape-the-Matrix">重塑矩阵</a> | 简单
 
 
 <h3 id="title7"></h3>
@@ -164,6 +175,7 @@
 ### 601-700
 题序-Squence  |  题目-Problem  |  难度-Level  
  ------------ | ------------- | ------------
+611 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/611_Valid-Triangle-Number">有效三角形的个数</a> | 中等
 
 
 <h3 id="title8"></h3>
@@ -171,8 +183,10 @@
 ### 701-800
 题序-Squence  |  题目-Problem  |  难度-Level  
  ------------ | ------------- | ------------
+714 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/714_Best-Time-to-Buy-and-Sell-Stock-with-Transaction-Fee">买卖股票的最佳时机含手续费</a> | 中等 
 717 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/717_1bit-and-2bit-Characters">1比特与2比特字符</a> | 简单 
 725 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/725_Split-Linked-List-in-Parts">Split Linked List in Parts 【链表分割】</a> | 中等 
+766 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/766_Toeplitz-Matrix">托普利茨矩阵</a> | 简单 
 
 
 <h3 id="title9"></h3>
