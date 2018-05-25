@@ -7,44 +7,85 @@
 1. 限行时间复杂度；
 2. 常数额外空间；
 
-## 题解一
-**这个思路不是严格意义上的in-place**  
+## 一、暴力
+**时间复杂度O(N)，无额外空间，显然不符合要求所以超时了**  
 
 思路：  
-1. 计算0出现的次数cnt；
-2. 从数组头部开始查找0的位置并删除，在数组末尾添加0，进行cnt次。
+按下标从0开始，依次查看下标代表的数是否在数组中。
 
 ```python
 class Solution(object):
-    def moveZeroes(self, nums):
+    def missingNumber(self, nums):
         """
         :type nums: List[int]
-        :rtype: void Do not return anything, modify nums in-place instead.
+        :rtype: int
         """
-        cnt = nums.count(0)
-        for i in range(cnt):
-        	idx = nums.index(0)
-        	del nums[idx]
-        	nums.append(0)
+        for i in range(len(nums)):
+            if i not in nums:
+                return i
+        return len(nums)
 ```
 
-## 题解二
-**in-place**  
+**以下题解参考[3 different ideas: XOR, SUM, Binary Search. Java code](https://leetcode.com/problems/missing-number/discuss/69786/3-different-ideas:-XOR-SUM-Binary-Search.-Java-code)**
 
+## 二、异或
 思路：  
-1. 一个变量记录0元素的位置；
-2. 每次将0与后一个不是0的元素交换位置，直到换到最后。
+1. a^b^b = a;
+2. 在没有缺失数字的完整数组中，索引和值应该完全对应（nums [index] = index），因此在丢失的数组中，最后剩下的就是丢失的数字。
 
 ```python
 class Solution(object):
-    def moveZeroes(self, nums):
+    def missingNumber(self, nums):
         """
         :type nums: List[int]
-        :rtype: void Do not return anything, modify nums in-place instead.
+        :rtype: int
         """
-        idx = 0
+        res = len(nums)
         for i in range(len(nums)):
-        	if nums[i] != 0:
-        		nums[i], nums[idx] = nums[idx], nums[i]
-        		idx += 1
+            res ^= i 
+            res ^= nums[i]
+        return res
+```
+
+## 三、求和
+思路：  
+1. 求出不缺数字的时候序列的和；
+2. 求出实际序列的和；
+3. 两和之差即为缺失的数。
+
+```python
+class Solution(object):
+    def missingNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        expectSum = sum(i for i in range(len(nums) + 1))
+        realSum = sum(nums)
+        return expectSum - realSum
+```
+
+## 四、二分查找
+思路：  
+1. 排序；
+2. nums[mid] > mid：缺失的值在左边；
+3. nums[mid] < mid：缺失的值在右边；
+4. left和right相遇时代表的就是缺失的值。
+
+```python
+class Solution(object):
+    def missingNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        nums.sort()
+        left, right = 0, len(nums) - 1
+        while left <= right:
+            mid = (left + right) // 2
+            if nums[mid] > mid:
+                right = mid - 1
+            else:
+                left = mid + 1
+        return left
 ```
