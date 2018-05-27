@@ -2,6 +2,8 @@
 ## 题目描述
 ![problem](images/84.png)
 
+>关联题目： [85.  最大矩形](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/85_Maximal-Rectangle)
+
 ## 栈
 思路：  
 1. 在heights数组后加上一个高度为0的哨兵，以正确计算最后一个柱子；
