@@ -3,7 +3,7 @@
 ## 题目描述
 ![problem](images/209.png)
 
-<!-- >关联题目： [153. 寻找旋转排序数组中的最小值](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/153_Find-Minimum-in-Rotated-Sorted-Array)     -->
+>关联题目： [718. 最长重复子数组](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/718_Maximum-Length-of-Repeated-Subarray)    
 
 ## 一、双指针-第一回合-LOSE
 **时间复杂度O(N)**
