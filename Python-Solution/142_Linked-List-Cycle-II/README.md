@@ -1,7 +1,11 @@
 # 142 - 环形链表 II
 
 ## 题目描述
-![problem](images/1.png)
+![problem](images/142.png)
+
+>关联题目： [141. 环形链表](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/141_Linked-List-Cycle)    
+>关联题目： [287. 寻找重复数](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/287_Find-the-Duplicate-Number)    
+
 
 ## 双指针
 >cr:[[leetcode]Linked List Cycle II @ Python

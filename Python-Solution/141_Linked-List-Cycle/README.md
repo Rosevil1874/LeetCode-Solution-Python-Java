@@ -3,6 +3,9 @@
 ## 题目描述
 ![problem](images/141.png)
 
+>关联题目： [142. 环形链表II](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/142_Linked-List-Cycle-II)    
+
+
 ## 双指针
 思路：使用两个移动速度不同的指针，若相遇则存在环。
 
