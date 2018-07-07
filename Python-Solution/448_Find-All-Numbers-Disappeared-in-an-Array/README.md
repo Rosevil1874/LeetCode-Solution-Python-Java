@@ -3,6 +3,8 @@
 ## 题目描述
 ![problem](images/448.png)
 
+>关联题目[442 数组中重复的数据](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/442_Find-All-Duplicates-in-an-Array)
+
 ## 题解一
 **时间复杂度O(1), 空间复杂度O(N)**
 >我的第一次一行代码解题哈哈哈哈哈✧*｡٩(ˊᗜˋ*)و✧\*｡
