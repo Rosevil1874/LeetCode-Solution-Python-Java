@@ -3,8 +3,19 @@
 ## 题目描述
 ![problem](images/448.png)
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 >关联题目[442 数组中重复的数据](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/442_Find-All-Duplicates-in-an-Array)
 
+=======
+>>>>>>> parent of 8674875... 久违的一次提交，442、532题
+=======
+>>>>>>> parent of 8674875... 久违的一次提交，442、532题
+=======
+>关联题目[442 数组中重复的数据](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/442_Find-All-Duplicates-in-an-Array)
+
+>>>>>>> 112acc22a4a8c54a24925d2e9f4e27f1b7272a42
 ## 题解一
 **时间复杂度O(1), 空间复杂度O(N)**
 >我的第一次一行代码解题哈哈哈哈哈✧*｡٩(ˊᗜˋ*)و✧\*｡
