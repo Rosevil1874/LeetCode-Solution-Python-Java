@@ -39,10 +39,8 @@ class Solution:
                 cnt = 0
             i += 1
         cntMid = max(cntMid, cnt)
-        print(cntMid)
 
         res = max(res, math.floor((cntMid + 1) / 2))
-
         return res
 
 # seats = [1,0,0,1,0,1,0,1]
