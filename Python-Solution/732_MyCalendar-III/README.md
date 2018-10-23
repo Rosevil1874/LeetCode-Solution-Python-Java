@@ -8,30 +8,43 @@
 - [731. 买卖股票的最佳时机II](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/731_MyCalendar-II)
 
 ## 题解一
-1. 使用两个list，overlaps存放两个重叠日程的重叠区域，calendar存放预定成功的日程（包括第一次成功，和与第一次成功日程冲突的日程）。  
-2. 当有新日程需要预定时，首先将其与重叠区域对比，若其冲突则说明这是二次重叠，即共三个日程发生重叠，不可行，返回False。
-3. 若与重叠区域不冲突则与成功预定的日程比较，若冲突则将重叠区域加入overlaps，仍将新日程加入calendar表示预定成功。
+>reference: [N^2 Python, Short and Elegant](https://leetcode.com/problems/my-calendar-ii/discuss/109530/N2-Python-Short-and-Elegant)    
+花了很久才理解，首先放上答主的原话：   
+【**This is to find the maximum number of concurrent ongoing event at any time.**
 
->reference: [N^2 Python, Short and Elegant](https://leetcode.com/problems/my-calendar-ii/discuss/109530/N2-Python-Short-and-Elegant)  
-虽然时间复杂度比较高，但不可否认思路还是非常清晰易懂的  
+>We can log the start & end of each event on the timeline, each start add a new ongoing event at that time, each end terminate an ongoing event. Then we can scan the timeline to figure out the maximum number of ongoing event at any time.
+
+>The most intuitive data structure for timeline would be array, but the time spot we have could be very sparse, so we can use sorted map to simulate the time line to save space.(答主用的Java和C+++)】
+
+解释一下:  
+其实在myCalendar2里答主也是使用的这个方法，哎呀真的很巧妙哩👍  
+1. 我们把每一个开始时间start的这个时刻的计数加1，把结束时间end的这个时刻计数-1；
+2. 保证保存的容器按时间顺序排列，这里使用insect的insort函数自动排序（答主用的是map）；
+3. 按时间线从前往后遍历，首先遍历到的肯定是一个开始时间，这里的值一定是正数，表示从这个时候开始，后面这段时间有多少件事情正在执行（ongoing）。此后，若又遇到正数则说明这里又新的事件在执行，需要累加起来；同理，若遇到负数则说明有事件到这里结束了。
+4. 我们此题需求的是任意时间内同时发生的最大事件数，所以，累加过程中的最大值即为结果。  
+完结撒花*★,°*:.☆(￣▽￣)/$:*.°★* 。
 
 ```python
-class MyCalendar:
+from bisect import insort
+class MyCalendarThree:
 
     def __init__(self):
-        self.intervals = []
+        self.timeline = []
 
     def book(self, start, end):
         """
         :type start: int
         :type end: int
-        :rtype: bool
+        :rtype: int
         """
-        for s, e in self.intervals:
-        	if not(start >= e or end <= s):
-        		return False
-        self.intervals.append((start, end))
-        return True
+        insort(self.timeline, (start, 1))
+        insort(self.timeline, (end, -1))
+
+        res, cumsum = 0, 0
+        for _, x in self.timeline:
+            cumsum += x
+            res = max(res, cumsum)
+        return res
 ```
 
 
