@@ -2,6 +2,7 @@
 
 ## 题目描述
 ![problem](images/914.png)
+![cases](images/914cases.png)
 
 
 ## 题解一【行不通哒】

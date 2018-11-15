@@ -2,6 +2,7 @@
 
 ## 题目描述
 ![problem](images/915.png)
+![cases](images/915cases.png)
 
 
 ## 题解
