@@ -3,6 +3,8 @@
 ## 题目描述
 ![problem](images/905.png)
 
+>相似题目：  
+[922.按奇偶排序数组II](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/922_Sort-Array-By-Parity-II)
 
 ## 题解一
 **思路：**    
@@ -75,5 +77,12 @@ class Solution:
 就是按list中每个数对2的模排序，模为0的偶数自然排在模为1的奇数前面了啊。  
 >reference:[really simply python](https://leetcode.com/problems/sort-array-by-parity/discuss/183575/really-simply-python)
 ```python
-
+class Solution:
+    def sortArrayByParity(self, A):
+        """
+        :type A: List[int]
+        :rtype: List[int]
+        """
+        A.sort(key = lambda x: x%2)
+        return A
 ```
