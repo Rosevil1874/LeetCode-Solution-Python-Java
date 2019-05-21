@@ -1,11 +1,17 @@
-fclass Solution(object):
+from functools import reduce
+class Solution(object):
     def minDominoRotations(self, A, B):
         """
         :type A: List[int]
         :type B: List[int]
         :rtype: int
         """
-        
+        intersection = reduce(set.__and__, [set(d) for d in zip(A, B)] )
+        if not intersection: 
+        	return -1
+        else:
+        	x = intersection.pop()   # 就是你，幸运儿！
+        	return  min(len(A) - A.count(x), len(B) - B.count(x))
             
 
 A = [2,1,2,4,2,2]
