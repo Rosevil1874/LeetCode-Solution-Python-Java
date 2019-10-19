@@ -75,3 +75,25 @@ class Solution:
 ```
 
 <blockquote class="blockquote-center">有了我，LeetCode的AC率恐怕。。。 </blockquote>
+
+
+## 别人的方法【滑动窗口】
+```python
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        n = len(s)
+        if n == 0 or n == 1:
+            return n
+        
+        max_len = curr_len = left = 0
+        max_str = ''
+        for i in range(n):
+            curr_len += 1
+            while s[i] in max_str:
+                max_str = max_str[1:]
+                left += 1
+                curr_len -= 1
+            max_len = max(max_len, curr_len)
+            max_str += s[i]
+        return max_len
+```
