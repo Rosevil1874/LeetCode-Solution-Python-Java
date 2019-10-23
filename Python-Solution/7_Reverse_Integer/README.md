@@ -5,7 +5,7 @@
 
 <!-- more -->
 
-## 方法
+## 一、字符串反转
 >看到题目，想到三个要注意的点：
 1. 负数的处理；
 2. 原数末尾为零时颠倒后要去掉；
@@ -50,3 +50,32 @@ class Solution:
 ```
 
 **一开始忽略了只有一位的情况，这种情况直接返回就好~~**
+
+## 二、 字符串反转--简化版（大神版）
+```python
+class Solution:
+    def reverse(self, x: int) -> int:
+        s = (x > 0) - (x < 0)       # 符号位
+        r = int(str(s*x)[::-1])     # 绝对值反转
+        return s*r * (r < 2**31)
+```python
+
+
+## 按位反转  
+依次将最后一位插入到返回数字的最前面，每插入一次之前判断此次插入是否会导致溢出。
+```python
+class Solution:
+    def reverse(self, x: int) -> int:
+        temp = 0
+        maxint = 0x7FFFFFFF
+        minint = -0x80000000
+        while x != 0:
+            pop = x % 10
+            if temp > maxint//10 or ( temp == maxint//10 and pop > 7):
+                return 0
+            if temp < minint//10 or ( temp == minint//10 and pop < -8):
+                return 0
+            x = x // 10
+            temp = temp*10 + pop
+        return temp
+```python
