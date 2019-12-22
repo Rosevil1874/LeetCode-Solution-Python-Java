@@ -26,5 +26,5 @@ class Solution:
         return s[resLeft : resRight + 1 ]
 
 solution = Solution()
-r = solution.longestPalindrome("aaabaaaa")
+r = solution.longestPalindrome("aa")
 print(r)

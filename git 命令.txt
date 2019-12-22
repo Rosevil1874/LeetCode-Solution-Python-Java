@@ -1,0 +1,22 @@
+进入当前位置：
+ cd E:/Git/LeetCode
+
+从远程拉取更新并与本地合并：
+git pull
+
+查看状态：
+git status
+
+添加到暂存区：
+git add
+
+提交到：
+git commit -m "some msg"
+
+提交到远程：
+git push
+
+
+错误：
+fatal: Not a git repository (or any of the parent directories): .git
+解决：git init
