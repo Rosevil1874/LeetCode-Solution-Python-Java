@@ -152,3 +152,35 @@ class Solution(object):
             li = li.next
         return s[::-1] 			#新技能get：翻转字符串
 ```
+
+## 二刷：python3 code
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        str1 = self.link_to_str(l1)
+        str2 = self.link_to_str(l2)
+        str_sum = str(int(str1) + int(str2))[::-1]
+        return self.str_to_link(str_sum)
+    
+        
+    def link_to_str(self, link: ListNode) -> str:
+        string = ''
+        while link:
+            string += str(link.val)
+            link = link.next
+        return string[::-1]
+    
+    
+    def str_to_link(self, string: str) -> ListNode:
+        head = curr = ListNode(int(string[0]))
+        for i in range(1, len(string)):
+            curr.next = ListNode(int(string[i]))
+            curr = curr.next
+        return head
+```
