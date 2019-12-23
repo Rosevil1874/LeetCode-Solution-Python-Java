@@ -11,35 +11,33 @@
 So，可不可以把“三数之和”问题改成“两数之和+X”捏。。。
 
 ## 方法一：利用“两数之和”
-1. 计算将列表中每个数与几（target）相加的和为零；
-2. 分别使用这个target作为两数之和问题中的target；
-3. 去重之后将符合条件的结果加入返回数组。
+1. 排序，方便去重
+2. 字典中存放与出现过的数字能组成和为0的三元组的元素；
+3. 遍历检查元素是否在字典中，在则构成三元组，否则将与当前两个元素能组成三元组的元素放入字典；
+4. 使用set存放返回三元组去重，返回时转换回列表。
+
+> Runtime: 712 ms, faster than 89.67% of Python3 online submissions
+
 ```python
 class Solution:
-    def threeSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
-        l = len(nums)
-        ret = []
-        for j in range(l):
-            target = 0 - nums[j]
-            tmp = {}
-            for i, a in enumerate(nums):
-                if i == j:
-                    continue
-                if target-a in tmp:
-                    re = sorted( [nums[j], nums[tmp[target-a]], nums[i]] ) 
-                    if re not in ret:
-                        ret.append( re )
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        nums.sort()
+        n = len(nums)
+        res = set()
+        
+        for i, val1 in enumerate(nums[:-2]):
+            if i >= 1 and val1 == nums[i-1]:   # delete duplicate
+                continue;
+                
+            d = {}  # save nums have chance in triplets
+            for val2 in nums[i+1:]:
+                if val2 not in d:
+                    d[-val1 - val2] = 1
                 else:
-                    tmp[a] = i
-
-        return ret
+                    res.add((val1, val2, -val1-val2))
+        return map(list, res)
 ```
-超时啦啊啊啊啊啊(눈‸눈)
-![overtime](images/overtime.png)
+
 
 ## 方法二：双指针
 1. 将数组排序；
@@ -47,48 +45,34 @@ class Solution:
 3. 第二层循环使用双指针在剩余位置由两端向中间靠拢检查【后两个数】；
 4. 符合条件且不重复的加入结果数组。
 
-```pyhton
+> Runtime: 908 ms, faster than 63.40% of Python3 online submissions
+
+```python
 class Solution:
-    def threeSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
-        l = len(nums)
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
-        ret = []
-
-        for i in range(l - 2):
-            # 去重
-            if i > 0 and nums[i] == nums[i-1]:
-                continue
-
-            # 双指针归位！
-            j, k = i + 1, l - 1
+        n = len(nums)
+        res = []
+        
+        for i in range(n - 2):
+            if i >= 1 and nums[i] == nums[i-1]:   # delete duplicate
+                continue;
+                
+            j, k = i + 1, n - 1
             while j < k:
-                if nums[i] + nums[j] + nums[k] == 0:
-                    ret.append( [nums[i], nums[j], nums[k]] )
+                s = nums[i] + nums[j] + nums[k]
+                if s < 0:
                     j += 1
+                elif: s > 0:
                     k -= 1
-
-                    # 去重
-                    while j < k and nums[j] == nums[j-1] :
-                        j += 1
-                    while j < k and nums[k] == nums[k+1] :
-                        k -= 1
-                elif nums[i] + nums[j] + nums[k] < 0:
-                    j += 1
                 else:
-                    k -= 1
-
-        return ret
+                    res.append([nums[i], nums[j], nums[k]])
+                    j += 1; k -= 1
+                    
+                    while j < k and nums[j] == nums[j - 1]:
+                        j += 1
+                    while j < k and nums[k] == nums[k + 1]:
+                        k -= 1
+                
+        return res
 ```
-
-还是超时，黑人问号.jpg
-![黑人问号.jpg](images/黑人问号.jpg)
-
-问题出在哪里，，，我把l = len(nums)去掉了，所有需要用到l的地方直接使用len(nums)就AC了，excuse me？？？把它暂存起来不是更快吗？？？看看这个卡住的测试用例吧：
-![overtime2](images/overtime2.png)
-
-**2018.04.19 review**
-还是一样的代码，现在提交就通过了，简直。。。唉过了就好( ･´ω`･ )
