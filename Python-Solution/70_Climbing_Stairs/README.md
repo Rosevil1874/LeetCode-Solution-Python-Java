@@ -15,15 +15,12 @@
 >嚯嚯嚯， TLE了...为什么TLE了呢，因为你看看啊，上面递归算法有好多重复计算啊，指数级的时间复杂度很累的呀,,ԾㅂԾ,,
 
 ```python
-class Solution(object):
-    def climbStairs(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
-        if n == 1: return 1
-        if n == 2: return 2
-        return self.climbStairs(n -1) + self.climbStairs(n - 2)
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        if n <= 2: 
+            return n
+        
+        return self.climbStairs(n - 1) + self.climbStairs(n - 2)
 ```
 
 
@@ -79,18 +76,18 @@ class Solution(object):
 
 **思路：** 和三一样一样的，就是没有用额外的空间啦~
 
->四舍五入就beat 88%了嚯嚯嚯
+**其实题解2，3都不用看了，用动态规划实现，这本质上是一个斐波那契数列啊！！**
+
+> Runtime: 24 ms, faster than 92.77% of Python3 online submissions
 
 ```python
-class Solution(object):
-    def climbStairs(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
-        if n == 1: return 1
-        a, b = 1, 2   # 1阶和2阶的方案分别为1种和2种，这是基本问题
-        for _ in range(2, n):
-            a, b = b, a + b
-        return b
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        if n <= 2: 
+            return n
+        
+        n1, n2 = 1, 2   # 1阶和2阶的方案分别为1种和2种，这是基本问题
+        for i in range(n - 2):
+            n1, n2 = n2, n1 + n2
+        return n2
 ```

@@ -32,6 +32,8 @@ class Solution(object):
 思路：  
 众数出现的次数大于`⌊ n/2 ⌋`，那么排序后数组的中位数一定是众数。  
 没错又是一行代码( ･´ω\`･ )
+
+> 
 ```python
 return sorted(nums)[len(nums)//2]
 ```

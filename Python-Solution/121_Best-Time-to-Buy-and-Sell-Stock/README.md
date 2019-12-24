@@ -35,6 +35,7 @@ class Solution(object):
 ```
 ![timeout](images/timeout.png)
 
+
 ## 二、DP
 **时间复杂度O(n)，空间复杂度O(n)**   
 
@@ -47,39 +48,39 @@ class Solution(object):
 	- max( dp[i], prices[i + 1] - minimum price before )，if prices[i+1] > minimum price before
 
 ```python
-class Solution(object):
-    def maxProfit(self, prices):
-        """
-        :type prices: List[int]
-        :rtype: int
-        """
-        if len(prices) == 0:
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        n = len(prices)
+        if n == 0:
             return 0
         
-        dp = [0] * len(prices)
-        minPrice = prices[0]
-        for i in range(1, len(prices)):
-        	dp[i] = max(dp[i - 1], prices[i] - minPrice)
-        	minPrice = min(minPrice, prices[i])
-        return dp[- 1]
+        min_price = prices[0]
+        dp = [0] * n
+        
+        for i in range(1, n):
+            dp[i] = max(dp[i - 1], prices[i] - min_price)
+            min_price = min(min_price, prices[i])
+        
+        return dp[n - 1]
 ```
+
 
 ## 三、DP变形
 **时间复杂度O(n)，空间复杂度O(1)**   
 
 解法二中其实有不必要的空间使用，即用于DP的数组，其实只需要使用一个变量来代替就行了。
 
+> Runtime: 60 ms, faster than 92.17% of Python3 online submissions
+
 ```python
-class Solution(object):
-    def maxProfit(self, prices):
-        """
-        :type prices: List[int]
-        :rtype: int
-        """
-        minPrice = float('inf')
-        maxProfit = 0
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:        
+        min_price = float('inf')
+        max_profit = 0
+        
         for i in range(len(prices)):
-        	maxProfit = max(maxProfit, prices[i] - minPrice)
-        	minPrice = min(minPrice, prices[i])
-        return maxProfit
+            max_profit = max(max_profit, prices[i] - min_price)
+            min_price = min(min_price, prices[i])
+        
+        return max_profit
 ```

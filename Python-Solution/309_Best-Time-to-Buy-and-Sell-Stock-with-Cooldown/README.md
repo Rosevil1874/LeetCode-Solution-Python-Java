@@ -31,19 +31,17 @@ The key is 3 states and 5 edges for state transition. 3 states are `notHold (sto
 
 最后取`max(hold, notHold, notHold_cooldown)`是因为交易序列可能在任意一种状态下结束。
 
+> Runtime: 28 ms, faster than 99.38% of Python3 online submissions
+
 ```python
 class Solution(object):
-    def maxProfit(self, prices):
-        """
-        :type prices: List[int]
-        :rtype: int
-        """
+    def maxProfit(self, prices: List[int]) -> int:
         notHold = 0                         # 开始状态
         hold = float('-inf')                # 不可能一开始就持有股票
         notHold_cooldown = float('-inf')    # 不可能一开始就冷冻
         for p in prices:
-            hold = max(hold, notHold - p)               # 一直持有股票或买了股票
+            hold = max(hold, notHold - p)               # 一直持有股票或买了股票(钱少了)
             notHold = max(notHold, notHold_cooldown)    # 一直未持有股票或刚渡过冷冻期
-            notHold_cooldown = hold + p                 # 刚卖掉了股票进入冷冻期
+            notHold_cooldown = hold + p                 # 刚卖掉了股票（钱多了）进入冷冻期
         return max(hold, notHold, notHold_cooldown)
 ```

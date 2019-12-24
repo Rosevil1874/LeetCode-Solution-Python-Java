@@ -54,30 +54,29 @@ class Solution:
 4. 如果字符已经出现在字典中，更新start的值
 5. 如果字符不在字典中，更新maxLength的值
 
+> Runtime: 48 ms, faster than 96.50% of Python3 online submissions
+
 ```python
 class Solution:
-    def lengthOfLongestSubstring(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-
-        start = maxLength = 0
-        usedChar = {}
-
-        for i in range(l):
-        	if s[i] in usedChar and start <= usedChar[s[i]]:
-        		start = usedChar[s[i]] + 1
-        	else:
-        		maxLength = max(maxLength, i - start + 1)
-        	usedChar[s[i]] = i
-        return maxLength
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        n = len(s)
+        start, max_length = 0, 0
+        used_char = {}
+        
+        for i in range(n):
+            if s[i] in used_char and start <= used_char[s[i]]:
+                start = used_char[s[i]] + 1
+            else:
+                max_length = max(max_length, i - start + 1)
+            used_char[s[i]] = i
+            
+        return max_length
 ```
-
-<blockquote class="blockquote-center">有了我，LeetCode的AC率恐怕。。。 </blockquote>
 
 
 ## 别人的方法【滑动窗口】
+>Runtime: 64 ms, faster than 69.43% of Python3 online submissions
+
 ```python
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
