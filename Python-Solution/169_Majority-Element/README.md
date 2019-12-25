@@ -10,21 +10,35 @@
 思路：
 使用set计算每个元素出现的次数，若出现次数**大于**`⌊ n/2 ⌋`则返回，无需考虑特殊情况。
 
+> Runtime: 188 ms, faster than 66.46% of Python3 online submissions.  
+Memory Usage: 14.1 MB, less than 100.00% of Python3 online submissions
+
 ```python
-class Solution(object):
-    def majorityElement(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
         s = {}
         for x in nums:
-        	if x in s:
-        		s[x] += 1
-        	else:
-        		s[x] = 1
-        	if s[x] > len(nums) // 2:
-        		return x
+            if x in s:
+                s[x] += 1
+            else:
+                s[x] = 1
+            if s[x] > len(nums) // 2:
+                return x
+```
+
+使用collections.Counter()实现此方法：
+
+>Runtime: 172 ms, faster than 93.63% of Python3 online submissions.  
+Memory Usage: 14 MB, less than 100.00% of Python3 online submissions
+
+```python
+from collections import Counter
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        cnt = dict(Counter(nums))
+        for k, v in cnt.items():
+            if v > len(nums) // 2:
+                return k
 ```
 
 ## 二、排序
@@ -33,16 +47,24 @@ class Solution(object):
 众数出现的次数大于`⌊ n/2 ⌋`，那么排序后数组的中位数一定是众数。  
 没错又是一行代码( ･´ω\`･ )
 
-> 
+> Runtime: 164 ms, faster than 99.19% of Python3 online submissions.  
+Memory Usage: 13.9 MB, less than 100.00% of Python3 online submissions
+
 ```python
 return sorted(nums)[len(nums)//2]
 ```
+
 
 ## 三、分治法
 **时间复杂度: O(n logn)**
 1. base case：只有一个元素时，这个元素就是众数；
 2. 语法`element = [a, b][a < b]`相当于`element = b if a < b else a`；
 3. 语法`list.count(obj)`：统计obj在list中出现的次数。
+
+> 递归是真的慢：  
+Runtime: 244 ms, faster than 5.00% of Python3 online submissions.  
+Memory Usage: 13.9 MB, less than 100.00% of Python3 online submissions.
+
 ```python
 class Solution(object):
     def majorityElement(self, nums):
@@ -60,6 +82,7 @@ class Solution(object):
         	return left
         return [right, left][nums.count(left) > len(nums)//2]
 ```
+
 
 ## 四、位操作
 **时间复杂度: O(n)**
@@ -90,13 +113,12 @@ class Solution(object):
 ![error](images/error.png)
 
 当一个32位二进制数的最高位为1时，代表此数为负数，加上负数情况处理后的代码：
+> Runtime: 512 ms, faster than 5.00% of Python3 online submissions.  
+Memory Usage: 13.9 MB, less than 100.00% of Python3 online submissions.
+
 ```python
 class Solution(object):
-    def majorityElement(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+    def majorityElement(self, nums: List[int]) -> int:
         n = len(nums)
         major = 0				# 众数
         mask = 1				# 掩码
@@ -114,6 +136,8 @@ class Solution(object):
         	mask <<= 1
         return major
 ```
+
+
 ## 五、投票算法
 **时间复杂度: O(n)**
 ![moore](images/moore.png)
@@ -124,6 +148,7 @@ class Solution(object):
 	- 否则若count == 0则说明这个candidate不可能是众数了，将更新candidate为当前元素；
 	- 否则count - 1。
 3. 因为每一对不一样的数都会消掉，而众数的数量大于一半，所以最终留下的candidate即为“当选的”众数。
+
 ```python
 candidate = nums[0]
 cnt = 0

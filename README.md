@@ -196,6 +196,7 @@
  ------------ | ------------- | ------------
 414 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/414_Third-Maximum-Number">第三大的数</a> | 简单
 442 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/442_Find-All-Duplicates-in-an-Array">数组中重复的数据</a> | 中等
+448 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/448_Find-All-Numbers-Disappeared-in-an-Array">找到所有数组中消失的数字</a> | 简单
 460 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/460_LFU-Cache">LFU缓存</a> | 困难
 485 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/485_Max-Consecutive-Ones">最大连续1的个数</a> | 简单
 495 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/495_Teemo-Attacking">提莫攻击</a> | 中等

@@ -9,28 +9,51 @@
 ## 动态规划
 >cr: [DP-solution-and-some-thoughts](https://leetcode.com/problems/maximum-subarray/discuss/20193/DP-solution-and-some-thoughts)
 
-1. sub problem: `maxSubArray(int A[], int i)`, means the maxSubArray for A[0:i ] which must has A[i] as the end element;
+1. sub problem: `maxSubArray(int A[], int i)`, means the maxSubArray for A[0:i] which must has A[i] as the end element;
 2. If maxSubArray(A, i - 1) is negative, adding it to A[i] will only make a smaller sum, so we add only if it's non-negative;
 3. DP function: `maxSubArray(A, i) = maxSubArray(A, i - 1) > 0 ? maxSubArray(A, i - 1) : 0 + A[i]`
 
+>Runtime: 68 ms, faster than 81.02% of Python3 online submissions.  
+Memory Usage: 13.6 MB, less than 70.73% of Python3 online submissions.
+
 ```python
-class Solution(object):
-    def maxSubArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
         n = len(nums)
         dp = [0] * n
         dp[0] = nums[0]
-        maximum = dp[0]
+        max_sum = nums[0]
         
-        for i in range(1, n):
-        	dp[i] = max(nums[i] + dp[i-1], nums[i])
-        	# dp[i] = nums[i] + (dp[i-1] if dp[i-1] > 0 else 0)
-        	maximum = max(maximum, dp[i])
-        return maximum
+        for i in range(1,n):
+            dp[i] = max(dp[i-1] + nums[i], nums[i])
+            max_sum = max(max_sum, dp[i])
+        return max_sum
 ```
+
+用一个变量替代dp数组，节省空间开销：
+```python
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        n = len(nums)
+        curr_sum = nums[0]
+        max_sum = nums[0]
+        
+        for i in range(1,n):
+            curr_sum = max(curr_sum + nums[i], nums[i])
+            max_sum = max(max_sum, curr_sum)
+        return max_sum
+```
+
+再简化：每一个nums[i]的值都表示，截止到目前为止，前面所有可能的countinuous array的最大的和。
+```python
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        for i in range(1, len(nums)):
+            if nums[i - 1] > 0:
+                nums[i] += nums[i - 1]
+        return max(nums)
+```
+
 
 ## 分治法
 **时间复杂度O(n * log n)**
