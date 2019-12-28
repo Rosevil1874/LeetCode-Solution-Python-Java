@@ -18,21 +18,19 @@
 
 ```python
 class Solution:
-    def productExceptSelf(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
         n = len(nums)
         res = [1 for i in range(n)]
+        
+        # 从前往后遍历：res[i]存储nums[i]之前的元素乘积
         for i in range(1, n):
             res[i] = res[i - 1] * nums[i - 1]
-
-        right = 1
-        i = n - 1
-        while i >= 0:
-            res[i] *= right
-            right *= nums[i]
-            i -= 1
+            
+        # 从后往前遍历：res[i]乘上nums[i]之后元素的乘积
+        right_product = 1
+        for i in range(n - 1, -1, -1):
+            res[i] *= right_product
+            right_product *= nums[i]
+            
         return res
 ```

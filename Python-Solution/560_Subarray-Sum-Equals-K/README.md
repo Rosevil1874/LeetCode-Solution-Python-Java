@@ -36,20 +36,17 @@ error如下：
 ### hash表
 emmm相关话题里面有个hash表，但是想不到应该怎么hash。于是又偷偷潜入discuss区哈哈哈，shawngao的解答[Java Solution, PreSum + HashMap](https://leetcode.com/problems/subarray-sum-equals-k/discuss/102106/Java-Solution-PreSum-+-HashMap)是这样分析的：  
 > We know the key to solve this problem is SUM[i, j]. So if we know SUM[0, i - 1] and SUM[0, j], then we can easily get SUM[i, j]. To achieve this, we just need to go through the array, calculate the current sum and save number of all seen PreSum to a HashMap. Time complexity O(n), Space complexity O(n).
+
 ```python
 class Solution:
-    def subarraySum(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
-        cnt = 0
-        theSum = 0
-        preSum = {0:1}
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        cnt = 0         # 和为k的子序列的个数
+        the_sum = 0     # nums[0]为头结点，目前元素为尾结点的子序列的和
+        pre_sum = {0:1} # 前面所有nums[0]为头结点的子序列的和
+        
         for x in nums:
-            theSum += x
-            cnt += preSum.get(theSum - k, 0)
-            preSum[theSum] = preSum.get(theSum, 0) + 1
+            the_sum += x
+            cnt += pre_sum.get(the_sum - k, 0)  
+            pre_sum[the_sum] = pre_sum.get(the_sum, 0) + 1
         return cnt
 ```

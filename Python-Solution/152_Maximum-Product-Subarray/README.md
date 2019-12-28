@@ -9,11 +9,7 @@
 
 ```python
 class Solution:
-    def maxProduct(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+    def maxProduct(self, nums: List[int]) -> int:
         # 当前最大值
         currMax = nums[0]
 

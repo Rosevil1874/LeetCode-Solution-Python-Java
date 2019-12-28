@@ -4,7 +4,7 @@
 ![problem](images/621.png)
 
 ## 题解
-参考sha256pki在discuss一个回答下的评论。
+参考awice在discuss的[回答](https://leetcode.com/problems/task-scheduler/discuss/104507/Python-Straightforward-with-Explanation)。
 
 ### collections模块：   
 collections模块自Python 2.4版本开始被引入，包含了dict、set、list、tuple以外的一些特殊的容器类型，分别是：
@@ -31,22 +31,15 @@ Counter类的目的是用来跟踪值出现的次数。它是一个无序的容�
 3. 把最重要的任务放在第一位，对于每一个最频繁的任务，再增加一个空间（最后）；
 4. 如果任务数组中的空间数量已经足够大以适应这种安排，就直接返回任务数组，否则返回计算值。
 
+> Runtime: 392 ms, faster than 99.80% of Python3 online submissions.  
+Memory Usage: 12.9 MB, less than 100.00% of Python3 online submissions
+
 ```python
-class Solution(object):
-    def triangleNumber(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        cnt = 0
-        nums.sort()
-        for i in range(2, len(nums)):
-        	left, right = 0, i - 1
-        	while left < right:
-        		if nums[left] + nums[right] > nums[i]:
-        			cnt += (right - left)
-        			right -=1
-        		else:
-        			left += 1
-        return cnt
+from collections import Counter
+class Solution:
+    def leastInterval(self, tasks, n: int) -> int:
+        tasks_cnt = list(Counter(tasks).values())
+        max_cpu = max(tasks_cnt)
+        max_tasks = tasks_cnt.count(max_cpu)
+        return max(len(tasks), (max_cpu - 1)*(n + 1) + max_tasks)
 ```
