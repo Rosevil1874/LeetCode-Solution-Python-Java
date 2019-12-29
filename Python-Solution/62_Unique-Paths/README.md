@@ -23,19 +23,16 @@
 3. 边界条件为最左列和最上行不存在的情况，可以通过初始化p[0][j] = 1，p[i][0] = 1来处理，**注意是1不是0**。
 
 ```python
-class Solution(object):
-    def uniquePaths(self, m, n):
-        """
-        :type m: int
-        :type n: int
-        :rtype: int
-        """
-        p = [ [1] * m for i in range(n) ]
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+        dp = [[1]*m for i in range(n)]
+        
         for i in range(1, n):
-        	for j in range(1, m):
-        		p[i][j] = p[i - 1][j] + p[i][j - 1]
-        return p[n - 1][m - 1]
+            for j in range(1, m):
+                dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
+        return dp[n - 1][m - 1]
 ```
+
 
 ## 题解二
 **时间复杂度：O(n^2)  
@@ -45,38 +42,32 @@ class Solution(object):
 更新p[i][j]时只需要用到 p[i - 1][j] 和 p[i][j - 1]，所以只需要保存当前行和上一行的状态，而不是整个矩阵的状态。
 
 ```python
-class Solution(object):
-    def uniquePaths(self, m, n):
-        """
-        :type m: int
-        :type n: int
-        :rtype: int
-        """
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
         prev = [1] * m
         curr = [1] * m
+        
         for i in range(1, n):
-        	for j in range(1, m):
-        		curr[j] = prev[j] + curr[j - 1]
-        	prev, curr = curr, prev
+            for j in range(1, m):
+                curr[j] = curr[j - 1] + prev[j]
+            prev = curr
         return prev[m - 1]
 ```
+
 
 ## 题解三
 
 **思路：**  
-可以看出题解二中的prev只是更新为了curr，所以连两个数组都用不上，用一个累加就行。
+可以看出题解二中的prev只是更新为了curr，所以连两个数组都用不上，用一个累加就行。缺点是代码可读性会差一点，分不清上一行和当前行。
+
 
 ```python
-class Solution(object):
-    def uniquePaths(self, m, n):
-        """
-        :type m: int
-        :type n: int
-        :rtype: int
-        """
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
         curr = [1] * m
+        
         for i in range(1, n):
-        	for j in range(1, m):
-        		curr[j] += curr[j - 1]
+            for j in range(1, m):
+                curr[j] += curr[j - 1]
         return curr[m - 1]
 ```

@@ -11,15 +11,14 @@
 3. 遍历数组，每遇到一个红色就插入到red后面并更新指针位置，每遇到一个蓝色就插入到blue前面并更新blue指针位置。
 
 ```python
-class Solution(object):
-    def sortColors(self, nums):
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
         """
-        :type nums: List[int]
-        :rtype: void Do not return anything, modify nums in-place instead.
+        Do not return anything, modify nums in-place instead.
         """
         n = len(nums)
-        red = 0
-        blue = n - 1
+        red, blue = 0, n - 1
+        
         i = 0
         while i <= blue:
             if nums[i] == 0:
@@ -27,7 +26,8 @@ class Solution(object):
                 red += 1
             elif nums[i] == 2:
                 nums[i], nums[blue] = nums[blue], nums[i]
-                i -= 1
+                i -= 1      # 换到前面的数值是未经判断的，i-1会保持i的位置以检查此元素
                 blue -= 1
             i += 1
+        
 ```

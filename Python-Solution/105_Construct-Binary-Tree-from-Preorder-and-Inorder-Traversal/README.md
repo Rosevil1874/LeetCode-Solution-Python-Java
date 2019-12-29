@@ -52,30 +52,29 @@ class Solution(object):
 ```
 
 ## 二、简版递归
+
+> Runtime: 136 ms, faster than 59.84% of Python3 online submissions.  
+Memory Usage: 51.1 MB, less than 71.05% of Python3 online submissions
+
 ```python
 # Definition for a binary tree node.
-# class TreeNode(object):
+# class TreeNode:
 #     def __init__(self, x):
 #         self.val = x
 #         self.left = None
 #         self.right = None
 
-class Solution(object):
-    def buildTree(self, preorder, inorder):
-        """
-        :type preorder: List[int]
-        :type inorder: List[int]
-        :rtype: TreeNode
-        """
+class Solution:
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
         if not preorder or not inorder:
             return None
-
+        
         root = TreeNode(preorder.pop(0))
-        inIdx = inorder.index(root.val)
-
-        root.left = self.buildTree(preorder, inorder[:inIdx])
-        root.right = self.buildTree(preorder, inorder[inIdx + 1 :])
-
+        in_idx = inorder.index(root.val)
+        
+        root.left = self.buildTree(preorder, inorder[:in_idx])
+        root.right = self.buildTree(preorder, inorder[in_idx + 1:])
+        
         return root
 ```
 

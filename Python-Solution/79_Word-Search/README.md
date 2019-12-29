@@ -17,34 +17,32 @@
 5. 递归边界：单词中所有字母均匹配。
 
 ```python
-class Solution(object):
-    def exist(self, board, word):
-        """
-        :type board: List[List[str]]
-        :type word: str
-        :rtype: bool
-        """
-        if not board:
-            return False
-
+class Solution:
+    def exist(self, board: List[List[str]], word: str) -> bool:
         for i in range(len(board)):
-        	for j in range(len(board[0])):
-        		if self.DFS(board, i, j, word):
-        			return True
+            for j in range(len(board[0])):
+                if self.dfs(board, i, j, word):
+                    return True
         return False
-
-    def DFS(self, board, i, j, word):
-    	# 所有字母都存在
-    	if len(word) == 0:
-    		return True
-    	if i < 0 or i >= len(board) or j < 0 or j >= len(board[0]) or word[0] != board[i][j]:
-    		return False
-    	tmp = board[i][j]		# 第一个字母匹配，接着判断剩下的
-    	board[i][j] = '#'		# 代表已经访问过哦
-    	if self.DFS(board, i + 1, j, word[1:]) or self.DFS(board, i - 1, j, word[1:]) or \
-    		self.DFS(board, i, j + 1, word[1:]) or self.DFS(board, i, j - 1, word[1:]):
-    		return True
-
-    	board[i][j] = tmp		# 回溯
-    	return False
+    
+    
+    def dfs(self, board: List[List[str]], i: int, j: int, word: str) -> bool:
+        # 所有字母都存在且找到连续路径
+        if len(word) == 0:  
+            return True
+        
+        # 边界条件：1. 越界， 2. 值与路径中相应位置元素不相等， 3. 此位置已经走过
+        if i < 0 or i >= len(board) or j < 0 or j >= len(board[0]) or board[i][j] != word[0]:
+            return False
+        
+        # 此位置匹配但还未完全匹配path，向四个方向扩展判断, 任意方向上搜索到了结果都可返回True
+        tmp = board[i][j]
+        board[i][j] = '#'
+        if self.dfs(board, i + 1, j, word[1:]) or self.dfs(board, i - 1, j, word[1:]) \
+    or self.dfs(board, i, j + 1, word[1:]) or self.dfs(board, i, j - 1, word[1:]):
+            return True
+        
+        # 回溯：此位置匹配但后面的位置都不匹配（没有返回True），将此位置恢复未访问状态，退回前一个位置
+        board[i][j] = tmp
+        return False
 ```
