@@ -33,11 +33,10 @@
 3. 替换后保证后续序列为升序（最小）。
 
 ```python
-class Solution(object):
-    def nextPermutation(self, nums):
+class Solution:
+    def nextPermutation(self, nums: List[int]) -> None:
         """
-        :type nums: List[int]
-        :rtype: void Do not return anything, modify nums in-place instead.
+        Do not return anything, modify nums in-place instead.
         """
         l = len(nums)
         i = l - 2

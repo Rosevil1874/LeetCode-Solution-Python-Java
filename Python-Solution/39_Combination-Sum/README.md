@@ -17,28 +17,25 @@
 4. 若remain == 0，则找到一个解；
 
 ```python
-class Solution(object):
-    def combinationSum(self, candidates, target):
-        """
-        :type candidates: List[int]
-        :type target: int
-        :rtype: List[List[int]]
-        """
+class Solution:
+    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []
         candidates.sort()
-        self.backtrack(res, [], candidates, target, 0)
+        self.backtrack(candidates, res, [], target, 0)
         return res
-
-    def backtrack(self, res, tmp, candidates, remain, start):
-    	if remain < 0:
-    		return
-    	elif remain == 0:
-    		res.append(tmp)
-    	else:
-    		for i in range(start, len(candidates)):
-    			if candidates[i] > remain:		# 剪枝
-    				break
-    			# tmp.append(candidates[i])		# tmp按引用传递，直接这样append会导致最后res中的解全部是最后一个tmp的值
-    			self.backtrack(res, tmp + [candidates[i]], candidates, remain - candidates[i], i) #可以重复使用同一元素，所以start是i而不是i+1
-
+    
+    
+    def backtrack(candidates: List[int], res: List[int], tmp: List[int], remain: int, start:int):
+        if remain < 0:
+            return
+        elif remain == 0:
+            res.append(tmp)
+        else:
+            for i in range(start, len(candidates)):
+                if candidates[i] > remain:  # 剪枝
+                    break
+                # tmp按引用传递，直接append会导致最后res中的解全部是最后一个tmp的值
+                # 可以重复使用同一元素，所以start是i而不是i+1
+                self.backtrack(candidates, res, tmp + [candidates[i]], remain - candidates[i], i)
+        
 ```

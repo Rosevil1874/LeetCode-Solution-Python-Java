@@ -13,62 +13,50 @@
 1. 以逐个累计的方式替代长×宽的方式；
 2. 从左往右记录一个最高点，若其右的值大于它，即为新的最高点，否则可以将其面积计入；
 3. 从右往左记录一个最高点，若其左的值大于它，即为新的最高点，否则可以将其面积计入；
-4. 左右指针相遇结束算法。
+4. 左右指针相遇在最高点结束算法。
 
 ```python
-class Solution(object):
-    def trap(self, height):
-        """
-        :type height: List[int]
-        :rtype: int
-        """
-        n = len(height)
-        maxArea = area = 0
-
-        left = 0
-        right = n - 1
-        res = 0
-        maxLeft = maxRight = 0
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        water = 0
+        left, right = 0, len(height) - 1
+        max_left, max_right = 0, 0
+        
         while left <= right:
             if height[left] <= height[right]:
-                if height[left] >= maxLeft:
-                    maxLeft = height[left]
+                if height[left] < max_left:
+                    water += (max_left - height[left])
                 else:
-                    res += (maxLeft - height[left])
+                    max_left = height[left]
                 left += 1
             else:
-                if height[right] >= maxRight:
-                    maxRight = height[right]
+                if height[right] < max_right:
+                    water += (max_right - height[right])
                 else:
-                    res += (maxRight - height[right])
+                    max_right = height[right]
                 right -= 1
-
-        return res
+        return water
 ```
+
 ## 简化代码
 ```python
-class Solution(object):
-    def trap(self, height):
-        """
-        :type height: List[int]
-        :rtype: int
-        """
-        n = len(height)
-        maxArea = area = 0
-
-        left = 0
-        right = n - 1
-        res = 0
-        maxLeft = maxRight = 0
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        water = 0
+        left, right = 0, len(height) - 1
+        max_left, max_right = 0, 0
+        
         while left <= right:
-            maxLeft = max(maxLeft, height[left])
-            maxRight = max(maxRight, height[right])
-            if maxLeft < maxRight:
-                res += (maxLeft - height[left])
+            max_left = max(max_left, height[left])
+            max_right = max(max_right, height[right])
+            
+            if max_left < max_right:
+                water += max_left - height[left]
                 left += 1
             else:
-                res += (maxRight - height[right])
-                right -= 1
-
-        return res
+                water += max_right - height[right]
+                right -=1
+        return water
+            
+        return water
 ```

@@ -16,13 +16,13 @@
 思路：
 1. 查找左边界range(0, len-1)：
     1. target > nums[mid]，第一个target在mid右边[left = mid + 1]；
-    2. target < nums[mid], 第一个target在mid左边[right = mid - 1]；
+    2. target < nums[mid], 第一个target在mid左边[right = mid]；
     3. target = nums[mid]，第一个target在mid左边[right = mid]。
     情况2,3中均需要将搜索范围往左边移动，所以可以合并。
 2. 查找右边界range(left, len-1):
-    1. target < nums[mid]，最后一个target在mid左边[left = mid + 1]；
-    2. target > nums[mid], 最后一个target在mid右边[right = mid - 1]；
-    3. target = nums[mid]，最后一个target在mid右边或者target就在mid处[right = mid]。
+    1. target < nums[mid]，最后一个target在mid左边[right = mid - 1]；
+    2. target > nums[mid], 最后一个target在mid右边[left = mid]；
+    3. target = nums[mid]，最后一个target在mid右边或者target就在mid处[left = mid]。
     情况2,3中均需要将搜索范围往右边移动，所以可以合并。
 
 ### 代码一
@@ -65,35 +65,40 @@ class Solution(object):
         return res
 ```
 
+
 ### 代码二
 ```python
-res = [-1, -1]
-if not len(nums):
-    return res
-
-left, right = 0, len(nums) - 1
-
-# right指针向左移动到第一个target出现的位置
-while left < right:
-    mid = (left + right) // 2
-    if target > nums[mid]:
-        left = mid + 1
-    else:
-        right = mid
-
-# 找不到target
-if nums[right] != target:
-    return res
-
-# 找最后一个target出现的位置
-res[0] = right
-right = len(nums)
-while left < right:
-    mid = (left + right) // 2
-    if target >= nums[mid]:
-        left = mid + 1
-    else:
-        right = mid
-res[1] = left - 1
-return res
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        res = [-1, -1]
+        
+        n = len(nums)
+        if not n:
+            return res
+        
+        left, right = 0, n - 1
+        
+        # 查找左边界：left指针向左移动到第一个target出现的位置
+        while left < right:
+            mid = (left + right) // 2
+            if target > nums[mid]:
+                left = mid + 1
+            else:
+                right = mid
+            
+        # 不存在target
+        if nums[left] != target:
+            return res
+        
+        # 查找右边界
+        res[0] = left
+        right = n
+        while left < right:
+            mid = (left + right) // 2
+            if target >= nums[mid]:
+                left = mid + 1
+            else:
+                right = mid
+        res[1] = left - 1
+        return res
 ```

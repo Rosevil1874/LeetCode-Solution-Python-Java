@@ -10,59 +10,20 @@
 思路：
 1. 将intervals按区间的start升序排列；
 2. 对interval中的每个区间，由于已经按start排序了，所以只需与前一个区间比较；
-3. 若后一个区间的start小于等于前一个区间的end，说明两区间相交，合并时只需将end赋值为大的那一个即可。
+3. 若后一个区间的start小于等于前一个区间的end，说明两区间相交，合并时只需将end赋值为大的那一个即可。每次合并后删除原始区间。
 
 ```python
-# Definition for an interval.
-# class Interval(object):
-#     def __init__(self, s=0, e=0):
-#         self.start = s
-#         self.end = e
-
-class Solution(object):
-    def merge(self, intervals):
-        """
-        :type intervals: List[Interval]
-        :rtype: List[Interval]
-        """
-        res = []
-        intervals.sort( key=lambda i: i.start)
-
-        for i in intervals:
-        	if res and i.start <= res[-1].end:
-        		res[-1].end = max(res[-1].end, i.end)
-        	else:
-        		res.append(i)
-        return res
-```
-
-## 不占用额外空间的方法
->即每次合并后删除原始区间
-
-```python
-# Definition for an interval.
-# class Interval(object):
-#     def __init__(self, s=0, e=0):
-#         self.start = s
-#         self.end = e
-
-class Solution(object):
-    def merge(self, intervals):
-        """
-        :type intervals: List[Interval]
-        :rtype: List[Interval]
-        """
-        intervals.sort( key=lambda i: i.start)
-
-        i = 0
-        while i < (len(intervals) - 1):
-        	j = i + 1
-        	if intervals[j].start <= intervals[i].end:
-        		intervals[i].end = max(intervals[i].end, intervals[j].end)
-        		del intervals[j]
-        	else:
-        		i += 1
-
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        intervals.sort(key=lambda item: item[0])
+        
+        i = 1
+        while i < len(intervals):
+            if intervals[i][0] <= intervals[i-1][1]:
+                intervals[i-1][1] = max(intervals[i-1][1], intervals[i][1])
+                del intervals[i]
+            else:
+                i += 1
         return intervals
 ```
 

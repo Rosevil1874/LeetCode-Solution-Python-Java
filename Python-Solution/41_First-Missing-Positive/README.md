@@ -18,22 +18,19 @@
 3. 从头遍历hash表（隐式升序排列），若表中某个位置为空，则找到了缺失的最小正整数。
 
 ```python
-class Solution(object):
-    def firstMissingPositive(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+class Solution:
+    def firstMissingPositive(self, nums: List[int]) -> int:
         n = len(nums)
-        box = [0] * (n+1)
+        hashmap = [0]*n
         
+        for x in nums:
+            if x > 0 and x <= n:
+                hashmap[x - 1] = x
+                
         for i in range(n):
-            if nums[i] >= 0 and nums[i] <= n:
-                box[nums[i] - 1] = nums[i]
-
-        for i in range( n):
-            if box[i] != i + 1:
+            if hashmap[i] != i + 1:
                 return i + 1
+        
         return n + 1
 ```
 
@@ -42,12 +39,8 @@ class Solution(object):
 把每个值换到原数组中对应下标的位置，把原数组变成一个hash表，最后遍历的是原数组。
 
 ```python
-class Solution(object):
-    def firstMissingPositive(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+class Solution:
+    def firstMissingPositive(self, nums: List[int]) -> int:
         n = len(nums)
 
         for i in range(n):
