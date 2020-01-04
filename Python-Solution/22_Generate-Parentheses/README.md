@@ -21,22 +21,17 @@ cr:[leetcode-22-生成括号](https://blog.csdn.net/zjc_game_coder/article/detai
 **私以为以下代码可以说是超级棒了**
 ```python
 class Solution:
-    def generateParenthesis(self, n):
-        """
-        :type n: int
-        :rtype: List[str]
-        """
-        
+    def generateParenthesis(self, n: int) -> List[str]:
         res = []
-        self.helper( '', res, n, 0, 0)
+        self.helper('', res, 0, 0, n)
         return res
-
-    def helper(self, curr, res, n, left, right):
-    	# 当 右括号 = n 时已经找到一个结果
-    	if right == n:
-    		res.append(curr)
-    	if left < n:
-    		self.helper(curr+'(',res, n, left+1, right)
-    	if left > right:
-    		self.helper(curr+')',res, n, left, right+1)
+    
+    def helper(self, curr, res, left, right, n):
+        # 当right == n 时说明已经有一个结果
+        if right == n:
+            res.append(curr)
+        if left < n:
+            self.helper(curr + '(', res, left + 1, right, n)
+        if left > right:
+            self.helper(curr + ')', res, left, right + 1, n)
 ```
