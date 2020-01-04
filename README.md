@@ -77,6 +77,7 @@
 45 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/45_Jump-Game-II">跳跃游戏 II </a> | 困难
 46 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/46_Permutations">全排列</a> | 中等
 48 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/48_Rotate-Image">旋转图像 </a> | 中等
+49 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/49_Group_Anagrams">组合变位词 </a> | 中等
 53 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/53_Maximum-Subarray">最大子序和 </a> | 简单
 54 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/54_Spiral-Matrix">螺旋矩阵 </a> | 中等
 55 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/55_Jump-Game">跳跃游戏 </a> | 中等
@@ -92,6 +93,7 @@
 73 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/73_Set-Matrix-Zeroes">矩阵置零</a> | 中等 
 74 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/74_Search-a-2D-Matrix">搜索二维矩阵 </a> | 中等 
 75 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/75_Sort-Colors">分类颜色 </a> | 中等 
+76 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/76_Minimum_Window_Substring">最小覆盖子串 </a> | 中等 
 78 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/78_Subsets">子集</a> | 中等 
 79 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/79_Word-Search">单词搜索</a> | 中等 
 80 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/80_Remove-Duplicates-from-Sorted-Array-II">删除排序数组中的重复项 II</a> | 中等 
@@ -226,6 +228,7 @@
 621 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/621_Task-Scheduler">任务调度器</a> | 中等
 628 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/628_Maximum-Product-of-Three-Numbers">三个数的最大乘积</a> | 简单
 643 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/643_Maximum-Average-Subarray-I">子数组最大平均数 I</a> | 简单
+647 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/647_Palindromic_Substrings">回文子串 I</a> | 中等
 665 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/665_Non-decreasing-Array">非递减数列 I</a> | 简单
 667 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/667_Beautiful-Arrangement-II">优美的排列 II</a> | 中等
 670 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/670_Maximum-Swap">最大交换</a> | 中等
