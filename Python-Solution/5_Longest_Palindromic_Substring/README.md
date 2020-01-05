@@ -12,38 +12,58 @@
 3. 取所有元素为中心的最长的一个
 ```python
 class Solution:
-    def longestPalindrome(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
-        l = len(s)
-        if l <= 1:
+    def longestPalindrome(self, s: str) -> str:
+        n = len(s)
+        if n <= 1:
             return s
-
-        start = 0
+        
         max_len = 0
-        max_s = ''
-        for i in range(1, l):
-            low = i - 1
-            high = i
-            while low>=0 and high<l and s[low]==s[high]:
-                low -= 1
-                high += 1
-            if high-low+1 > max_len:
-                max_len = high-low+1
-                max_s = s[low+1 : high]
-
-            low = i - 1
-            high = i + 1
-            while low>=0 and high<l and s[low]==s[high]:
-                low -= 1
-                high += 1
-            if high-low+1 > max_len:
-                max_len = high-low+1
-                max_s = s[low+1 : high]
-        return max_s
+        max_palindrome = ''
+        for i in range(1, n):
+            # 偶数回文
+            l, r = i - 1, i
+            while l >= 0 and r < n and s[l] == s[r]:
+                l -= 1
+                r += 1
+            if r - l + 1 > max_len:
+                max_len = r - l + 1
+                max_palindrome = s[l + 1:r]
+            
+            # 奇数回文
+            l, r = i - 1, i + 1
+            while l >= 0 and r < n and s[l] == s[r]:
+                l -= 1
+                r += 1
+            if r - l + 1 > max_len:
+                max_len = r - l + 1
+                max_palindrome = s[l + 1:r]
+                
+        return max_palindrome
 ```
+
+可以看出这样的代码有大量冗余，我们对它进行简化。一个字符串的回文子串一共有`2n+1`种情况的中心点（奇数情况加偶数情况），对每一个可能的回文中心依次向两边扩张并判断是否为回文。
+```python
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        n = len(s)
+        if n <= 1:
+            return s
+        
+        max_len = 0
+        max_palindrome = ''
+        for center in range(1, 2*n-1):
+            l = center // 2
+            r = center // 2 + center % 2
+            while l >= 0 and r < n and s[l] == s[r]:
+                l -= 1
+                r += 1
+            if r - l + 1 > max_len:
+                max_len = r - l + 1
+                max_palindrome = s[l + 1:r]
+                
+        return max_palindrome
+```
+
 
 ## 二、动态规划
 >时间复杂度：O(n^2)
