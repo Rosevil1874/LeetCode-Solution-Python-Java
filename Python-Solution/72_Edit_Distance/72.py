@@ -1,43 +1,25 @@
-class Solution(object):
-    def setZeroes(self, matrix):
-        """
-        :type matrix: List[List[int]]
-        :rtype: void Do not return anything, modify matrix in-place instead.
-        """
-        if not matrix:
-        	return None
-
-        m = len(matrix)
-        n = len(matrix[0])
-        row0 = col0 = 1			# 第一列的状态
-        for i in range(m):
-        	for j in range(n):
-        		if matrix[i][j] == 0:
-        			if i == 0:
-        				row0 = 0
-        			if j == 0:
-        				col0 = 0
-        			matrix[i][0] = matrix[0][j] = 0
-
-        for i in range(1, m):
-        	for j in range(1, n):
-        		if matrix[i][0] == 0 or matrix[0][j] == 0:
-        			matrix[i][j] = 0
-
-        if not row0:
-        	matrix[0] = [0] * n
-
-        if not col0:
-        	for i in range(m):
-        		matrix[i][0] = 0
+class Solution:
+    def minDistance(self, word1: str, word2: str) -> int:
+        return self.curr_min(word1, word2, 0, 0, {})
+    
+    
+    def curr_min(self, word1, word2, i, j, memo):
+        if i == len(word1) and j == len(word2):
+            return 0
+        elif i == len(word1):
+            return len(word2) - j
+        elif j == len(word2):
+            return len(word1) - i
         
-       
-matrix = [
-  [0,1,2,0],
-  [3,4,5,2],
-  [1,3,1,5]
-]
-
-s = Solution()
-s.setZeroes(matrix)
-print(matrix)
+        if (i, j) not in memo:
+            if word1[i] == word2[j]:
+                cnt = self.curr_min(word1, word2, i + 1, j + 1, memo)
+            else:
+                insert = 1+ self.curr_min(word1, word2, i, j + 1, memo)
+                delete = 1 + self.curr_min(word1, word2, i + 1, j, memo)    
+                replace = 1 + self.curr_min(word1, word2, i + 1, j + 1, memo)    
+                cnt = min(insert, delete, replace)
+            memo[(i, j)] = cnt
+        return memo[(i, j)]
+        
+    

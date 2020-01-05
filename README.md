@@ -90,6 +90,7 @@
 64 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/64_UMinimum-Path-Sum">最小路径和 </a> | 中等 
 66 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/66_Plus-One">加一</a> | 简单 
 70 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/70_Climbing_Stairs">爬楼梯</a> | 简单 
+72 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/72_Edit_Distance">编辑距离</a> | 中等 
 73 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/73_Set-Matrix-Zeroes">矩阵置零</a> | 中等 
 74 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/74_Search-a-2D-Matrix">搜索二维矩阵 </a> | 中等 
 75 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/75_Sort-Colors">分类颜色 </a> | 中等 
