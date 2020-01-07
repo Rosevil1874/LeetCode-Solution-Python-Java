@@ -25,11 +25,7 @@
 #         self.next = None
 
 class Solution:
-    def mergeKLists(self, lists):
-        """
-        :type lists: List[ListNode]
-        :rtype: ListNode
-        """
+    def mergeKLists(self, lists: List[ListNode]) -> ListNode:
         l = len(lists)
         if l == 0:
             return None
@@ -66,21 +62,21 @@ sys.setrecursionlimit(10000000)
 把合并两个数组改一下：
 ```python
 def mergeTwoLists(self, l1, l2):
-        head = ListNode(0)
-        res = head
-        while l1 and l2:
-            if l1.val < l2.val:
-                res.next = l1
-                l1 = l1.next
-            else:
-                res.next = l2
-                l2 = l2.next
-            res = res.next
-        if l1:
+    head = ListNode(0)
+    res = head
+    while l1 and l2:
+        if l1.val < l2.val:
             res.next = l1
-        elif l2:
+            l1 = l1.next
+        else:
             res.next = l2
-        return head.next
+            l2 = l2.next
+        res = res.next
+    if l1:
+        res.next = l1
+    elif l2:
+        res.next = l2
+    return head.next
 ```
 果然通过了哗哈哈哈哈哈哈哈哈哈哈哈✧\*｡٩(ˊᗜˋ*)و✧*｡
 
@@ -90,7 +86,28 @@ def mergeTwoLists(self, l1, l2):
 2. 每次取出堆顶元素（最小）加入结果链表，然后将其后那个元素加入最小堆；
 3. 直到把堆取空了，结果链表就合并完成了。
 
-but...python没有实现堆这样的数据结构呀，计几构建吧。哈哈哈，下次吧嘻嘻
 ```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
 
+from heapq import heappush, heappop, heapreplace, heapify
+
+class Solution:
+    def mergeKLists(self, lists: List[ListNode]) -> ListNode:
+        dummy = curr = ListNode(0)
+        # i代表的是第i条链表，若不把i加进去，则建堆过程中当链表头结点相同时会接着比较链表下一个结点
+        h = [(head.val, i, head) for i, head in enumerate(lists) if head]
+        heapify(h)              # 建立最小堆
+        while h:
+            val, i, node = h[0]
+            if not node.next:   # 遍历完了堆顶链表，将其pop
+                heappop(h)
+            else:               # 使用堆顶链表的下一个结点替代这个结点
+                heapreplace(h, (node.next.val, i, node.next))   # 删除最小元素值，添加新的元素值
+            curr.next = node
+            curr = curr.next
+        return dummy.next
 ```

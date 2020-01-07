@@ -1,53 +1,92 @@
-# 31 - 下一个排列
+# 31 - 最长有效括号
 
 ## 题目描述
-![problem](images/31.png)
 
->审题：
-1. 原地操作，无返回值；
-2. 常数额外空间。
-3. 可以这样理解：输入一个整数数组，该数组按照下标顺序代表一个整数，如[1,2,3]代表123，找出以这个数组元素为数位的，比当前这个数字大的数中的最小值，若当前已经是最大值，则输出最小值（升序）。
+Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.
 
-## 全排列
->cr: [递归解决全排列生成算法](https://segmentfault.com/a/1190000000666583)
+Example:
 
-集合{ 1,2,3}的全排列为：
-- { 1 2 3 }
-- { 1 3 2 }
-- { 2 1 3 }
-- { 2 3 1 }
-- { 3 2 1 }
-- { 3 1 2 }
+Input: "(()"
+Output: 2
+Explanation: The longest valid parentheses substring is "()"
 
-1. 递归：排列枚举树
-![recursive](images/recursive.png)
-2. 循环
-![cycle](images/cycle.png)
 
-## 题解
->cr : [leetcode31 Next Permutation](https://segmentfault.com/a/1190000009435816)
 
+## 一、栈
 思路：
-1. 从后往前遍历，倒数第二位开始，找到可以替换的最小值；
-2. 对每一位，从前往后找一个比当前值大的数中的最小值，与当前进行替换；
-3. 替换后保证后续序列为升序（最小）。
+1. 从前往后遍历字符串；
+2. 若当前为字符'('则将其下标入栈，若当前字符为')'且栈顶为'('则将栈顶出栈，此时找到了一对有效括号，否则将')'的下标也入栈；
+3. 遍历完成后栈中为无效括号的下标，可以计算出最长有效括号的长度。若栈为空则整个字符串中括号均有效匹配。
 
 ```python
 class Solution:
-    def nextPermutation(self, nums: List[int]) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
-        l = len(nums)
-        i = l - 2
-        while i >= 0:
-            for j in range(i+1, l):
-                if nums[i] < nums[j]:
-                    nums[i], nums[j] = nums[j], nums[i]
-                    nums[i+1:] = sorted(nums[i+1:])
-                    return
-            # 当前位不可替换，则对后面的元素排序，以直接找到大值中的最小值
-            nums[i:] = sorted(nums[i:])
-            i -= 1
-        nums[0:].sort()
+    def longestValidParentheses(self, s: str) -> int:
+        stack = []
+        for i, c in enumerate(s):
+            if c == '(':
+                stack.append(i)
+            else:
+                if stack:
+                    if s[stack[-1]] == '(':
+                        stack.pop(-1)
+                    else:
+                        stack.append(i)
+                else:
+                    stack.append(i)
+
+        if not stack:
+            return len(s)
+        else:
+            longest_len = 0
+            # 头尾加上两个哨兵，处理无效索引不从0开始和不以len(s)结束的情况
+            stack.insert(0, -1)
+            stack.append(len(s))
+            for i in range(1, len(stack)):
+                longest_len = max(longest_len, stack[i] - stack[i - 1] - 1)
+            return longest_len
+```
+
+简化版：one pass
+```python
+class Solution:
+    def longestValidParentheses(self, s: str) -> int:
+        stack = []
+        longest_len = 0
+        left = -1
+        for i, c in enumerate(s):
+            if c == '(':
+                stack.append(i)
+            else:
+                if not stack:
+                    left = i
+                else:
+                    stack.pop(-1)
+                    if not stack:
+                        longest_len = max(longest_len, i - left)
+                    else:
+                        longest_len = max(longest_len, i - stack[-1])
+        return longest_len
+```
+
+
+## 二、动态规划
+
+> [ref:](https://leetcode.com/problems/longest-valid-parentheses/discuss/14312/My-ten-lines-python-solution).  
+let dp[i] is the number of longest valid Parentheses ended with the i - 1 position of s, then we have the following relationship:
+dp[i + 1] = dp[p] + i - p + 1 where p is the position of '(' which can matches current ')' in the stack.
+
+这里使用curr_longest代替dp。
+```python
+class Solution:
+    def longestValidParentheses(self, s: str) -> int:
+        curr_longest = [0]*(len(s) + 1)
+        stack = []
+        for i in range(len(s)):
+            if s[i] == '(':
+                stack.append(i)
+            else:
+                if stack:
+                    p = stack.pop()
+                    curr_longest[i + 1] = curr_longest[p] + i - p + 1
+        return max(curr_longest)
 ```

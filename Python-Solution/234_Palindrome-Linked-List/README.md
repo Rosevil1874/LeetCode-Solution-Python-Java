@@ -11,23 +11,22 @@
 3. 前半部分与反转后的后半部分逐一比较。
 注意：链表为空或只有一个元素均为回文链表。
 
+> 太慢啦：Runtime: 84 ms, faster than 13.20% of Python3 online submissions.
+
 ```python
 # Definition for singly-linked list.
-# class ListNode(object):
+# class ListNode:
 #     def __init__(self, x):
 #         self.val = x
 #         self.next = None
 
-class Solution(object):
-    def isPalindrome(self, head):
-        """
-        :type head: ListNode
-        :rtype: bool
-        """
+class Solution:
+    def isPalindrome(self, head: ListNode) -> bool:
         if not head or not head.next:
             return True
 
         # 将链表平分为前半部分head和后半部分slow
+        # (fast的移动速度是slow的两倍，当fast到达链表尾部时，slow在链表中间位置)
         fast = slow = prev = head
         while fast and fast.next:
             prev = slow
@@ -35,7 +34,7 @@ class Solution(object):
             fast = fast.next.next
         prev.next = None
 
-        # 将后半部分反转反转后为tmp
+        # 将后半部分反转后为tmp
         curr = slow
         if not curr.next:
             right = slow
