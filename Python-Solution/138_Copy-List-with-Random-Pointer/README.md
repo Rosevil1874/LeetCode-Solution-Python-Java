@@ -60,45 +60,42 @@ class Solution(object):
 ![copy](images/copy.png)
 
 ```python
-# Definition for singly-linked list with a random pointer.
-class RandomListNode(object):
-    def __init__(self, x):
-        self.label = x
-        self.next = None
-        self.random = None
-
-class Solution(object):
-    def copyRandomList(self, head):
-        """
-        :type head: RandomListNode
-        :rtype: RandomListNode
-        """
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
+        self.val = int(x)
+        self.next = next
+        self.random = random
+"""
+class Solution:
+    def copyRandomList(self, head: 'Node') -> 'Node':
         if not head:
             return head
-
-        # 第一次遍历：拷贝新结点
-        tmp = head
-        while tmp:
-            newNode = RandomListNode(tmp.label)
-            newNode.next = tmp.next
-            tmp.next = newNode
-            tmp = tmp.next.next
-
+        
+        # 第一次遍历：拷贝每一个结点到相邻位置
+        curr = head
+        while curr:
+            new_node = Node(curr.val)
+            new_node.next = curr.next
+            curr.next = new_node
+            curr = curr.next.next
+        
         # 第二次遍历：拷贝random指针
-        tmp = head
-        while tmp:
-            if tmp.random:
-                tmp.next.random = tmp.random.next
-            tmp = tmp.next.next
-
+        curr = head
+        while curr:
+            if curr.random:
+                curr.next.random = curr.random.next
+            curr = curr.next.next
+             
         # 拆分链表
-        newHead = head.next
-        oldNode, newNode = head, newHead
-        while newNode.next:
-            oldNode.next = newNode.next
-            oldNode = oldNode.next
-            newNode.next = oldNode.next
-            newNode = newNode.next
-        oldNode.next = None
-        return newHead
+        new_head = head.next
+        old, new = head, new_head
+        while new.next:
+            old.next = new.next
+            old = old.next
+            new.next = old.next
+            new = new.next
+        new.next = None
+        return new_head
 ```
