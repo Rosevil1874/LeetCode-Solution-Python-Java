@@ -14,20 +14,17 @@
 
 ```python
 # Definition for a binary tree node.
-# class TreeNode(object):
+# class TreeNode:
 #     def __init__(self, x):
 #         self.val = x
 #         self.left = None
 #         self.right = None
 
-class Solution(object):
-    def maxDepth(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
-        if not root:	# 空树
-        	return 0
+class Solution:
+    def maxDepth(self, root: TreeNode) -> int:
+        if not root:
+            return 0
+
         return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
 ```
 
@@ -35,12 +32,8 @@ class Solution(object):
 **recursive one-line版：**
 
 ```python
-class Solution(object):
-    def maxDepth(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
+class Solution:
+    def maxDepth(self, root: TreeNode) -> int:
         return max(self.maxDepth(root.left) + self.maxDepth(root.right)) + 1 if root else 0
 ```
 
@@ -59,16 +52,16 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
-        depth = 0						# 最大深度
-        level = [root] if root else []	# 当前层中包含的树节点
+        depth = 0						       # 最大深度
+        curr_level = [root] if root else []	   # 当前层中包含的树节点
         while level:
-        	depth += 1					# 深度加上当前层的1
-        	queue = []					# 放置下一层的节点
-        	for node in level:			# 遍历这一层所有节点，获取其子节点
+        	depth += 1					       # 深度加上当前层的1
+        	next_level = []					   # 放置下一层的节点
+        	for node in curr_level:			   # 遍历这一层所有节点，获取其子节点
         		if node.left:
-        			queue.append(node.left)
+        			next_level.append(node.left)
         		if node.right:
-        			queue.append(node.right)
-        	level = queue				# 接下来就遍历下一层的子节点啦
-        return depth 					# 遍历完之后树的最大深度就求出来啦
+        			next_level.append(node.right)
+        	curr_level = next_level            # 接下来就遍历下一层的子节点啦
+        return depth                           # 遍历完之后树的最大深度就求出来啦
 ```
