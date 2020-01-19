@@ -8,7 +8,7 @@
 
 ## 题解一：【OrderedDict】
 **思路：**
-1. collections.OrderedDict():可以记住内容添加顺序的字典。  特殊方法：OrderedDict.popitem(last=True) 。last为True是LIFO,即为堆栈，反之是FIFO，即为队列；
+1. collections.OrderedDict():可以记住内容添加顺序的字典。特殊方法：OrderedDict.popitem(last=True) 。last为True是LIFO,即为栈，反之是FIFO，即为队列；
 2. 不管get还是set之后，操作的这个元素都要拿出来重新放进去，表示现在使用了它；
 
 >两个操作时间复杂度都是O(1)哟~
@@ -17,19 +17,12 @@
 import collections
 class LRUCache(object):
 
-    def __init__(self, capacity):
-        """
-        :type capacity: int
-        """
+    def __init__(self, capacity: int):
         self.remain = capacity
         self.cache = collections.OrderedDict()
         
 
-    def get(self, key):
-        """
-        :type key: int
-        :rtype: int
-        """
+    def get(self, key: int) -> int:
         if key not in self.cache:
             return -1
         value = self.cache.pop(key)
@@ -37,12 +30,7 @@ class LRUCache(object):
         return value
 
 
-    def put(self, key, value):
-        """
-        :type key: int
-        :type value: int
-        :rtype: None
-        """
+    def put(self, key: int, value: int) -> None:
         # 若这个key已经在缓存中了，为了“使用”它一次，要把它拿出来重新放进去，表示最近使用
         if key in self.cache:
             self.cache.pop(key)
@@ -69,20 +57,13 @@ class LRUCache(object):
 import collections
 class LRUCache(object):
 
-    def __init__(self, capacity):
-        """
-        :type capacity: int
-        """
+    def __init__(self, capacity: int):
         self.capacity = capacity
         self.cache = collections.deque([])  # 用来存key，记住存放顺序
         self.dict = {}                      # 用来存key-value
         
 
-    def get(self, key):
-        """
-        :type key: int
-        :rtype: int
-        """
+    def get(self, key: int) -> int:
         if key not in self.dict:
             return -1
         self.cache.remove(key)
@@ -90,12 +71,7 @@ class LRUCache(object):
         return self.dict[key]
 
 
-    def put(self, key, value):
-        """
-        :type key: int
-        :type value: int
-        :rtype: None
-        """
+    def put(self, key: int, value: int) -> None:
         # 若这个key已经在缓存中了，为了“使用”它一次，要把它拿出来重新放进去，表示最近使用
         if key in self.cache:
             self.cache.remove(key)
@@ -109,4 +85,7 @@ class LRUCache(object):
 ```
 
 
-其实有很多使用双链表的，这里放一个传送门就不复现了：[Python Dict + Double LinkedList](https://leetcode.com/problems/lru-cache/discuss/45926/Python-Dict-%2B-Double-LinkedList)
+## 题解三：【dict + double linked-list】
+```python
+
+```
