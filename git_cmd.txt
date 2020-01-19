@@ -2,6 +2,9 @@
 进入当前目录：
 cd C:/Git_repositories/LeetCode
 
+从远程拉取更新并与本地合并：
+git pull
+
 查看文件状态：
 git status
 
@@ -19,3 +22,7 @@ git push
 其他：
 查看历史提交记录：
 git log
+
+错误：
+fatal: Not a git repository (or any of the parent directories): .git
+解决：git init
