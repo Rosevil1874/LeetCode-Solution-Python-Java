@@ -18,35 +18,35 @@
 没有思路，偷偷瞄了一眼相关话题，提到位运算和hash表，hash表不就是额外空间嘛，过。  
 剩下位运算啦，**对于任何数x，都有x^x=0，x^0=x**，就是你了！so，一直往后异或，得到的结果就是我们要找的那个可怜巴巴的孤独的数了。
 
+> Runtime: 84 ms, faster than 84.55% of Python3 online submissions.
+
 ```python
-class Solution(object):
-    def singleNumber(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
         single = 0
         for x in nums:
-        	single ^= x
+            single ^= x
         return single
+
 ```
 
 后面都是借鉴的[Python different solutions](https://leetcode.com/problems/single-number/discuss/43000/Python-different-solutions.),这位老哥点子好多啊。首先是异或方法的one-line版：  
 
 1. reduce + lambda
 
+> Runtime: 76 ms, faster than 99.23% of Python3 online submissions
+
 ```python
 from functools import reduce
-class Solution(object):
-    def singleNumber(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        return reduce(lambda x,y: x^y, nums)
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        return reduce(lambda x, y: x^y, nums)
 ```
 
 2. reduce + operator.xor
+
+> Runtime: 88 ms, faster than 64.49% of Python3 online submissions.
+
 ```python
 from functools import reduce
 import operator
@@ -62,12 +62,10 @@ class Solution(object):
 ## 题解二
 利用set的元素唯一的性质。
 
+> Runtime: 76 ms, faster than 99.23% of Python3 online submissions.
+
 ```python
-class Solution(object):
-    def singleNumber(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        return 2*sum(set(nums)) - sum(nums)
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        return 2 * sum(set(nums)) - sum(nums)
 ```

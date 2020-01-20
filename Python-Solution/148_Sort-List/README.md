@@ -18,82 +18,87 @@ So..虽然符合题意的是堆排序，但是要自己实现堆好麻烦。考�
 2. 递归：对前后每一部分分别归并排序；
 3. 合并：将排好序的子链表合并。
 
+> 上一次刷题的时候这个代码递归深度超限了没有通过，这次竟然通过了，不过挺慢的。  
+Runtime: 264 ms, faster than 20.73% of Python3 online submissions
+
 ```python
 # Definition for singly-linked list.
-class ListNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
 
-class Solution(object):
-    def sortList(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
+class Solution:
+    def sortList(self, head: ListNode) -> ListNode:
         if not head or not head.next:
             return head
-
-        fast = slow = prev = head
+        
+        # 将链表平分成两段
+        prev = slow = fast = head
         while fast and fast.next:
             prev = slow
             slow = slow.next
             fast = fast.next.next
         prev.next = None
-        return self.merge( self.sortList(head), self.sortList(slow) )
-
-    def merge(self, l1, l2):
+        return self.merge_lists(self.sortList(head), self.sortList(slow))
+        
+        
+    def merge_lists(self, l1: ListNode, l2: ListNode) -> ListNode:
         if not l1:
             return l2
-        if not l2:
+        elif not l2:
             return l1
-        if l1.val < l2.val:
-            l1.next = self.merge(l1.next, l2)
+        elif l1.val <= l2.val:
+            l1.next = self.merge_lists(l1.next, l2)
             return l1
         else:
-            l2.next = self.merge(l1, l2.next)
+            l2.next = self.merge_lists(l1, l2.next)
             return l2
+                
 ```
-个人觉得这个代码写的很厉害（当然是大神写的），虽然能正确解题不过递归深度超限了。。。
-![problem](images/error.jpg)
+
 
 ## 方法二
 那就把merge改为迭代吧。
 哈哈哈过了真开心呦呦✧*｡٩(ˊᗜˋ*)و✧*｡
+
 ```python
-class Solution(object):
-    def sortList(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def sortList(self, head: ListNode) -> ListNode:
         if not head or not head.next:
             return head
-
-        fast = slow = prev = head
+        
+        # 将链表平分成两段
+        prev = slow = fast = head
         while fast and fast.next:
             prev = slow
             slow = slow.next
             fast = fast.next.next
         prev.next = None
-        return self.merge( self.sortList(head), self.sortList(slow) )
-
-    def merge(self, l1, l2):
+        return self.merge_lists(self.sortList(head), self.sortList(slow))
+        
+        
+    def merge_lists(self, l1: ListNode, l2: ListNode) -> ListNode:
         dummy = ListNode(None)
         curr = dummy
-        p1 = l1
-        p2 = l2
-        while p1 and p2:
-            if p1.val < p2.val:
-                curr.next = p1
-                p1 = p1.next
+        while l1 and l2:
+            if l1.val <= l2.val:
+                curr.next = l1
+                l1 = l1.next
             else:
-                curr.next = p2
-                p2 = p2.next
+                curr.next = l2
+                l2 = l2.next
             curr = curr.next
-        if p1:
-            curr.next = p1
-        if p2:
-            curr.next = p2
+        if l1:
+            curr.next = l1
+        else:
+            curr.next = l2
         return dummy.next
+                
 ```

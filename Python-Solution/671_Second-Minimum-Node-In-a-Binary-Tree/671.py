@@ -5,27 +5,17 @@
 #         self.left = None
 #         self.right = None
 
-class Solution(object):
-    def findSecondMinimumValue(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
-        if not root or not root.left or not root.right:
-            return -1
-
-        q = [root]
-        minimum = root.val
-        vals = set()
-
-        while q:
-            node = q.pop(0)
-            vals.add(node.val)
-            if node.val == minimum:
-                if node.left:
-                    q.append(node.left)
-                if node.right:
-                    q.append(node.right)
-        if len(vals) == 1:
-            return -1
-        return sorted(list(vals))[1]
+class Solution:
+    def findSecondMinimumValue(self, root: TreeNode) -> int:
+        res = [float('inf')]
+        res = self.dfs(root, root, res)
+        return -1 if res[0] == float('inf') else res[0]
+        
+    def dfs(self, root: TreeNode, curr: TreeNode, res: List[int]) -> List[int]:
+        if not curr:
+            return
+        if root.val < curr.val < res[0]:
+            res[0] = curr.val
+        self.dfs(root, curr.left, res)
+        self.dfs(root, curr.right, res)
+        return res

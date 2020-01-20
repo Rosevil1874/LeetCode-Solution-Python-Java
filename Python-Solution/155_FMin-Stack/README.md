@@ -1,7 +1,8 @@
 # 155 - 最小栈
 
 ## 题目描述
-![problem](images/155.png)
+![problem](images/155.png)  
+Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
 
 >关联题目： 716. 最大栈，emmmmm这题要开会员才能刷，穷人现在已经不配刷题了呜呜┭┮﹏┭┮
 
