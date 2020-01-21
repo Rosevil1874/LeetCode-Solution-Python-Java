@@ -84,3 +84,25 @@ class Solution(object):
                 left = mid + 1
         return False
 ```
+
+## trick
+
+从矩阵的右上角开始查找
+
+```python
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        if not matrix:
+            return False
+        
+        m, n = len(matrix), len(matrix[0])
+        i, j = 0, n - 1
+        while i < m and j >= 0:
+            if target < matrix[i][j]:
+                j -= 1
+            elif target > matrix[i][j]:
+                i += 1
+            else:
+                return True
+        return False
+```
