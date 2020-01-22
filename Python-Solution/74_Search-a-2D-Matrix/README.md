@@ -18,25 +18,18 @@
     2. 若遍历完矩阵都不包括target，返回false。
 
 ```python
-class Solution(object):
-    def searchMatrix(self, matrix, target):
-        """
-        :type matrix: List[List[int]]
-        :type target: int
-        :rtype: bool
-        """
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         if not matrix:
             return False
-        m = len(matrix)
-        n = len(matrix[0])
+        m, n = len(matrix), len(matrix[0])
         if m == 0 or n == 0:
             return False
 
         for i in range(m):
             if target >= matrix[i][0] and target <= matrix[i][n-1]:
                 # 二分法查找
-                left = 0
-                right = n - 1
+                left, right = 0, n - 1
                 while left <= right:
                     mid = (left + right) // 2
                     if matrix[i][mid] == target:
@@ -57,23 +50,16 @@ class Solution(object):
 3. 一维数组转n * m 矩阵： a[i] => matrix[i / m][i % m]
 
 ```python
-class Solution(object):
-    def searchMatrix(self, matrix, target):
-        """
-        :type matrix: List[List[int]]
-        :type target: int
-        :rtype: bool
-        """
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         if not matrix:
             return False
-        n = len(matrix)
-        m = len(matrix[0])
+        n, m = len(matrix), len(matrix[0])
         if m == 0 or n == 0:
             return False
 
         # 二分法查找
-        left = 0
-        right = n * m - 1
+        left, right = 0, n * m - 1
         while left <= right:
             mid = (left + right) // 2
             if matrix[mid // m][mid % m] == target:
@@ -84,6 +70,7 @@ class Solution(object):
                 left = mid + 1
         return False
 ```
+
 
 ## trick
 
