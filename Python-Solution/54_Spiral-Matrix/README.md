@@ -15,50 +15,41 @@
 4. 注意向左和向上遍历时需要检查此元素是否已经遍历过。
 
 ```python
-class Solution(object):
-    def spiralOrder(self, matrix):
-        """
-        :type matrix: List[List[int]]
-        :rtype: List[int]
-        """
-        res = []
-        n = len(matrix)
-        
-        if n == 0:
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        m = len(matrix)
+        if m == 0:
             return []
         
-        rowBegin = 0
-        rowEnd = n - 1
-        colBegin = 0
-        colEnd = len(matrix[0]) - 1
-        
-        while rowBegin <= rowEnd and colBegin <= colEnd:
-			# 向右
-            for j in range(colBegin, colEnd + 1):
-				res.append(matrix[rowBegin][j])
-            rowBegin += 1
-
-			# 向下
-            for i in range(rowBegin, rowEnd + 1):
-				res.append(matrix[i][colEnd])
-            colEnd -= 1
-
-			# 向左
-            j = colEnd
-            while j >= colBegin and rowBegin <= rowEnd:
-				res.append(matrix[rowEnd][j])
-				j -= 1
-            rowEnd -= 1
-
-			# 向上
-            i = rowEnd
-            while i >= rowBegin and colBegin <= colEnd:
-				res.append(matrix[i][colBegin])
-				i -= 1
-            colBegin += 1
+        res = []
+        n = len(matrix[0])
+        row_begin, row_end = 0, m - 1
+        col_begin, col_end = 0, n - 1
+        while row_begin <= row_end and col_begin <= col_end:
+            # 向右
+            for j in range(col_begin, col_end + 1):
+                res.append(matrix[row_begin][j])
+            row_begin += 1
             
+            # 向下
+            for i in range(row_begin, row_end + 1):
+                res.append(matrix[i][col_end])
+            col_end -= 1
+            
+            # 向左
+            j = col_end
+            while j >= col_begin and row_begin <= row_end:
+                res.append(matrix[row_end][j])
+                j -= 1
+            row_end -= 1
+            
+            # 向上
+            i = row_end
+            while i >= row_begin and col_begin <= col_end:
+                res.append(matrix[i][col_begin])
+                i -= 1
+            col_begin += 1
         return res
-
 ```
 
 ## 解法二
@@ -74,20 +65,16 @@ class Solution(object):
 3. 循环进行前两步。
 
 ```python
-class Solution(object):
-    def spiralOrder(self, matrix):
-        """
-        :type matrix: List[List[int]]
-        :rtype: List[int]
-        """
-        res = []
-        n = len(matrix)
-        if n == 1:
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        if len(matrix) == 1:
             return matrix[0]
+        
+        res = []
         while len(matrix) > 0:
             res += matrix[0]
-            matrix.remove(matrix[0])
-            matrix = list ( map(list, zip(*matrix)) )
+            del matrix[0]
+            matrix = list(map(list, zip(*matrix)))
             matrix.reverse()
         return res
 ```

@@ -13,27 +13,14 @@
     2. 最高位也进位了，那么就要在最高位的基础上进一位，即在数组最前端插入一个‘1’。
 
 ```python
-class Solution(object):
-    def plusOne(self, digits):
-        """
-        :type digits: List[int]
-        :rtype: List[int]
-        """
-        if not digits:
-            return 0
-
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
         n = len(digits)
-        if digits[n - 1] != 9:
-            digits[n - 1] += 1
-        else:
-            i = n - 1
-            while digits[i] == 9:
-                digits[i] = 0
-                i -= 1
-            if i >= 0:
+        for i in range(n - 1, -1, -1):
+            if digits[i] < 9:
                 digits[i] += 1
-            else:
-                digits.insert(0, 1)
-
-        return digits
+                return digits
+            digits[i] = 0
+        
+        return [1] + digits
 ```
