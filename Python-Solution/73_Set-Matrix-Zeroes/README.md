@@ -13,30 +13,29 @@
 3. 遍历集合col，将其代表的每一列置零。
 
 ```python
-class Solution(object):
-    def setZeroes(self, matrix):
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
         """
-        :type matrix: List[List[int]]
-        :rtype: void Do not return anything, modify matrix in-place instead.
+        Do not return anything, modify matrix in-place instead.
         """
         if not matrix:
-        	return None
-
-        m = len(matrix)
-        n = len(matrix[0])
-        row = set()
-        col = set()
+            return matrix
+        m, n = len(matrix), len(matrix[0])
+        row, col = set(), set()
+        
+        # 找出所有出现0的行列索引
         for i in range(m):
-        	for j in range(n):
-        		if matrix[i][j] == 0:
-        			row.add(i)
-        			col.add(j)
-
+            for j in range(n):
+                if matrix[i][j] == 0:
+                    row.add(i)
+                    col.add(j)
+        
+        # 将出现0的行列全部置零
         for r in row:
-        	matrix[r] = [0] * n
+            matrix[r] = [0] * n
         for c in col:
-        	for i in range(m):
-        		matrix[i][c] = 0
+            for i in range(m):
+                matrix[i][c] = 0
 ```
 
 ## 解法二
@@ -48,36 +47,38 @@ class Solution(object):
 3. 检查状态，根据状态改变矩阵。
 
 ```python
-class Solution(object):
-    def setZeroes(self, matrix):
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
         """
-        :type matrix: List[List[int]]
-        :rtype: void Do not return anything, modify matrix in-place instead.
+        Do not return anything, modify matrix in-place instead.
         """
         if not matrix:
-        	return None
-
-        m = len(matrix)
-        n = len(matrix[0])
-        row0 = col0 = 1			# 第一列的状态
+            return matrix
+        m, n = len(matrix), len(matrix[0])
+        row0 = col0 = 1     # 第一行和第一列的状态
+        
+        # 第一次遍历：检查矩阵中的0，并作标记
         for i in range(m):
-        	for j in range(n):
-        		if matrix[i][j] == 0:
-        			if i == 0:
-        				row0 = 0
-        			if j == 0:
-        				col0 = 0
-        			matrix[i][0] = matrix[0][j] = 0
-
+            for j in range(n):
+                if matrix[i][j] == 0:
+                    # 如果是第一行或第一列的元素为0，将其状态单独保存
+                    if i == 0:
+                        row0 = 0
+                    if j == 0:
+                        col0 = 0
+                    # 将出现0的行列第一个元素置零
+                    matrix[0][j] = matrix[i][0] = 0
+                
+        # 第二次遍历：将行首或列首标记为0的行列全部置零
         for i in range(1, m):
-        	for j in range(1, n):
-        		if matrix[i][0] == 0 or matrix[0][j] == 0:
-        			matrix[i][j] = 0
-
-        if not row0:
-        	matrix[0] = [0] * n
-
-        if not col0:
-        	for i in range(m):
-        		matrix[i][0] = 0
+            for j in range(1, n):
+                if matrix[0][j] == 0 or matrix[i][0] == 0:
+                    matrix[i][j] = 0
+        
+        # 若第一行或第一列出现0，将其元素全部置零
+        if row0 == 0:
+            matrix[0] = [0] * n
+        if col0 == 0:
+            for i in range(m):
+                matrix[i][0] = 0
 ```

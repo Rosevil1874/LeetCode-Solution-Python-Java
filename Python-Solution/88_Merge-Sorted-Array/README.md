@@ -30,27 +30,21 @@ class Solution(object):
 2. 若最后nums2中还有元素未插入nums1中，剩下的一定都比nums1中已放好的元素大，只需依次放进去就行。
 
 ```python
-class Solution(object):
-    def merge(self, nums1, m, nums2, n):
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         """
-        :type nums1: List[int]
-        :type m: int
-        :type nums2: List[int]
-        :type n: int
-        :rtype: void Do not return anything, modify nums1 in-place instead.
+        Do not return anything, modify nums1 in-place instead.
         """
-        i = j = 0
-        while i < m + n and j < n:
-            if nums2[j] <= nums1[i]:
+        i, j = 0, 0
+        while i < len(nums1) and j < n:
+            if nums1[i] > nums2[j]:
                 nums1.pop()
                 nums1.insert(i, nums2[j])
                 j += 1
             i += 1
             
         while j < n:
-            i = m + j
-            nums1[i] = nums2[j]
-            i += 1
+            nums1[m + j] = nums2[j]
             j += 1
 ```
 
@@ -61,27 +55,21 @@ class Solution(object):
 
 
 ```python
-class Solution(object):
-    def merge(self, nums1, m, nums2, n):
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         """
-        :type nums1: List[int]
-        :type m: int
-        :type nums2: List[int]
-        :type n: int
-        :rtype: void Do not return anything, modify nums1 in-place instead.
+        Do not return anything, modify nums1 in-place instead.
         """
-        i = m - 1
-        j = n - 1
-        k = m + n - 1
-        while i >= 0 and j >= 0:
+        i, j, k = m - 1, n - 1, m + n - 1
+        while i>= 0 and j >= 0:
             if nums1[i] >= nums2[j]:
                 nums1[k] = nums1[i]
                 i -= 1
-                k -= 1
             else:
                 nums1[k] = nums2[j]
                 j -= 1
-                k -= 1
+            k -= 1
+        
         while j >= 0:
             nums1[k] = nums2[j]
             j -= 1

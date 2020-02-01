@@ -17,48 +17,43 @@
 ## 解法一
 思路：  
 1. 中心思想就是：只要后面的价格下跌就赶紧卖了（哇要是买股票的时候真的能知道后面的走势就暴富了哇同志们！！！）；
-2. 维护一个价格下跌前的最低价格，在这个时候买入；
+2. 维护一个价格上升前的最低价格，在这个时候买入；
 3. 若发现价格下跌，就在下跌前转卖。
 
 ```python
-class Solution(object):
-    def maxProfit(self, prices):
-        """
-        :type prices: List[int]
-        :rtype: int
-        """
-        if len(prices) == 0:
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        n = len(prices)
+        if n == 0:
             return 0
         
-        maxProfit = 0
-        prevMin = prices[0]
-        for i in range(1, len(prices)):
+        max_profit = 0
+        prev_min = prices[0]
+        for i in range(1, n):
             if prices[i] < prices[i - 1]:
-                maxProfit += prices[i - 1] - prevMin
-                prevMin = prices[i]
-            prevMin = min(prevMin, prices[i])
-
-        if prices[len(prices)-1] > prevMin:
-            maxProfit += prices[len(prices)-1] - prevMin
-        return maxProfit
+                max_profit += prices[i - 1] - prev_min
+                prev_min = prices[i]
+            prev_min = min(prev_min, prices[i])
+            
+        if prices[n - 1] > prev_min:
+            max_profit += prices[n - 1] - prev_min
+            
+        return max_profit
 ```
 
 ## 解法二
 思路：  
-这个同学没有严格按照交易的逻辑，而是只要后面的价格比较高就累加累加，得出的结果是一样的。  cr: [Is this question a joke?](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/discuss/39402/Is-this-question-a-joke) (感觉作者的智商被嘲笑了 XD )
+这个同学没有严格按照交易的逻辑，而是只要后面的价格比较高就累加累加，得出的结果是一样的。  cr: [Is this question a joke?](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/discuss/39402/Is-this-question-a-joke) (感觉出题人的智商被嘲笑了 XD )
 
 ```python
-class Solution(object):
-    def maxProfit(self, prices):
-        """
-        :type prices: List[int]
-        :rtype: int
-        """
-        maxProfit = 0
-        for i in range(len(prices) - 1):
-            if prices[i + 1] > prices[i]:
-                maxProfit += prices[i + 1] - prices[i]
-        return maxProfit
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        n = len(prices)
+        max_profit = 0
+        for i in range(1, n):
+            if prices[i] > prices[i - 1]:
+                max_profit += prices[i] - prices[i - 1]
+        return max_profit
 ```
 
 ## 解法三、动态规划
@@ -67,11 +62,7 @@ class Solution(object):
 
 ```python
 class Solution(object):
-    def maxProfit(self, prices):
-        """
-        :type prices: List[int]
-        :rtype: int
-        """
+    def maxProfit(self, prices: List[int]) -> int:
         notHold = 0                      # 开始状态  
         hold = float('-inf')             # 不可能一开始就持有股票   
         for p in prices:
