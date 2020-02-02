@@ -8,15 +8,29 @@
 把数组末尾的k个元素一个个删除插到头部
 
 ```python
-class Solution(object):
-    def rotate(self, nums, k):
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
         """
-        :type nums: List[int]
-        :type k: int
-        :rtype: void Do not return anything, modify nums in-place instead.
+        Do not return anything, modify nums in-place instead.
         """
+        if k == 0:
+            return
         for i in range(k):
             nums[0:0] = [nums.pop()]
+```
+
+or
+```python
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        if k == 0:
+            return
+        k = k % len(nums)
+        for i in range(k):
+            nums.insert(0, nums.pop())
 ```
 
 ## 二、反转
@@ -25,22 +39,23 @@ class Solution(object):
 
 ```python
 class Solution(object):
-    def rotate(self, nums, k):
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
         """
-        :type nums: List[int]
-        :type k: int
-        :rtype: void Do not return anything, modify nums in-place instead.
+        Do not return anything, modify nums in-place instead.
         """
         if k == 0:
             return
-            
-        k, end = k % len(nums), len(nums) - 1
-        self.reverse(nums, 0, end - k)
-        self.reverse(nums, end - k + 1, end)
-        self.reverse(nums, 0, end)
         
-    def reverse(self, nums, start, end):
-        while start < end:
-            nums[start], nums[end] = nums[end], nums[start]
-            start, end = start + 1, end - 1
+        k = k % len(nums)
+        n = len(nums) - 1
+        self.reverse(nums, 0, n - k)
+        self.reverse(nums, n - k + 1, n)
+        self.reverse(nums, 0, n)
+        
+    def reverse(self, nums: List[int], l:int, r:int):
+        while l < r:
+            nums[l], nums[r] = nums[r], nums[l]
+            l += 1
+            r -= 1
 ```

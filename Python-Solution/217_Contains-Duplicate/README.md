@@ -16,19 +16,16 @@
 >时间复杂度O(n * logn)-排序，空间复杂度O(1)
 
 ```python
-class Solution(object):
-    def containsDuplicate(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
-        if len(nums) == 0 or len(nums) == 1:
-        	return False
-
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        n = len(nums)
+        if n <= 1:
+            return False
+        
         nums.sort()
-        for i in range(1, len(nums)):
-        	if nums[i] == nums[i - 1]:
-        		return True
+        for i in range(1, n):
+            if nums[i] == nums[i - 1]:
+                return True
         return False
 ```
 
@@ -41,30 +38,24 @@ class Solution(object):
 >时间复杂度O(n)，空间复杂度O(1)
 
 ```python
-class Solution(object):
-    def containsDuplicate(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
-        if len(nums) == 0 or len(nums) == 1:
-        	return False
-
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        n = len(nums)
+        if n <= 1:
+            return False
+        
         s = set()
-        for i in range(len(nums)):
-        	if nums[i] in s:
-        		return True
-        	s.add(nums[i])
+        for x in nums:
+            if x in s:
+                return True
+            else:
+                s.add(x)
         return False
 ```
 
 这个方法还有一个大神的一行代码:
 ```python
-class Solution(object):
-    def containsDuplicate(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
         return len(nums) != len(set(nums))
 ```
