@@ -42,42 +42,46 @@ class RandomizedSet:
         """
         Initialize your data structure here.
         """
-        self.nums = []
-        self.pos = {}
-        
+        self.cache = []     # 存储数据(列表的append和pop是O(1)复杂度，remove是O(N)复杂度)
+        self.pos = {}       # 存储每个数据的位置(字典get和set都是O(1)复杂度)
 
-    def insert(self, val):
+        
+    def insert(self, val: int) -> bool:
         """
         Inserts a value to the set. Returns true if the set did not already contain the specified element.
-        :type val: int
-        :rtype: bool
         """
         if val not in self.pos:
-        	self.nums.append(val)
-        	self.pos[val] = len(self.nums) - 1
-        	return True
-        return False
-        
-    def remove(self, val):
-        """
-        Removes a value from the set. Returns true if the set contained the specified element.
-        :type val: int
-        :rtype: bool
-        """
-        if val in self.pos:
-        	idx = self.pos[val]
-        	last = self.nums[-1]
-        	self.nums[idx] = last
-        	self.pos[last] = idx
-        	self.nums.pop()
-        	self.pos.pop(val, 0)
-        	return True
+            self.cache.append(val)
+            self.pos[val] = len(self.cache) - 1
+            return True
         return False
 
-    def getRandom(self):
+    
+    def remove(self, val: int) -> bool:
+        """
+        Removes a value from the set. Returns true if the set contained the specified element.
+        """
+        if val in self.pos:
+            p = self.pos[val]
+            tail = self.cache[-1]
+            self.cache[p] = tail
+            self.pos[tail] = p
+            self.cache.pop()
+            self.pos.pop(val)
+            return True
+        return False
+        
+
+    def getRandom(self) -> int:
         """
         Get a random element from the set.
-        :rtype: int
         """
-        return self.nums[random.randint(0, len(self.nums) - 1)]
+        return self.cache[random.randint(0, len(self.cache) - 1)]
+
+
+# Your RandomizedSet object will be instantiated and called as such:
+# obj = RandomizedSet()
+# param_1 = obj.insert(val)
+# param_2 = obj.remove(val)
+# param_3 = obj.getRandom()
 ```
