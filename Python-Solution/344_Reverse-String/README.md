@@ -12,20 +12,16 @@
 2. 使用 O(1) 的额外空间.
 
 ## 题解一：【按序插入】
-**思路：** 以原字符串的最后一个字母为基准，每次将字符串当前的第一个字母插入到基准字母后面，遍历完一遍字符串就好啦。
+**思路：** 以原字符串的第一个字母为基准，每次将字符串当前的最后一个字母弹出并插入到基准字母后面，遍历完一遍字符串就好啦。
 
 ```python
-class Solution(object):
-    def reverseString(self, s):
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
         """
-        :type s: List[str]
-        :rtype: None Do not return anything, modify s in-place instead.
+        Do not return anything, modify s in-place instead.
         """
-        i = len(s) - 1
-        while i > 0:
-            x = s.pop(0)
-            s.insert(i, x)
-            i -= 1
+        for i in range(len(s)):
+            s.insert(i, s.pop())
 ```
 
 
@@ -33,15 +29,14 @@ class Solution(object):
 **思路：** 每次将字符串前面一半的元素与后面一半对应位置的元素交换位置。
 
 ```python
-class Solution(object):
-    def reverseString(self, s):
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
         """
-        :type s: List[str]
-        :rtype: None Do not return anything, modify s in-place instead.
+        Do not return anything, modify s in-place instead.
         """
-        i, j = 0, len(s) - 1
-        while i < j:
-            s[i], s[j] = s[j], s[i]
-            i += 1
-            j -= 1
+        l, r = 0, len(s) - 1
+        while l < r:
+            s[l], s[r] = s[r], s[l]
+            l += 1
+            r -= 1
 ```
