@@ -23,11 +23,7 @@
 #         self.next = None
 
 class Solution(object):
-    def oddEvenList(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
+    def oddEvenList(self, head: ListNode) -> ListNode:
         # 少于三个结点的都不用移动，直接返回
         if not head or not head.next or not head.next.next:
             return head
