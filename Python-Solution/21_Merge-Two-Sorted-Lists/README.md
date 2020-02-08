@@ -16,6 +16,12 @@
 #         self.val = x
 #         self.next = None
 
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         if not l1 and not l2:
@@ -26,21 +32,21 @@ class Solution:
             return l1
         
         new_head = ListNode(0)
-        prev = new_head
+        curr = new_head
         while l1 and l2:
-            if l1.val <= l2.val:
-                prev.next = l1
+            if l1.val < l2.val:
+                curr.next = l1
                 l1 = l1.next
             else:
-                prev.next = l2
+                curr.next = l2
                 l2 = l2.next
-            prev = prev.next
-        
-        if l1:
-            prev.next = l1
-        else:
-            prev.next = l2
+            curr = curr.next
             
+        if l1:
+            curr.next = l1
+        elif l2:
+            curr.next = l2
+        
         return new_head.next
 ```
 
