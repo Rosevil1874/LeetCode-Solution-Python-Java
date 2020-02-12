@@ -19,8 +19,8 @@ class Solution(object):
                 t = t[c]
             t['#'] = '#'
 
-        # for k, v in trie.items():
-        #     print(k, v)
+        for k, v in trie.items():
+            print(k, v)
 
         # DFS
         self.res = set()
