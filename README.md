@@ -69,11 +69,14 @@
 33 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/33_Search-in-Rotated-Sorted-Array">搜索旋转排序数组</a> | 中等
 34 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/34_Search-for-a-Range">搜索范围</a> | 中等
 35 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/35_Search-Insert-Position">搜索插入位置 </a> | 简单
+36 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/36_Valid_Sudoku">有效的数独 </a> | 中等
+38 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/38_Count_and_Say">外观数列 </a> | 简单
 39 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/39_Combination-Sum">组合总和 </a> | 中等
 40 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/40_Combination-Sum-II">组合总和 II </a> | 中等
 41 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/41_First-Missing-Positive">缺失的第一个正数</a> | 困难
 42 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/42_Trapping-Rain-Water">接雨水</a> | 困难
 43 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/43_Multiply_Strings">字符串相乘</a> | 中等
+44 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/44_Wildcard_Matching">通配符匹配</a> | 困难
 45 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/45_Jump-Game-II">跳跃游戏 II </a> | 困难
 46 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/46_Permutations">全排列</a> | 中等
 48 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/48_Rotate-Image">旋转图像 </a> | 中等
@@ -120,37 +123,52 @@
  ------------ | ------------- | ------------
 101 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/101_Symmetric_Tree">对称二叉树</a> | 简单 
 102 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/102_Binary_Tree_Level_Order_Traversal">二叉树的层次遍历</a> | 中等 
+103 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/103_Binary_Tree_Zigzag_Level_Order_Traversal">二叉树的锯齿形层次遍历 </a> | 中等 
 104 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/104_Maximum-Depth-of-Binary-Tree">二叉树的最大深度</a> | 简单 
 105 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/105_Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal">从前序与中序遍历序列构造二叉树</a> | 中等 
 106 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/106_Construct-Binary-Tree-from-Inorder-and-Postorder-Traversal">从中序与后序遍历序列构造二叉树</a> | 中等 
+108 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/108_Convert_Sorted_Array_to_Binary_Search_Tree">将有序数组转化为二叉搜索树</a> | 简单 
 109 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/109_Convert-Sorted-List-to-Binary-Search-Tree">有序链表转换二叉搜索树</a> | 中等 
 111 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/111_Minimum-Depth-of-Binary-Tree">二叉树的最小深度</a> | 简单 
 114 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/114_Flatten_Binary_Tree_to_Linked_List">二叉树展开为链表</a> | 中等 
+116 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/116_Populating_Next_Right_Pointers_in_Each_Node">填充每一个节点的下一个右侧节点指针</a> | 中等 
 118 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/118_Pascal-Triangle">杨辉三角</a> | 简单 
 119 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/119_Pascal-Triangle-II">杨辉三角 II</a> | 简单 
 120 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/120_Triangle">三角形最小路径和</a> | 中等 
-128 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/128_Longest-Consecutive-Sequence">最长连续序列</a> | 困难 
 121 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/121_Best-Time-to-Buy-and-Sell-Stock">买卖股票的最佳时机</a> | 简单 
 122 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/122_Best-Time-to-Buy-and-Sell-Stock-II">买卖股票的最佳时机II</a> | 简单 
 123 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/123_Best-Time-to-Buy-and-Sell-Stock-III">买卖股票的最佳时机III</a> | 困难 
+125 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/125_Valid_Palindrome">验证回文串</a> | 简单 
+127 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/127_Word_Ladder">单词接龙</a> | 中等 
+128 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/128_Longest-Consecutive-Sequence">最长连续序列</a> | 困难 
+130 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/130_Surrounded_Regions">被围绕的区域</a> | 中等 
+131 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/131_Palindrome_Partitioning">分割回文串</a> | 中等 
+134 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/134_Gas_Station">加油站</a> | 中等 
 136 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/136_Single-Number">只出现一次的数字</a> | 简单 
 137 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/137_Single-Number-II">只出现一次的数字 II</a> | 中等 
 138 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/138_Copy-List-with-Random-Pointer">复制带随机指针的链表</a> | 中等 
 139 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/139_Word_Break">单词拆分</a> | 中等 
+140 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/140_Word-Break-II">单词拆分 II </a> | 困难 
 141 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/141_Linked-List-Cycle">环形链表</a> | 简单 
 142 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/142_Linked-List-Cycle-II">环形链表II</a> | 中等 
 143 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/143_Reorder-List">重排链表</a> | 中等 
 146 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/146_LRU-Cache">LRU缓存机制</a> | 困难 
 147 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/147_Insertion-Sort-List">链表插入排序</a> | 中等 
+150 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/147_Insertion-Sort-List">逆波兰表达式求值</a> | 中等 
 152 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/152_Maximum-Product-Subarray">乘积最大子序列</a> | 中等 
 153 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/153_Find-Minimum-in-Rotated-Sorted-Array">寻找旋转排序数组中的最小值</a> | 中等 
 154 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/154_Find-Minimum-in-Rotated-Sorted-Array-II">寻找旋转排序数组中的最小值 II</a> | 中等 
 155 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/155_FMin-Stack">最小栈 </a> | 简单 
 162 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/162_Find-Peak-Element">寻找峰值</a> | 简单 
+166 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/166_Fraction_to_Recurring_Decimal">分数到小数</a> | 中等 
 167 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/167_Two-Sum-II-Input-array-is-sorted">两数之和 II - 输入有序数组</a> | 简单 
 169 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/169_Majority-Element">求众数</a> | 简单 
+171 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/171_Excel_Sheet_Column_Number">Excel表列序号</a> | 简单 
+179 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/179_Largest_Number">最大数</a> | 中等 
 188 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/188_Best-Time-to-Buy-and-Sell-Stock-IV">买卖股票的最佳时机 IV</a> | 困难 
 189 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/189_Rotate-Array">旋转数组</a> | 简单 
+190 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/190_Reverse_Bits">颠倒二进制位</a> | 简单 
+191 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/191_Number_of_1_Bits">位1的个数</a> | 简单 
 198 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/198_House_Robber">打家劫舍</a> | 简单 
 
 
@@ -160,18 +178,23 @@
 题序-Squence  |  题目-Problem  |  难度-Level  
  ------------ | ------------- | ------------
 200 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/200_Number_of_Islands">岛屿数量</a> | 中等 
+202 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/202_Happy_Number">快乐数</a> | 简单 
+204 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/204_Count_Primes">计算质数</a> | 简单 
 206 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/206_Reverse-Linked-List">反转链表</a> | 简单 
 207 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/207_Course_Schedule">课程表</a> | 中等 
 208 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/208_Implement_Trie(Prefix_Tree)">实现 Trie (前缀树)</a> | 中等 
 209 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/209_Minimum-Size-Subarray-Sum">长度最小的子数组</a> | 中等 
+210 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/210_Course_Schedule_II"> 课程表 II </a> | 中等 
 212 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/212_Word-Search-II">单词搜索 II</a> | 困难 
 215 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/215_Kth-Largest-Element-in-an-Array">数组中的第K个最大元素</a> | 中等 
 216 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/216_Combination-Sum-III">组合总和III </a> | 中等
 217 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/217_Contains-Duplicate">存在重复元素  </a> | 简单
+218 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/217_Contains-Duplicate">天际线问题  </a> | 困难
 219 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/219_Contains-Duplicate-II">存在重复元素 II </a> | 简单
 220 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/220_Contains-Duplicate-III">存在重复元素 III </a> | 中等
 221 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/221_Maximal_Square">最大正方形</a> | 中等
 226 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/226_Invert_Binary_Tree">翻转二叉树</a> | 简单
+227 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/227_Basic_Calculator_II">基本计算器 II </a> | 中等
 228 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/228_Summary-Ranges">汇总区间</a> | 中等
 229 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/229_Majority-Element-II">求众数 II </a> | 中等
 230 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/230_Kth-Smallest-Element-in-a-BST">二叉搜索树中第K小的元素</a> | 中等
@@ -183,6 +206,7 @@
 238 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/238_Product-of-Array-Except-Self">除自身以外数组的乘积</a> | 中等
 239 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/239_Sliding_Window_Maximum">滑动窗口最大值</a> | 困难
 240 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/240_Search-a-2D-Matrix-II">搜索二维矩阵 II</a> | 中等 
+242 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/242_Valid_Anagram">有效的字母异位词</a> | 简单 
 260 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/260_Single-Number-III">只出现一次的数字 III</a> | 中等 
 268 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/268_Missing-Number">缺失数字</a> | 简单 
 279 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/279_Perfect_Squares">完全平方数</a> | 中等 
@@ -203,6 +227,7 @@
 301 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/301_Remove_Invalid_Parentheses">删除无效的括号</a> | 困难
 309 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/309_Best-Time-to-Buy-and-Sell-Stock-with-Cooldown">最佳买卖股票时机含冷冻期</a> | 中等
 312 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/312_Burst_Balloons">戳气球</a> | 困难
+315 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/315_Count_of_Smaller_Numbers_After_Self">计算右侧小于当前元素的个数</a> | 困难
 322 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/322_Coin_Change">零钱兑换</a> | 中等
 328 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/328_Odd-Even-Linked-List">奇偶链表 Odd Even Linked List</a> | 中等
 326 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/326_Powe-of-Three">3的幂</a> | 简单
@@ -210,11 +235,14 @@
 338 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/338_Counting_Bits">比特位计数</a> | 中等
 341 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/341_Flatten-Nested-List-Iterator">扁平化嵌套列表迭代器</a> | 中等
 342 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/342_Powe-of-Four">4的幂</a> | 中等
-347 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/347_Top_K_Frequent_Elements">	
-前 K 个高频元素</a> | 中等
 344 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/344_Reverse-String">反转字符串</a> | 简单
+347 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/347_Top_K_Frequent_Elements"> 前 K 个高频元素</a> | 中等
+350 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/350_Intersection_of_Two_Arrays_II"> 两个数组的交集 II</a> | 中等
+371 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/371_Sum_of_Two_Integers"> 两整数之和</a> | 简单
+378 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/378_Kth_Smallest_Element_in_a_Sorted_Matrix"> 有序矩阵中第K小的元素 </a> | 中等
 380 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/380_Insert-Delete-GetRandom-O1">常数时间插入、删除和获取随机元素</a> | 中等
 381 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/381_Insert-Delete-GetRandom-O1-Duplicates-allowed">O(1) 时间插入、删除和获取随机元素 - 允许重复 </a> | 困难
+387 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/387_First_Unique_Character_in_a_String"> 字符串中的第一个唯一字符 </a> | 简单
 394 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/394_Decode_String">字符串解码 </a> | 中等
 
 
@@ -230,6 +258,7 @@
 438 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/438_Find_All_Anagrams_in_a_String">找到字符串中所有字母异位词</a> | 中等
 442 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/442_Find-All-Duplicates-in-an-Array">数组中重复的数据</a> | 中等
 448 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/448_Find-All-Numbers-Disappeared-in-an-Array">找到所有数组中消失的数字</a> | 简单
+454 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/454_4Sum_II">四数相加II </a> | 简单
 460 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/460_LFU-Cache">LFU缓存</a> | 困难
 485 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/485_Max-Consecutive-Ones">最大连续1的个数</a> | 简单
 494 | <a href="https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/494_Target_Sum">目标和</a> | 中等
