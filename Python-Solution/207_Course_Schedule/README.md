@@ -129,12 +129,11 @@ class Solution:
             
         # queue中存放所有没有前置结点的课程
         queue = [node for node in range(numCourses) if degree[node] == 0]
-        cnt = 0
         for node in queue:
             # 对其每一个后继结点，入度减一，表示已经访问过node
             for successor in G[node]:
                 degree[successor] -= 1
-                # 已经没有前驱结点的课程放入stack
+                # 已经没有前驱结点的课程放入queue
                 if degree[successor] == 0:
                     queue.append(successor)
                     

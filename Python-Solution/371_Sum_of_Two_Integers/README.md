@@ -27,7 +27,7 @@ class Solution:
             a, b = (a ^ b) & mask, ((a & b) << 1) & mask
         
         # a <= MAX: a为正数，直接返回
-        # a > MAX：a为负数，先计算其32为补码，再取反
+        # a > MAX：a为负数，计算机存储补码，a ^ mask得到a的按位取反，~得到相反数-1。
         return a if a < MAX else ~(a ^ mask)
         
 ```
