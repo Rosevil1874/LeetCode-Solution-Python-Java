@@ -51,6 +51,7 @@ class Solution:
 
 **一开始忽略了只有一位的情况，这种情况直接返回就好~~**
 
+
 ## 二、 字符串反转--简化版（大神版）
 ```python
 class Solution:
@@ -66,16 +67,11 @@ class Solution:
 ```python
 class Solution:
     def reverse(self, x: int) -> int:
-        temp = 0
-        maxint = 0x7FFFFFFF
-        minint = -0x80000000
-        while x != 0:
-            pop = x % 10
-            if temp > maxint//10 or ( temp == maxint//10 and pop > 7):
-                return 0
-            if temp < minint//10 or ( temp == minint//10 and pop < -8):
-                return 0
+        sign = (x > 0) - (x < 0)
+        x = x * sign
+        res = 0
+        while x > 0:
+            res = res * 10 + x % 10
             x = x // 10
-            temp = temp*10 + pop
-        return temp
+        return sign * res * (res < 2**31)
 ```python

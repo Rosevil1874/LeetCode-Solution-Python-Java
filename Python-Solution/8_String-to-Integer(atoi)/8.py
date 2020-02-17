@@ -1,49 +1,44 @@
 class Solution:
     def myAtoi(self, str):
-        """
-        :type str: str
-        :rtype: int
-        """
-        l = len(str)
-        ret = 0
-        is_valid = False    # 是否无效，
-        flag = 1            # 1：正数，-1：负数
-        i = 0
-
-        if l == 0:
+        # 去掉空白符
+        str = str.strip()
+        if not len(str):
             return 0
 
-        while i < l and str[i] == ' ':
-            i += 1
+        # 确定符号位
+        sign = 1
+        start = 0   # 开始判断数字的索引
+        if str[0] == '+':
+            sign = 1
+            start = 1
+        elif str[0] == '-':
+            sign = -1
+            start = 1
 
-        if str[i] == '+' or str[i] == '-':
-            flag = 1 if str[i] == '+' else -1
-            i += 1
-
-        while i < l:
-            if '0' <= str[i] <= '9':
+        is_valid = False    # 从符号位开始，后面是否接数字
+        res = 0
+        for i in range(start, len(str)):
+            if str[i] >= '0' and str[i] <= '9':
                 is_valid = True
-                ret = ret * 10 + int(str[i])
-                i += 1
+                res = res * 10 + int(str[i])
             else:
                 break
 
-        # 检查是否有效、是否负数
+        res = sign * res
+        # 若符号位后不是紧跟数字则无效
         if not is_valid:
             return 0
-        elif flag == -1:
-            ret = -ret
-
         # 检查是否溢出
-        if ret > 2147483647:
-            return 2147483647
-        elif ret < -2147483648:
-            return -2147483648
+        elif res > 2**31 - 1:
+            return 2**31 - 1
+        elif res < -2**31:
+            return -2**31
         else:
-            return ret
+            return res
+
         
                     
 
 solution = Solution()
-r = solution.myAtoi('   +-123')
+r = solution.myAtoi('-91283472332')
 print(r)
