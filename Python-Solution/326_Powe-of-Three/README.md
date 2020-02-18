@@ -11,17 +11,13 @@
 **思路：** 最原始的方法，一直除以3。
 
 ```python
-class Solution(object):
-    def isPowerOfThree(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """
+class Solution:
+    def isPowerOfThree(self, n: int) -> bool:
         if n <= 0:
             return False
-            
-        while n%3 == 0:
-            n = n // 3
+        
+        while n % 3 == 0:
+            n //= 3
         return n == 1
 ```
 
@@ -29,18 +25,16 @@ class Solution(object):
 >人家题目上让不用循环或者递归解题呢，，那我，想不出来啊。。。于是网上冲浪一波抄抄别人的思路: 先求出最大的3的幂，然后看n能不能被这个最大的3的幂整除就行啦。
 ![solution](images/solution.jpg)
 
+> 换底公式：log a b = log c b / log c a
+
 ```python
-import math
-class Solution(object):
-    def isPowerOfThree(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """
+class Solution:
+    def isPowerOfThree(self, n: int) -> bool:
         if n <= 0:
             return False
-
-        maxInt = 0x7fffffff
-        max3Power = 3 ** (math.log(maxInt) // math.log(3))      # 换底公式求最大幂次，再使用最大幂次求最大幂
-        return max3Power % n == 0
+        
+        MAX = 0X7FFFFFFF
+        # 换底公式求最大幂次，再使用最大幂次求最大幂
+        MAX_3power = 3 ** (math.log(MAX) // math.log(3))
+        return MAX_3power % n == 0
 ```

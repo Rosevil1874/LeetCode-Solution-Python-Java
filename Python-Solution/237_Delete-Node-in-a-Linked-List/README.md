@@ -15,20 +15,22 @@
 
 ```python
 # Definition for singly-linked list.
-class ListNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
 
-class Solution(object):
+class Solution:
     def deleteNode(self, node):
         """
         :type node: ListNode
         :rtype: void Do not return anything, modify node in-place instead.
         """
+        # 下列情况没法删
         if not node or not node.next:
             return
+        # 把下一节点的值赋给当前节点
         node.val = node.next.val
+        # 删除下一节点
         node.next = node.next.next
-        return
 ```
