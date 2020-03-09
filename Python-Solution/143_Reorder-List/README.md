@@ -34,13 +34,13 @@ class Solution(object):
         # 划分两个子链表
         fast = slow = prev = head
         while fast and fast.next:
-            prev = slow
-            slow = slow.next
-            fast = fast.next.next
+            prev = slow             # 链表中间节点的前一个节点(前一部分的结尾)
+            slow = slow.next        # 链表中间节点(后半部分的开始)
+            fast = fast.next.next   # 链表尾
         rightList = slow
         prev.next = None
 
-        # # 将右半部分子链表逆序
+        # 将右半部分子链表逆序
         curr = rightList
         while curr.next:
             tmp = ListNode(curr.next.val)

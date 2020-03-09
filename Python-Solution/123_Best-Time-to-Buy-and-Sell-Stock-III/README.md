@@ -1,7 +1,7 @@
-# 188 - 买卖股票的最佳时机IV
+# 123 - 买卖股票的最佳时机III
 
 ## 题目描述
-![problem](images/188.png)
+![problem](images/123.png)
 
 >关联题目：  
 - [121. 买卖股票的最佳时机](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/121_Best-Time-to-Buy-and-Sell-Stock)
@@ -29,14 +29,14 @@ class Solution(object):
         :type prices: List[int]
         :rtype: int
         """
-        notHold1 = 0                        
-        notHold2 = 0                         
+        not_hold1 = 0                        
+        not_hold2 = 0                         
         hold1 = float('-inf')                
         hold2 = float('-inf')                
         for p in prices:
             hold1 = max(hold1, -p)                  # 借钱买了第一支股票
-            notHold1 = max(notHold1, hold1 + p)     # 卖了第一支股票
-            hold2 = max(hold2, notHold1 - p)        # 买了第二支股票
-            notHold2 = max(notHold2, hold2 + p)     # 卖了第二支股票
-        return notHold2
+            not_hold1 = max(not_hold1, hold1 + p)     # 卖了第一支股票
+            hold2 = max(hold2, not_hold1 - p)        # 买了第二支股票
+            not_hold2 = max(not_hold2, hold2 + p)     # 卖了第二支股票
+        return not_hold2
 ```

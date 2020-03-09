@@ -63,10 +63,10 @@ class Solution:
 ```python
 class Solution(object):
     def maxProfit(self, prices: List[int]) -> int:
-        notHold = 0                      # 开始状态  
+        not_hold = 0                      # 开始状态  
         hold = float('-inf')             # 不可能一开始就持有股票   
         for p in prices:
-            hold = max(hold, notHold - p)        # 一直持有股票或买了股票
-            notHold = max(notHold, hold + p)     # 一直未持有股票或卖了股票
-        return notHold
+            hold = max(hold, not_hold - p)        # 一直持有股票或买了股票
+            not_hold = max(not_hold, hold + p)     # 一直未持有股票或卖了股票
+        return not_hold
 ```

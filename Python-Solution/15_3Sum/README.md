@@ -22,7 +22,6 @@ So，可不可以把“三数之和”问题改成“两数之和+X”捏。。�
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
-        n = len(nums)
         res = set()
         
         for i, val1 in enumerate(nums[:-2]):

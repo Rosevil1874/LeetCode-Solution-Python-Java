@@ -1,4 +1,4 @@
-# 188 - 买卖股票的最佳时机III
+# 188 - 买卖股票的最佳时机IV
 
 ## 题目描述
 ![problem](images/188.png)
@@ -12,7 +12,7 @@
 
 
 ## 动态规划
->cr: [Clean Java DP solution with comment](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/discuss/54117/Clean-Java-DP-solution-with-comment) 
+>cr: [Clean Java DP solution with comment](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/discuss/54117) 
 
 思路：  
 - p[i，j]: 进行到第j天时进行i个交易的最大利润。（0 <= i <= K，0 <= j <= len）
@@ -24,24 +24,20 @@
 
 ```python
 class Solution(object):
-    def maxProfit(self, k, prices):
-        """
-        :type k: int
-        :type prices: List[int]
-        :rtype: int
-        """
+    def (self, k: int, prices: List[int]) -> int:
         n = len(prices)
-        if k >= n // 2:
+        if k > n // 2:
             return self.quickSolve(prices)
 
         p = [ [0] * n for i in range(k + 1) ]
         for i in range(1, k + 1):
-            tmpMax = -prices[0]
+            tmpMax = p[i - 1][0] - prices[0]
             for j in range(1, n):
-                p[i][j] = max(p[i][j - 1], prices[j] + tmpMax)
-                tmpMax = max(tmpMax, p[i][j] - prices[j])
-        return p[k][n - 1]
+                p[i][j] = max(p[i][j - 1], tmpMax + prices[j])
+                tmpMax = max(tmpMax, p[i - 1][j] - prices[j])
+        return p[-1][-1]
 
+    
     def quickSolve(self, prices):
         n = len(prices)
         profit = 0

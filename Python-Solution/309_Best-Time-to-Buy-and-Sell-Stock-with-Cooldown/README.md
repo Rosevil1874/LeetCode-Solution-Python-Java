@@ -16,7 +16,7 @@
 ## 动态规划
 我真是。。。很弱啊。。。  
 这题感觉看大神的思路都有一点点困难的说。。。  
-cr: [4-line Python solution, 52 ms](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/discuss/75942/4-line-Python-solution-52-ms)
+cr: [4-line Python solution, 52 ms](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/discuss/75942/)
 
 >思路：  
 The key is 3 states and 5 edges for state transition. 3 states are `notHold (stock)`, `hold (stock)`, and `notHold_cooldown`. The initial values of the latter two are negative infinity since they are meaningless, i.e. you won't hold stocks at first and there's no cooldown at first. The 5 edges:
@@ -36,12 +36,12 @@ The key is 3 states and 5 edges for state transition. 3 states are `notHold (sto
 ```python
 class Solution(object):
     def maxProfit(self, prices: List[int]) -> int:
-        notHold = 0                         # 开始状态
+        not_hold = 0                         # 开始状态
         hold = float('-inf')                # 不可能一开始就持有股票
-        notHold_cooldown = float('-inf')    # 不可能一开始就冷冻
+        not_hold_cooldown = float('-inf')    # 不可能一开始就冷冻
         for p in prices:
-            hold = max(hold, notHold - p)               # 一直持有股票或买了股票(钱少了)
-            notHold = max(notHold, notHold_cooldown)    # 一直未持有股票或刚渡过冷冻期
-            notHold_cooldown = hold + p                 # 刚卖掉了股票（钱多了）进入冷冻期
-        return max(hold, notHold, notHold_cooldown)
+            hold = max(hold, not_hold - p)               # 一直持有股票或买了股票(钱少了)
+            not_hold = max(not_hold, not_hold_cooldown)    # 一直未持有股票或刚渡过冷冻期
+            not_hold_cooldown = hold + p                 # 刚卖掉了股票（钱多了）进入冷冻期
+        return max(hold, not_hold, not_hold_cooldown)
 ```
