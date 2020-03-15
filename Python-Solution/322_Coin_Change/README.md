@@ -20,8 +20,15 @@ You may assume that you have an infinite number of each kind of coin.
 ```python
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
+        # corner cases
+        if not coins:
+            return -1
+        if not amount:
+            return 0
+            
         dp = [0] + [float('inf')] * amount
-        
+
+        # dp[i]: 凑齐价值i需要的最少的硬币数量
         for i in range(1, amount + 1):
             for coin in coins:
                 if coin <= i:

@@ -84,7 +84,7 @@ class Solution:
 ```
 
 ## 3. BFS
-和BFS只是使用栈(stack)还是队列(queue)的区别。
+和DFS只是使用栈(stack)还是队列(queue)的区别。
 ```python
 from collections import defaultdict, deque
 class Solution:

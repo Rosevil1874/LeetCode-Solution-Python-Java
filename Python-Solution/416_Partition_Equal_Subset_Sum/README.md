@@ -25,13 +25,16 @@ The array size will not exceed 200.
 ```python
 class Solution:
     def canPartition(self, nums: List[int]) -> bool:
-        if sum(nums) % 2 == 1:
+        the_sum = sum(nums)
+        if the_sum & 1 == 1:
             return False
         
-        target = sum(nums) // 2
+        target = the_sum // 2
         dp = [True] + [False] * target
         
+        # i: 物品索引
         for i in range(1, len(nums)):
+            # j: 容量
             for j in range(target, nums[i - 1] - 1, -1):
                 dp[j] = dp[j] or dp[j - nums[i - 1]]
         return dp[target]

@@ -5,7 +5,7 @@
 
 >审题：就是把单链表想象成一个循环链表，向右转k个位置。
 
-## 双指针
+## 一、双指针
 **特殊情况：**
 1. 链表长度为0或1，直接返回；
 2. k是链表长度的整数倍，直接返回
@@ -16,61 +16,67 @@
 3. fast指向头结点，slow指向None。
 ```python
 # Definition for singly-linked list.
-class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
 
 class Solution:
-    def rotateRight(self, head, k):
-        """
-        :type head: ListNode
-        :type k: int
-        :rtype: ListNode
-        """
-        # 链表长度为0或1，直接返回
-        if head is None or head.next is None:
-        	return head
+    def rotateRight(self, head: ListNode, k: int) -> ListNode:
+        if not head:
+            return head
+        
+        # 求链表长度
+        l = 1
+        curr = head
+        while curr.next:
+            curr = curr.next
+            l += 1
 
-        # 计算链表长度
-        n = 1
-        p = head
-        while p.next is not None:
-        	p = p.next
-        	n += 1
-
-        # k是链表长度的整数倍，直接返回
-        if k % n == 0:
-        	return head
-
-        k %= n
-        p = head
-        slow = p
-        fast = p
-        while k > 0 and fast.next is not None:
-        	fast = fast.next
-        	k -= 1
-
-        while fast.next is not None:
-        	fast = fast.next
-        	slow = slow.next
-        newHead = slow.next
-        fast.next = head
+        k %= l
+        if k == 0:
+            return head
+        
+        # 若待旋转次数不是链表长度的整数倍则还需要旋转
+        slow = fast = head
+        for i in range(k):
+            fast = fast.next
+        while fast.next:
+            fast = fast.next
+            slow = slow.next
+        new_head = slow.next
         slow.next = None
-        return newHead
+        fast.next = head
+        return new_head
 ```
 
-## 错误
-判断特殊情况时不能先计算链表长度再合并三种情况：
-```python
-if n == 0 or n == 1 or k % n == 0:
-	return head
-```
-否则会出现以下错误：
-![error](images/error.png)
 
-链表长度为0的情况必须单独判断（1的就随意了）
+## 二、成环
 ```python
-if head is None or head.next is None:
-    return head
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def rotateRight(self, head: ListNode, k: int) -> ListNode:
+        if not head:
+            return head
+        
+        # 求链表长度
+        l = 1   
+        tail = head
+        while tail.next:
+            tail = tail.next
+            l += 1
+        tail.next = head    # 将链表成环
+        
+        # 若待旋转次数不是链表长度的整数倍则还需要旋转
+        k %= l
+        for i in range(l - k):
+            head = head.next
+            tail = tail.next
+        tail.next = None    # 切断环，成单链表
+        return head
 ```

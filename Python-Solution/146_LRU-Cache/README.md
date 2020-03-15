@@ -84,8 +84,38 @@ class LRUCache(object):
         self.dict[key] = value
 ```
 
-
-## 题解三：【dict + double linked-list】
+list代替deque:
 ```python
+class LRUCache:
 
+    def __init__(self, capacity: int):
+        self.remain = capacity
+        self.cache = []
+        self.dict ={}
+
+    def get(self, key: int) -> int:
+        if key not in self.cache:
+            return -1
+        self.cache.remove(key)
+        self.cache.append(key)
+        return self.dict[key]
+
+    def put(self, key: int, value: int) -> None:
+        if key in self.cache:
+            self.cache.remove(key)
+        else:
+            if self.remain >= 1:
+                self.remain -= 1
+            else:
+                x = self.cache.pop(0)
+                self.dict.pop(x)
+        self.cache.append(key)
+        self.dict[key] = value
+
+
+# Your LRUCache object will be instantiated and called as such:
+# obj = LRUCache(capacity)
+# param_1 = obj.get(key)
+# obj.put(key,value)
 ```
+
