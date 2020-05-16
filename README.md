@@ -1,6 +1,6 @@
 # solution of LeetCode by Python
 
-### Java solution <a herf="https://github.com/Rosevil1874/LeetCode/tree/master/java_solution_dir.md">
+### <a herf="https://github.com/Rosevil1874/LeetCode/tree/master/java_solution_dir.md">Java solution</a>
 
 ## 文件组织
 - Python Solution：解题思路以及Python代码；
