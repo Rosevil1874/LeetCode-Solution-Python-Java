@@ -1,13 +1,5 @@
 # 39 - 组合总和
 
-## 题目描述
-![problem](images/39.png)
-
->审题：  
-1. 相同元素可重复使用；
-2. 解集不包含重复解；
-3. 这是n-sum，不是之前的two-sum、three-sum、four-sum，不能用循环。
-4. 关联题目[40.组合总数II](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/40_Combination-Sum-II)，[216.组合总数III](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/216_Combination-Sum-III)
 
 ## 回溯法
 
@@ -16,26 +8,35 @@
 3. 若remain < 0，则表示解中元素的和比target大，从解中pop最后一个元素；
 4. 若remain == 0，则找到一个解；
 
-```python
-class Solution:
-    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        res = []
-        candidates.sort()
-        self.backtrack(candidates, res, [], target, 0)
-        return res
-    
-    
-    def backtrack(candidates: List[int], res: List[int], tmp: List[int], remain: int, start:int):
-        if remain < 0:
-            return
-        elif remain == 0:
-            res.append(tmp)
-        else:
-            for i in range(start, len(candidates)):
-                if candidates[i] > remain:  # 剪枝
-                    break
-                # tmp按引用传递，直接append会导致最后res中的解全部是最后一个tmp的值
-                # 可以重复使用同一元素，所以start是i而不是i+1
-                self.backtrack(candidates, res, tmp + [candidates[i]], remain - candidates[i], i)
+```java
+class Solution {
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        List<List<Integer>> res = new ArrayList<>();
+        int len = candidates.length;
+        Arrays.sort(candidates);        // 便于剪枝
+        backtrack(res, candidates, new ArrayDeque<>(), target, 0);
+        return res;
+    }
+
+    // path: 当前组合，remain: 剩余数值，start:搜索起点下标
+    private void backtrack(List<List<Integer>> res, int[] candidates, Deque<Integer> path, int remain, int start){
+        if (remain < 0) {
+            return;
+        } else if (remain == 0) {
+            res.add(new ArrayList<>(path));
+            return;
+        } else {
+            for (int i = start; i < candidates.length; i++){
+                if (candidates[i] > remain) {   // 剪枝
+                    break;
+                }
+                path.addLast(candidates[i]);
+                // 可以重复使用，所以start是i而不是i+1
+                backtrack(res, candidates, path, remain - candidates[i], i);
+                path.removeLast();
+            }
+        }
+    }
+}
         
 ```

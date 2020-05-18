@@ -1,48 +1,48 @@
 # 19 - 删除链表的倒数第N个节点
 
 
-## 题目描述
-![problem](images/19.png)
-
-## 方法
-思路一：
-1. 首先，要删除的是**倒数**第N个结点，单链表只能从前往后遍历，这样就要求知道链表一共有多少个结点；
-2. 知道链表一共有多少个结点的方法就是先遍历一遍；
-3. 这样的话要删除某个结点需要再跟着链表往后走一遍，去删除目标结点；
-4. 遍历两边，不妙不妙啊(ó﹏ò｡)
-
-思路二：
+## 双指针
 1. 使用两个指针，一快一慢；
 2. 快的比慢的快N个结点；
 3. 当快的到达尾部的时候，慢的正好指向目标结点的pre结点，只需要轻轻跳过它就Okey-dokey yo!
 4. 遍历一遍，妙哉妙哉(｡◕ˇ∀ˇ◕)
 
-```python
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        // coner case 1
+        if (head == null) {
+            return head;
+        }
 
-class Solution:
-    def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
-        if not head:
-            return None
-        
-        # fast先前进n步
-        fast = head
-        for _ in range(n):
-            fast = fast.next
-            
-        # 若n等于链表长度时fast会移动到最后的None，此时删除第一个结点
-        if not fast:
-            return head.next
-        
-        # 两指针同时前进，fast到达尾部时slow指向待删结点前一个结点
-        slow = head
-        while fast.next:
-            slow = slow.next
-            fast = fast.next
-        slow.next = slow.next.next
-        return head
+        ListNode fast = head;
+        ListNode slow = head;
+
+        // 快指针先走n步
+        for (int i = 0; i < n; i++) {
+            fast = fast.next;
+        }
+
+        // coner case 2: 当n等于链表长度时fast会移动到最后的null节点，倒数第n个节点即第一个节点
+        if (fast == null) {return head.next;}
+
+        // 快慢指针一起向前，当快指针到结尾时慢指针刚好在待删节点的前面
+        while (fast.next != null) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        // 删除节点
+        slow.next = slow.next.next;
+        return head;
+    }
+}
+
 ```

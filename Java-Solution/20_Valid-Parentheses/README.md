@@ -1,52 +1,30 @@
 # 20 - 有效的括号
 
-## 题目描述
-![problem](images/20.png)
+使用栈和map：
+```java
+class Solution {
+    private static final Map<Character, Character> map = new  HashMap<Character, Character>() {{
+        put('}','{'); put(']','['); put(')','('); 
+    }};
 
-## 方法
-数据结构经典题，用栈完美解决。
-```python
-class Solution:
-    def isValid(self, s: str) -> bool:
-        if not s:
-            return True
-        
-        x = ['[', '(', '{']
-        y = [']', ')', '}']
-        z = ['[]', '()', '{}']
-        
-        stack = []
-        for char in s:
-            # 左括号入栈
-            if char in x:
-                stack.append(char)
-            # 右括号判断栈中是否有与其匹配的左括号，有则将匹配的出栈，没有则返回false
-            elif char in y:
-                if stack == [] or stack.pop() + char not in z:
-                    return False
+    public boolean isValid(String s) {
+        Stack<Character> stack = new Stack<Character>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            // 如果是左括号就入栈
+            if (map.containsValue(c)) {
+                stack.push(c);
+            }
+            // 如果是右括号就判断和栈顶是否匹配
+            else if(map.containsKey(c)) {
+                char top_elem = stack.empty() ? '#' : stack.pop();
+                if (top_elem != map.get(c)) {
+                    return false;
+                }
+            }
             
-        # 栈中左括号全部匹配，返回True
-        return stack == []
-```
-
-使用栈和字典：
-```python
-class Solution:
-    def isValid(self, s: str) -> bool:
-        if not s:
-            return True
-        
-        dic = {']': '[', ')': '(', '}': '{'}
-        stack = []
-        for char in s:
-            # 左括号入栈
-            if char in dic.values():
-                stack.append(char)
-            # 右括号判断栈中是否有与其匹配的左括号，有则将匹配的出栈，没有则返回false
-            elif char in dic.keys():
-                if stack == [] or dic[char] != stack.pop():
-                    return False
-            
-        # 栈中左括号全部匹配，返回True
-        return stack == []
+        }
+        return stack.empty();
+    }
+}
 ```

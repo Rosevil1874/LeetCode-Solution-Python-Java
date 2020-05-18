@@ -1,52 +1,8 @@
 # 10 - 正则表达式匹配
 
-**迷迷糊糊**
-**此题有待深究 哦哦哦**
-
-## 题目描述
-![problem](images/10.png)
-
-<!-- more -->
-
-## 递归一：超时
-剑指offer上有一道[正则表达式匹配](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/sword_points_offer/python_solution/52%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D.md)，题意是一样的，参考了当时的解答。
-
-```python
-class Solution:
-    def isMatch(self, s: str, p: str) -> bool:
-        len_s, len_p = len(s), len(p)
-        
-        # string和pattern完全匹配
-        if len_s == 0 and len_p == 0:
-            return True
-        
-        # string遍历完却未匹配完
-        if len_s != 0 and len_p == 0:
-            return False
-        
-        # pattern第二个字符是*
-        if len_p > 1 and p[1] == '*':
-            if len_s > 0 and (s[0] == p[0] or p[0] == '.'):
-                return self.isMatch(s, p[2:]) or self.isMatch(s[1:], p[2:]) or self.isMatch(s[1:], p)
-            else:
-                return self.isMatch(s, p[2:])
-            
-        # pattern第二个字符不是*，直接判断
-        if len_s > 0 and (s[0] == p[0] or p[0] == '.'):
-            return self.isMatch(s[1:], p[1:])
-        else:
-            return False
-```
 
 
-## 递归二
->cr:[Regular Expression Matching](https://articles.leetcode.com/regular-expression-matching/)
-
->Think   
-carefully how you would do matching of ‘\*’. Please note that ‘\*’ in regular expression is different from wildcard matching, as we match the previous character 0 or more times. But, how many times? If you are stuck, recursion is your friend.
-1. If the next character of p is NOT ‘\*’, then it must match the current character of s. Continue pattern matching with the next character of both s and p.
-2. If the next character of p is ‘\*’, then we do a brute force exhaustive matching of 0, 1, or more repeats of current character of p… Until we could not match any more characters.
-
+## 递归
 
 1. 若正则表达式的长度为0，字符串长度也为0时匹配，否则不匹配；
 2. 若正则表达式的长度为1，当字符串长度也为1，且两字符相等或表达式为'.'时匹配，否则不匹配；
@@ -55,35 +11,32 @@ carefully how you would do matching of ‘\*’. Please note that ‘\*’ in re
 5. 若正则表达式第二个字符为'\*'，则字符串的第一个字符一定是匹配的。接下来递归判断字符串与表达式第三个字符开始的子串是否匹配，若匹配返回True。否则判断字符串第二个字符开始的子串与表达式是否匹配（一个个字符一次与与'\*'匹配）。
 
 
-```python
-class Solution:
-    def isMatch(self, s: str, p: str) -> bool:
-        len_s, len_p = len(s), len(p)
-        
-        if len_p == 0:
-            return len_s == 0
-        
-        if len_p == 1:
-            return len_s == 1 and (s[0] == p[0] or p[0] == '.')
-        
-        if p[1] != '*':
-            if len_s == 0:
-                return False
-            elif s[0] == p[0] or p[0] == '.':
-                return self.isMatch(s[1:], p[1:])
-            else:
-                return False
-        else:
-            while len(s) and (s[0] == p[0] or p[0] == '.'):
-                if self.isMatch(s, p[2:]):
-                    return True
-                s = s[1:]
-            return self.isMatch(s, p[2:])
+```java
+class Solution {
+    public boolean isMatch(String s, String p) {
+        // corner case
+        if (p.isEmpty()) {
+            return s.isEmpty();
+        }
+
+        // check first character
+        boolean first_match = (!s.isEmpty() && (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.'));
+
+        // check second character
+        if (p.length() >= 2 && p.charAt(1) == '*') {
+            // 1. 匹配0个字符，2.若首字符匹配可匹配一个字符
+            return (isMatch(s, p.substring(2)) || (first_match && isMatch(s.substring(1), p)));
+        } 
+        // 若首字符匹配可匹配一个字符
+        else {
+            return first_match && (isMatch(s.substring(1), p.substring(1)));
+        }
+    }
+}
 ```
 
 
 ## 动态规划
->cr:[leetcode 10 Regular Expression Matching](http://www.voidcn.com/article/p-wzvbljqo-ys.html)
 
 This problem has a typical solution using Dynamic Programming. We define the state P[i][j] to be true if s[0..i) matches p[0..j) and false otherwise. Then the state equations are: 
 >1. P[i][j] = P[i - 1][j - 1], if p[j - 1] != ‘\*’ && (s[i - 1] == p[j - 1] || p[j - 1] == ‘.’); 
@@ -94,35 +47,56 @@ Putting these together, we will have the following code.
 
 以下代码关于dp[i][j]的定义与以上分析相反，即dp[i][j]为True表示p[0..i) matches s[0..j)。比楼上递归快多了。
 
-```python
-class Solution:
-    def isMatch(self, s: str, p: str) -> bool:
-        len_s, len_p = len(s), len(p)
-        
-        # dp[0][0]为True，其他均为False（两个空串match）
-        dp = [[True] + [False] * len_s]
-        for i in range(len_p):
-            dp.append([False]*(len_s+1))
+```java
+class Solution {
+    public boolean isMatch(String s, String p) {
+        if(s==null||p==null)
+            return false;
+       int rows = s.length();
+       int columns = p.length();
+       boolean[][]dp = new boolean[rows+1][columns+1];
+       //s和p两个都为空，肯定是可以匹配的，同时这里取true的原因是
+       //当s=a，p=a，那么dp[1][1] = dp[0][0]。因此dp[0][0]必须为true。
+       dp[0][0] = true;
+        for(int j=1;j<=columns;j++)
+        {   
+            //p[j-1]为*可以把j-2和j-1处的字符删去，只有[0,j-3]都为true才可以
+            //因此dp[j-2]也要为true，才可以说明前j个为true
+            if(p.charAt(j-1)=='*'&&dp[0][j-2])
+                dp[0][j] = true;
+        }
 
-        for i in range(1, len_p + 1):
-            x = p[i-1]
-            if x == '*' and i > 1:
-                dp[i][0] = dp[i-2][0]
-            for j in range(1, len_s+1):
-                if x == '*':
-                    dp[i][j] = dp[i-2][j] or dp[i-1][j] or (dp[i-1][j-1] and p[i-2] == s[j-1]) or (dp[i][j-1] and p[i-2]=='.')
-                elif x == '.' or x == s[j-1]:
-                    dp[i][j] = dp[i-1][j-1]
+        for(int i=1;i<=rows;i++)
+        {
+            for(int j=1;j<=columns;j++)
+            {
+                char nows = s.charAt(i-1);
+                char nowp = p.charAt(j-1);
+                if(nows==nowp)
+                {
+                    dp[i][j] = dp[i-1][j-1];
+                }else{
+                    if(nowp=='.')
+                        dp[i][j] = dp[i-1][j-1];
+                    else if(nowp=='*')
+                    {
+                        //p需要能前移1个。（当前p指向的是j-1，前移1位就是j-2，因此为j>=2）
+                        if(j>=2){
+                            char nowpLast = p.charAt(j-2);
+                            //只有p[j-2]==s[i-1]或p[j-2]==‘.’才可以让*取1个或者多个字符：
+                            if(nowpLast==nows||nowpLast=='.')
+                                dp[i][j] = dp[i-1][j]||dp[i][j-1];
+                            //不论p[j-2]是否等于s[i-1]都可以删除掉j-1和j-2处字符：
+                            dp[i][j] = dp[i][j]||dp[i][j-2];
+                        }
+                    }
+                    else
+                        dp[i][j] = false;
+                }
+            }
+        }
+        return dp[rows][columns];
+    }
+}
 
-        return dp[len_p][len_s]
-```
-
-## 使用第三方库re
-一行代码/微笑脸
-```python
-import re
-
-class Solution:
-    def isMatch(self, s, p):
-        return re.match('^' + p + '$', s) != None
 ```
