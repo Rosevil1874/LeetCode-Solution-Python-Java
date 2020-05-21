@@ -1,13 +1,5 @@
 # 62 - 不同路径
 
-## 题目描述
-![problem](images/62.png)
-
->关联题目： [63. 不同路径II](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/63_Unique-Paths-II)  
->关联题目： [64. 最小路径和](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/64_UMinimum-Path-Sum)  
-
->cr: [0ms, 5-lines DP Solution in C++ with Explanations](https://leetcode.com/problems/unique-paths/discuss/22954/0ms-5-lines-DP-Solution-in-C++-with-Explanations)  
-我要什么时候才能看到题目就像大神一样说出一句：“emmm，这是基本的DP问题”呢(T ^ T) 
 
 ## 题解一
 **时间复杂度：O(n^2)  
@@ -22,15 +14,20 @@
 	2. p[i][j] = p[i - 1][j] + p[i][j - 1]；
 3. 边界条件为最左列和最上行不存在的情况，可以通过初始化p[0][j] = 1，p[i][0] = 1来处理，**注意是1不是0**。
 
-```python
-class Solution:
-    def uniquePaths(self, m: int, n: int) -> int:
-        dp = [[1]*m for i in range(n)]
-        
-        for i in range(1, n):
-            for j in range(1, m):
-                dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
-        return dp[n - 1][m - 1]
+```java
+class Solution {
+    public int uniquePaths(int m, int n) {
+        int[][] dp = new int[m][n];
+        for (int i = 0; i < m; i++) dp[i][0] = 1;
+        for (int j = 0; j < n; j++) dp[0][j] = 1;
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+            }
+        }
+        return dp[m - 1][n - 1];
+    }
+}
 ```
 
 
@@ -41,17 +38,23 @@ class Solution:
 **思路**
 更新p[i][j]时只需要用到 p[i - 1][j] 和 p[i][j - 1]，所以只需要保存当前行和上一行的状态，而不是整个矩阵的状态。
 
-```python
-class Solution:
-    def uniquePaths(self, m: int, n: int) -> int:
-        prev = [1] * m
-        curr = [1] * m
-        
-        for i in range(1, n):
-            for j in range(1, m):
-                curr[j] = curr[j - 1] + prev[j]
-            prev = curr
-        return prev[m - 1]
+```java
+class Solution {
+    public int uniquePaths(int m, int n) {
+        int[] prev = new int[m];
+        int[] curr = new int[m];
+        Arrays.fill(prev, 1);
+        Arrays.fill(curr, 1);
+
+        for (int j = 1; j < n; j++) {
+            for (int i = 1; i < m; i++) {
+                curr[i] = curr[i - 1] + prev[i];
+            }
+            prev = curr;
+        }
+        return curr[m - 1];
+    }
+}
 ```
 
 
@@ -61,13 +64,18 @@ class Solution:
 可以看出题解二中的prev只是更新为了curr，所以连两个数组都用不上，用一个累加就行。缺点是代码可读性会差一点，分不清上一行和当前行。
 
 
-```python
-class Solution:
-    def uniquePaths(self, m: int, n: int) -> int:
-        curr = [1] * m
-        
-        for i in range(1, n):
-            for j in range(1, m):
-                curr[j] += curr[j - 1]
-        return curr[m - 1]
+```java
+class Solution {
+    public int uniquePaths(int m, int n) {
+        int[] curr = new int[m];
+        Arrays.fill(curr, 1);
+
+        for (int j = 1; j < n; j++) {
+            for (int i = 1; i < m; i++) {
+                curr[i] += curr[i - 1];
+            }
+        }
+        return curr[m - 1];
+    }
+}
 ```
