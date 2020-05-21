@@ -1,6 +1,6 @@
 # solution of LeetCode by Java
 
-[Python Solutions](https://github.com/Rosevil1874/LeetCode/tree/master/Python_solution_dir.md)
+【Python Solutions】：[Python Solutions](https://github.com/Rosevil1874/LeetCode/tree/master/Python_solution_dir.md)
 
 ## 快速跳转[TOC]
 - [1-99](#title1)
