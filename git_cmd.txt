@@ -1,6 +1,7 @@
 提交步骤：
 进入当前目录：
-cd C:/Git_repositories/LeetCode
+cd C:/Git_repositories/LeetCode/Java-Solution
+cd C:/Git_repositories/LeetCode/Python-Solution
 
 从远程拉取更新并与本地合并：
 git pull
