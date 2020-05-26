@@ -1,53 +1,72 @@
 # 78 - 子集
 
-## 题目描述
-![problem](images/78.png)
-
->关联题目： [90. 子集II](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/90_Subsets-II)
-
-## 回溯法
-确切地说是dfs，因为这里没有回溯操作。
-
-```python
-class Solution:
-    def subsets(self, nums: List[int]) -> List[List[int]]:
-        res = []
-        self.dfs(nums, res, [], 0)
-        return res
-        
-    def dfs(self, nums, res, path, start):
-        res.append(path)
-        for i in range(start, len(nums)):   
-            self.dfs(nums, res, path + [nums[i]], i + 1)
-```
-
-
 ## 迭代
+```java
+class Solution {
+    public List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>> res = new ArrayList();
+        res.add(new ArrayList<Integer>());
 
-```python
-class Solution:
-    def subsets(self, nums: List[int]) -> List[List[int]]:
-        res = [[]]
-        for x in sorted(nums):
-            res += [subset + [x] for subset in res]
-        return res
+        for (int num: nums) {
+            List<List<Integer>> subsets = new ArrayList();
+            for (List<Integer> curr: res) {
+                subsets.add(new ArrayList<Integer>(curr){{add(num);}});
+            }
+            for (List<Integer> curr: subsets) {
+                res.add(curr);
+            }
+        }
+        return res;
+    }
+}
 ```
 
+## 回溯
+```java
+class Solution {
+    List<List<Integer>> res = new ArrayList();
+    int n, k;
+
+    public void backtrack(int first, ArrayList<Integer> curr, int[] nums) {
+        if (curr.size() == k) {
+            res.add(new ArrayList(curr));
+        }
+
+        for (int i = first; i < n; i++) {
+            curr.add(nums[i]);
+            backtrack(i + 1, curr, nums);
+            curr.remove(curr.size() - 1);
+        }
+    }
+
+    public List<List<Integer>> subsets(int[] nums) {
+        n = nums.length;
+        // k代表每种可能的子集长度
+        for (k = 0; k <= n; k++) {
+            backtrack(0, new ArrayList<Integer>(), nums);
+        }
+        return res;
+    }
+}
+```
 
 ## 位运算
 >'To give all the possible subsets, we just need to exhaust all the possible combinations of the numbers. And each number has only two possibilities: either in or not in a subset. And this can be represented using a bit.'
 
-```python
-class Solution:
-    def subsets(self, nums: List[int]) -> List[List[int]]:
-        res = []
-        nums.sort()
+```java
+class Solution {
+    public List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>> res = new ArrayList();
+        int n = nums.length;
         
-        for i in range(1 << len(nums)):
-            temp = []
-            for j in range(len(nums)):
-                if i & 1 << j:
-                    temp.append(nums[j])
-            res.append(temp)
-        return res
+        for (int i = 0; i < (1 << n); i++) {
+            List<Integer> subset = new ArrayList();
+            for (int j = 0; j < n; j++) {
+                if (((i >> j) & 1) == 1) subset.add(nums[j]);
+            }
+            res.add(subset);
+        }
+        return res;
+    }
+}
 ```
