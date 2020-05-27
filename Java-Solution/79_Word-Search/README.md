@@ -1,10 +1,5 @@
 # 79 - 单词搜索
 
-## 题目描述
-![problem](images/79.png)
-
->关联题目： [212. 单词搜索II](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/212_Word-Search-II)  
->知识点： [BFS & DFS](https://github.com/Rosevil1874/LeetCode/tree/master/Summary/BFS & DFS)
 
 ## DFS + 回溯
 >虽然难度是中等，但是DFS也是好久没用过了，所以参考了一下别人的思路。
@@ -16,33 +11,46 @@
 4. 若某一元素不匹配，回溯（当前元素标记为未访问），选取下一个元素为起点DFS；
 5. 递归边界：单词中所有字母均匹配。
 
-```python
-class Solution:
-    def exist(self, board: List[List[str]], word: str) -> bool:
-        for i in range(len(board)):
-            for j in range(len(board[0])):
-                if self.dfs(board, i, j, word):
-                    return True
-        return False
-    
-    
-    def dfs(self, board: List[List[str]], i: int, j: int, word: str) -> bool:
-        # 所有字母都存在且找到连续路径
-        if len(word) == 0:  
-            return True
-        
-        # 边界条件：1. 越界， 2. 值与路径中相应位置元素不相等， 3. 此位置已经走过
-        if i < 0 or i >= len(board) or j < 0 or j >= len(board[0]) or board[i][j] != word[0]:
-            return False
-        
-        # 此位置匹配但还未完全匹配path，向四个方向扩展判断, 任意方向上搜索到了结果都可返回True
-        tmp = board[i][j]
-        board[i][j] = '#'
-        if self.dfs(board, i + 1, j, word[1:]) or self.dfs(board, i - 1, j, word[1:]) \
-    or self.dfs(board, i, j + 1, word[1:]) or self.dfs(board, i, j - 1, word[1:]):
-            return True
-        
-        # 回溯：此位置匹配但后面的位置都不匹配（没有返回True），将此位置恢复未访问状态，退回前一个位置
-        board[i][j] = tmp
-        return False
+```java
+class Solution {
+    public boolean exist(char[][] board, String word) {
+        int m = board.length;
+        if (m == 0) {
+            return false;
+        }
+        int n = board[0].length;
+
+        for(int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (backtrack(i, j, board, word)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private boolean backtrack(int i, int j, char[][] board, String word) {
+        // 匹配整个字符串
+        if (word.length() == 0) {
+            return true;
+        }
+        // 超出边界或当前字符与字符串中当前字符不匹配
+        if (i < 0 || i >= board.length || j < 0 || j >= board[0].length || board[i][j] != word.charAt(0)) {
+            return false;
+        }
+
+        // DFS
+        char temp = board[i][j];
+        board[i][j] = '#';      // 标记保证不重复使用
+        String remain = word.substring(1);
+        if (backtrack(i + 1, j, board, remain) || backtrack(i, j + 1, board, remain) || backtrack (i - 1, j, board, remain) || backtrack(i, j - 1, board, remain)) {
+            return true;
+        }
+
+        // 回溯
+        board[i][j] = temp;
+        return false;
+    }
+}
 ```
