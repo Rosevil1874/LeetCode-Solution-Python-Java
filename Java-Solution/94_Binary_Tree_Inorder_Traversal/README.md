@@ -11,26 +11,31 @@ Follow up: Recursive solution is trivial, could you do it iteratively?
 
 > Runtime: 28 ms, faster than 63.29% of Python3 online submissions.
 
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        helper(root, res);
+        return res;
+    }
 
-class Solution:
-    def inorderTraversal(self, root: TreeNode) -> List[int]:
-        res = []
-        self.helper(root, res)
-        return res
-        
-    def helper(self, root: TreeNode, res: List[int]) -> List[int]:
-        if root:
-            self.helper(root.left, res)
-            res.append(root.val)
-            self.helper(root.right, res)
-        
+    private void helper(TreeNode root, List<Integer> res) {
+        if (root != null) {
+            helper(root.left, res);
+            res.add(root.val);
+            helper(root.right, res);
+        }
+    }
+}    
 ```
 
 
@@ -40,28 +45,33 @@ class Solution:
 2. 从栈中依次pop左子结点，将其值放入结果数组中，同时将当前结点的右子结点作为根重复操作1；
 3. 重复上述两步直到栈空。
 
-运行时间和上面一样。
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-
-class Solution:
-    def inorderTraversal(self, root: TreeNode) -> List[int]:
-        res, stack = [], []
-        while root or stack:
-            while root:
-                stack.append(root)
-                root = root.left
-            curr = stack.pop()
-            res.append(curr.val)
-            root = curr.right
-        return res
-            
-                
-            
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode curr = root;
         
+        while (curr != null || !stack.isEmpty()) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+            curr = stack.pop();
+            res.add(curr.val);
+            curr = curr.right;
+        }
+
+        return res;
+    }
+}    
 ```

@@ -11,56 +11,75 @@ Both the left and right subtrees must also be binary search trees.
 
 
 ## 递归
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public boolean isValidBST(TreeNode root) {
+        return helper(root, null, null);
+    }
 
-class Solution:
-    def isValidBST(self, root: TreeNode) -> bool:
-        return self.helper(root, float('-inf'), float('inf'))
-        
-        
-    def helper(self, root, min_val, max_val) -> bool:
-        if not root:
-            return True
-        elif root.val <= min_val or root.val >= max_val:
-            return False
-        return self.helper(root.left, min_val, root.val) and self.helper(root.right, root.val, max_val)
+    private boolean helper(TreeNode node, Integer lower, Integer upper) {
+        if (node == null) {
+            return true;
+        }
+
+        int val = node.val;
+
+        if (lower != null && val <= lower) return false;
+        if (upper != null && val >= upper) return false;
+
+        if ( !(helper(node.left, lower, val)) ) return false;
+        if ( !(helper(node.right, val, upper)) ) return false;
+
+        return true;
+    }
+}
 ```
 
 ## 栈
-类似的解法有94题。
+二叉搜索树的中序遍历是升序序列，因此可以用栈的方法进行中序遍历，在遍历的同时比较前后遍历节点的大小。类似的解法有94题。
 
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+```Java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public boolean isValidBST(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
 
-class Solution:
-    def isValidBST(self, root: TreeNode) -> bool:
-        if not root:
-            return True
-        pre = None
-        stack = []
-        
-        curr = root
-        while curr or stack:
-            while curr:
-                stack.append(curr)
-                curr = curr.left
-                
-            curr = stack.pop()
-            if pre and pre.val >= curr.val:
-                return False
-            pre = curr
-            curr = curr.right
-            
-        return True  
+        TreeNode pre = null;
+        TreeNode curr = root;
+        Stack<TreeNode> stack = new Stack<>();
+
+        while (curr != null || !stack.isEmpty()) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+            curr = stack.pop();
+            if (pre != null && pre.val >= curr.val) {
+                return false;
+            }
+            pre = curr;
+            curr = curr.right;
+        }
+        return true;
+    }
+} 
 ```
