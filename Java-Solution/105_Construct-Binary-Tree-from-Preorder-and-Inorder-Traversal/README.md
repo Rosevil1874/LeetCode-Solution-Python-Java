@@ -20,63 +20,50 @@
 2. 中序 + 后序
 
 ## 一、递归
-```python
-# Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    private Map<Integer, Integer> indexMap;
 
-class Solution(object):
-    def buildTree(self, preorder, inorder):
-        """
-        :type preorder: List[int]
-        :type inorder: List[int]
-        :rtype: TreeNode
-        """
-        return self.helper(0, 0, len(inorder) - 1, preorder, inorder) or None
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        indexMap = new HashMap<>();
+        int n = preorder.length;
+        for (int i = 0; i < n; i++) {
+            indexMap.put(inorder[i], i);
+        }
+        return helper(preorder, inorder, 0, n - 1, 0, n - 1);
+    }
 
-    def helper(self, preStart, inStart, inEnd, preorder, inorder):
-        if preStart > len(preorder) - 1 or inStart > inEnd:
-            return None
+    private TreeNode helper(int[] preorder, int[] inorder, int preLeft, int preRight, int inLeft, int inRight) {
+        if (preLeft > preRight) return null;
 
-        root = TreeNode(preorder[preStart])
-        inIdx = 0           # 当前inorder中的根结点下标
-        for i in range(inStart, inEnd + 1):     # 不能在切片数组中使用index确定下标，因为这样下标就是从0开始而不是在[inStart, inEnd]这个范围内了
-            if inorder[i] == root.val:
-                inIdx = i;
-        root.left = self.helper(preStart + 1, inStart, inIdx - 1, preorder, inorder)        
-        root.right = self.helper(preStart + inIdx - inStart + 1, inIdx + 1, inEnd, preorder, inorder)
-        return root
+        // 前序遍历第一个节点是根节点
+        int preRoot = preLeft;
+        // 在中序遍历中定位根节点
+        int inRoot = indexMap.get(preorder[preRoot]);
+
+        // 建立根节点
+        TreeNode root = new TreeNode(preorder[preRoot]);
+        // 左子树中的节点数目
+        int left_sub_size = inRoot - inLeft;
+        // 递归构造左子树并连接到根节点
+        root.left = helper(preorder, inorder, preLeft + 1, preLeft + left_sub_size, inLeft, inRoot - 1);
+        // 递归构造右子树并连接到根节点
+        root.right = helper(preorder, inorder, preLeft + left_sub_size + 1, preRight, inRoot + 1, inRight);
+
+        return root;
+    }
+}
 ```
 
-## 二、简版递归
-
-> Runtime: 136 ms, faster than 59.84% of Python3 online submissions.  
-Memory Usage: 51.1 MB, less than 71.05% of Python3 online submissions
-
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-
-class Solution:
-    def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
-        if not preorder or not inorder:
-            return None
-        
-        root = TreeNode(preorder.pop(0))
-        in_idx = inorder.index(root.val)
-        
-        root.left = self.buildTree(preorder, inorder[:in_idx])
-        root.right = self.buildTree(preorder, inorder[in_idx + 1:])
-        
-        return root
-```
 
 ## 三、迭代
 cr: [The iterative solution is easier than you think!](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/discuss/34555/The-iterative-solution-is-easier-than-you-think!)
@@ -85,57 +72,46 @@ cr: [The iterative solution is easier than you think!](https://leetcode.com/prob
 2. At this point, pop the top of the stack until the top does not equal inorder (keep a flag to note that you have made a pop).
 3. Repeat 1 and 2 until preorder is empty. The key point is that whenever the flag is set, insert a node to the right and reset the flag.
 
-```python
-# Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        if (preorder == null || preorder.length == 0) {
+            return null;
+        }
 
-class Solution(object):
-    def buildTree(self, preorder, inorder):
-        """
-        :type preorder: List[int]
-        :type inorder: List[int]
-        :rtype: TreeNode
-        """
-        if not preorder or not inorder:
-            return None
+        TreeNode root = new TreeNode(preorder[0]);
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        int inorderIndex = 0;
 
-        stack = []      # 保存val
-        nodeStack = []  # 保存结点
-
-        i = j = 0       # i为preorder的下标，j为inorder的下标
-        isRight = 0     # 是否右子树
-        stack.append(preorder[i])
-
-        # 根结点
-        root = TreeNode(preorder[i])
-        nodeStack.append(root)
-        curr = root
-        i += 1
-
-        while i < len(preorder):
-            # 子树根结点
-            if len(nodeStack) and nodeStack[-1].val == inorder[j]:
-                curr = nodeStack[-1]
-                nodeStack.pop()
-                stack.pop()
-                isRight = 1
-                j += 1
-            elif isRight == 0:
-                stack.append(preorder[i])
-                curr.left = TreeNode(preorder[i])
-                curr = curr.left
-                nodeStack.append(curr)
-                i += 1
-            else:
-                isRight = 0
-                stack.append(preorder[i])
-                curr.right = TreeNode(preorder[i])
-                curr = curr.right
-                nodeStack.append(curr)
-                i += 1
-        return root
+        for (int i = 1; i < preorder.length; i++) {
+            int preorderVal = preorder[i];
+            TreeNode node = stack.peek();
+            // 建立左子树
+            if (inorder[inorderIndex] != node.val) {
+                node.left = new TreeNode(preorderVal);
+                stack.push(node.left);
+            } else {
+                // 跳过已经建立的左子树
+                while (!stack.isEmpty() && stack.peek().val == inorder[inorderIndex]) {
+                    node = stack.pop();
+                    inorderIndex++;
+                }
+                // 建立右子树
+                node.right = new TreeNode(preorderVal);
+                stack.push(node.right);
+            }
+        }
+        return root;
+    }
+}
 ```

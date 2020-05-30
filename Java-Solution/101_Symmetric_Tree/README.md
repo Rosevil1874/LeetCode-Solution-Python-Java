@@ -4,59 +4,71 @@ Given a binary tree, check whether it is a mirror of itself (ie, symmetric aroun
 
 
 ## 递归：
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+```Java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        return helper(root.left, root.right);
+    }
 
-class Solution:
-    def isSymmetric(self, root: TreeNode) -> bool:
-        if not root:
-            return True
-        return self.helper(root.left, root.right)
-        
-    def helper(self, left: TreeNode, right: TreeNode) -> bool:
-        if not left and not right:
-            return True
-        if not left or not right:
-            return False
-        if left.val == right.val:
-            return self.helper(left.left, right.right) and self.helper(left.right, right.left)
-        else:
-            return False
+    private boolean helper(TreeNode left, TreeNode right) {
+        if (left == null && right == null) {
+            return true;
+        } else if (left == null || right == null) {
+            return false;
+        }
+
+        if (left.val == right.val) {
+            return helper(left.left, right.right) && helper(left.right, right.left);
+        } else {
+            return false;
+        }
+    }
+}
 ```
 
 
 ## 迭代：
-递归地本质是是栈，这里使用栈实现迭代版本。
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
 
-class Solution:
-    def isSymmetric(self, root: TreeNode) -> bool:
-        if not root:
-            return True
-        
-        stack = [[root.left, root.right]]
-        while stack:
-            pair = stack.pop()
-            left, right = pair[0], pair[1]
-            if not left and not right:
-                continue
-            if not left or not right:
-                return False
-            if left.val == right.val:
-                stack.append([left.left, right.right])
-                stack.append([left.right, right.left])
-            else:
-                return False
-        return True
+```Java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+        q.add(root);
+
+        while (!q.isEmpty()){
+            TreeNode t1 = q.poll();
+            TreeNode t2 = q.poll();
+            if (t1 == null && t2 == null) continue;
+            if (t1 == null || t2 == null) return false;
+            if (t1.val != t2.val) return false;
+            q.add(t1.left);
+            q.add(t2.right);
+            q.add(t1.right);
+            q.add(t2.left);
+        }
+        return true;
+    }
+}
 ```
