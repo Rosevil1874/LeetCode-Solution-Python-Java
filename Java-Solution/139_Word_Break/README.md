@@ -12,17 +12,24 @@ You may assume the dictionary does not contain duplicate words.
 ## DP
 DP[i]：以s[i-1]为尾的字串在字典中有对应单词，且DP[i - len(word)]为True.
 
-```python
-class Solution:
-    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        n = len(s)
-        dp = [False for _ in range(n + 1)]
-        dp[0] = True
-        
-        for i in range(1, n + 1):
-            for w in wordDict:
-                if dp[i - len(w)] and s[i - len(w):i] == w:
-                    dp[i] = True
-                    break
-        return dp[-1]
+```Java
+class Solution {
+    public boolean wordBreak(String s, List<String> wordDict) {
+        // Set<String> wordSet = new HashSet<>(wordDict);
+        int n = s.length();
+        boolean[] dp = new boolean[n + 1];
+        dp[0] = true;
+
+        for (int i = 1; i <= n; i++){
+            for (String word: wordDict) {
+                int len = word.length();
+                if (i >= len && dp[i - len] && s.substring(i - len, i).equals(word)) {
+                    dp[i] = true;
+                    break;
+                }
+            }
+        }
+        return dp[n];
+    }
+}
 ```

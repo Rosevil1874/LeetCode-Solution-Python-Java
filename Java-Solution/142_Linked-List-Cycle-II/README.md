@@ -1,16 +1,6 @@
 # 142 - 环形链表 II
 
-## 题目描述
-![problem](images/142.png)
-
->关联题目： [141. 环形链表](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/141_Linked-List-Cycle)    
->关联题目： [287. 寻找重复数](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/287_Find-the-Duplicate-Number)    
-
-
 ## 双指针
->cr:[[leetcode]Linked List Cycle II @ Python
-](http://www.cnblogs.com/zuoyuan/p/3701877.html)
-
 思路：
 1. 使用两个移动速度不同的指针，fast指针的步长为slow指针的两倍；
 2. 若两指针相遇则存在环,否则不存在环；
@@ -30,34 +20,46 @@
 当slow回到head后走了K到达环路起点，L在环路里从M处开始也走了K，把公式里的M抵消掉，两个指针会在环路起点相遇。
 
 
-```python
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+```Java
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public ListNode detectCycle(ListNode head) {
+        if (head == null || head.next == null) {
+            return null;
+        }
 
-class Solution:
-    def detectCycle(self, head: ListNode) -> ListNode:
-        if not head or not head.next:
-            return None
+        // 判断是否有环，若有环，两指针相遇在环内
+        ListNode slow = head, fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                break;
+            }
+        }
         
-        # 寻找在环内的相遇点
-        fast = slow = head
-        while fast and fast.next:
-            slow = slow.next
-            fast = fast.next.next
-            if slow == fast:
-                break
-        
-        # 不存在环
-        if slow != fast:
-            return None
-        
-        # 找环入口
-        fast = head
-        while slow != fast:
-            slow = slow.next
-            fast = fast.next
-        return fast
+        // 无环
+        if (slow != fast) {
+            return null;
+        }
+
+        // 寻找环入口
+        slow = head;
+        while (slow != fast) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
+    }
+}
 ```

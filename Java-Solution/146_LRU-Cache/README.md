@@ -1,121 +1,151 @@
 # 146 - LRU缓存机制
 
-## 题目描述
-![problem](images/146.png)
 
->关联题目： [460. LFU缓存](https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution/460_LFU-Cache)  
+## 一、自己建立双向链表
+使用双向链表：删除一个节点不光要得到该节点本身的指针，也需要操作其前驱节点的指针，而双向链表才能支持直接查找前驱，保证操作的时间复杂度 O(1)。
 
+```java
+// 双向链表节点类
+class Node {
+    public int key, val;
+    public Node prev, next;
+    public Node(int k, int v) {
+        this.key = k;
+        this.val = v;
+    }
+}
 
-## 题解一：【OrderedDict】
-**思路：**
-1. collections.OrderedDict():可以记住内容添加顺序的字典。特殊方法：OrderedDict.popitem(last=True) 。last为True是LIFO,即为栈，反之是FIFO，即为队列；
-2. 不管get还是set之后，操作的这个元素都要拿出来重新放进去，表示现在使用了它；
+// 双向链表类
+class DoubleList {  
+    private Node head, tail; // 头尾虚节点
+    private int size; // 链表元素数
 
->两个操作时间复杂度都是O(1)哟~
+    public DoubleList() {
+        head = new Node(0, 0);
+        tail = new Node(0, 0);
+        head.next = tail;
+        tail.prev = head;
+        size = 0;
+    }
 
-```python
-import collections
-class LRUCache(object):
+    // 在链表头部添加节点 x
+    public void addFirst(Node x) {
+        x.next = head.next;
+        x.prev = head;
+        head.next.prev = x;
+        head.next = x;
+        size++;
+    }
 
-    def __init__(self, capacity: int):
-        self.remain = capacity
-        self.cache = collections.OrderedDict()
+    // 删除链表中的 x 节点（x 一定存在）
+    public void remove(Node x) {
+        x.prev.next = x.next;
+        x.next.prev = x.prev;
+        size--;
+    }
+    
+    // 删除链表中最后一个节点，并返回该节点
+    public Node removeLast() {
+        if (tail.prev == head)
+            return null;
+        Node last = tail.prev;
+        remove(last);
+        return last;
+    }
+    
+    // 返回链表长度
+    public int getSize() { return size; }
+}
+
+// LRU操作类
+class LRUCache {
+    // key -> Node(key, val)
+    private HashMap<Integer, Node> map;
+    // Node(k1, v1) <-> Node(k2, v2)...
+    private DoubleList cache;
+    // 最大容量
+    private int cap;
+    
+    public LRUCache(int capacity) {
+        this.cap = capacity;
+        map = new HashMap<>();
+        cache = new DoubleList();
+    }
+    
+    public int get(int key) {
+        if (!map.containsKey(key))
+            return -1;
+        int val = map.get(key).val;
+        // 利用 put 方法把该数据提前
+        put(key, val);
+        return val;
+    }
+    
+    public void put(int key, int val) {
+        // 先把新节点 x 做出来
+        Node x = new Node(key, val);
         
+        if (map.containsKey(key)) {
+            // 删除旧的节点，新的插到头部
+            cache.remove(map.get(key));
+            cache.addFirst(x);
+        } else {
+            if (cap == cache.getSize()) {
+                // 删除链表最后一个数据
+                Node last = cache.removeLast();
+                map.remove(last.key);
+            }
+            // 直接添加到头部
+            cache.addFirst(x);
+        }
+        // 更新 map 中对应的数据
+        map.put(key, x);
+    }
+}
 
-    def get(self, key: int) -> int:
-        if key not in self.cache:
-            return -1
-        value = self.cache.pop(key)
-        self.cache[key] = value
-        return value
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache obj = new LRUCache(capacity);
+ * int param_1 = obj.get(key);
+ * obj.put(key,value);
+ */
 
-
-    def put(self, key: int, value: int) -> None:
-        # 若这个key已经在缓存中了，为了“使用”它一次，要把它拿出来重新放进去，表示最近使用
-        if key in self.cache:
-            self.cache.pop(key)
-        # 否则：
-        else:
-            # 若缓存未满，这个key将占用一个缓存位置
-            if self.remain > 0:
-                self.remain -= 1
-            # 若缓存满了，将最近最少使用的元素移除，为新key腾出空间
-            else:
-                self.cache.popitem(last = False)
-        self.cache[key] = value
 ```
 
 
+## 二、LinkedHashMap
+> ref:[leetcode中文题解](https://leetcode-cn.com/problems/lru-cache/solution/yuan-yu-linkedhashmapyuan-ma-by-jeromememory/)
 
-## 题解二：【dict + deque】
-然鹅，有人评论说在这道题用OrderedDict就是trick，不过我很开心又学了新知识嘻嘻。好啦，下面有老老实实不trick的版本啦，其实就是吧OrderedDict拆开成deque和dictionary两部分来实现。不过根据文档，deque的remove时间复杂度是O(n)，不能达到让两个操作都是O(1)的时间复杂度。  
+```java
+class LRUCache extends LinkedHashMap<Integer, Integer>{
+    private int capacity;
 
-同理，用list代替deque实现也是可以哒。
+    public LRUCache(int capacity) {
+        // initialCapacity 代表 map 的 容量，loadFactor 代表加载因子 (默认即可)
+        // accessOrder 默认是为false，按插入顺序排序，如果要按读取顺序排序需要将其设为 true
+        super(capacity, 0.75F, true);
+        this.capacity = capacity;
+    }
 
-```python
+    public int get(int key){
+        return super.getOrDefault(key, -1);
+    }
 
-import collections
-class LRUCache(object):
+    public void put(int key, int val) {
+        super.put(key, val);
+    }
 
-    def __init__(self, capacity: int):
-        self.capacity = capacity
-        self.cache = collections.deque([])  # 用来存key，记住存放顺序
-        self.dict = {}                      # 用来存key-value
-        
+    // 移除最近最少被访问条件之一，通过覆盖此方法可实现不同策略的缓存
+    @Override
+    protected boolean removeEldestEntry(Map.Entry<Integer, Integer> eldest) {
+        return size() > capacity;
+    }
+}
 
-    def get(self, key: int) -> int:
-        if key not in self.dict:
-            return -1
-        self.cache.remove(key)
-        self.cache.append(key)
-        return self.dict[key]
-
-
-    def put(self, key: int, value: int) -> None:
-        # 若这个key已经在缓存中了，为了“使用”它一次，要把它拿出来重新放进去，表示最近使用
-        if key in self.cache:
-            self.cache.remove(key)
-
-        # 否则：若缓存满了，将最近最少使用的元素移除，为新key腾出空间。同时要将在dict中的记录也删去。
-        elif len(self.cache) == self.capacity:
-            v = self.cache.popleft()
-            self.dict.pop(v)
-        self.cache.append(key)
-        self.dict[key] = value
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache obj = new LRUCache(capacity);
+ * int param_1 = obj.get(key);
+ * obj.put(key,value);
+ */
 ```
-
-list代替deque:
-```python
-class LRUCache:
-
-    def __init__(self, capacity: int):
-        self.remain = capacity
-        self.cache = []
-        self.dict ={}
-
-    def get(self, key: int) -> int:
-        if key not in self.cache:
-            return -1
-        self.cache.remove(key)
-        self.cache.append(key)
-        return self.dict[key]
-
-    def put(self, key: int, value: int) -> None:
-        if key in self.cache:
-            self.cache.remove(key)
-        else:
-            if self.remain >= 1:
-                self.remain -= 1
-            else:
-                x = self.cache.pop(0)
-                self.dict.pop(x)
-        self.cache.append(key)
-        self.dict[key] = value
-
-
-# Your LRUCache object will be instantiated and called as such:
-# obj = LRUCache(capacity)
-# param_1 = obj.get(key)
-# obj.put(key,value)
-```
-
