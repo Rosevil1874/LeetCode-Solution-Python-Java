@@ -17,27 +17,34 @@ Output: 3
 ## DFS
 遍历每一个格子，如果它属于岛屿(grid[i][j]==1)则标记其所有相邻格子(DFS)，岛屿数量加一。
 
-```python
-class Solution:
-    def numIslands(self, grid: List[List[str]]) -> int:
-        if not grid:
-            return 0
+```Java
+class Solution {
+    private void dfs(char[][] grid, int i, int j) {
+        if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] != '1') {
+            return;
+        }
+
+        grid[i][j] = '0';   // 标记遍历过的点
+        dfs(grid, i - 1, j);
+        dfs(grid, i, j - 1);
+        dfs(grid, i + 1, j);
+        dfs(grid, i, j + 1);
         
-        cnt = 0
-        for i in range(len(grid)):
-            for j in range(len(grid[0])):
-                if grid[i][j] == '1':
-                    self.dfs(grid, i, j)
-                    cnt += 1
-        return cnt
-    
-    
-    def dfs(self, grid: List[List[str]], i: int, j: int):
-        if i < 0 or j < 0 or i >= len(grid) or j >= len(grid[0]) or grid[i][j] != '1':
-            return
-        grid[i][j] = '#'    # 标记访问
-        self.dfs(grid, i + 1, j)
-        self.dfs(grid, i - 1, j)
-        self.dfs(grid, i, j + 1)
-        self.dfs(grid, i, j - 1)
+    }
+
+    public int numIslands(char[][] grid) {
+        if (grid == null) return 0;
+        int cnt = 0;
+
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (grid[i][j] == '1') {
+                    dfs(grid, i, j);
+                    cnt++;
+                }
+            }
+        }
+        return cnt;
+    }
+}
 ```
