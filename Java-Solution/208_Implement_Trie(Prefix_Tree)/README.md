@@ -26,125 +26,48 @@ Implement a trie with insert, search, and startsWith methods.
 
 
 ## 题解
-```python
-class TrieNode:
-    def __init__(self):
-        self.is_word = False
-        self.children = {}
-        
-class Trie:
+```Java
+public class Trie {
+    private boolean is_string = false;
+    private Trie next[] = new Trie[26];
 
-    def __init__(self):
-        """
-        Initialize your data structure here.
-        """
-        self.root = TrieNode()
-        
+    public Trie(){}
 
-    # 插入单词后将单词结束位置的is_word标记为真
-    def insert(self, word: str) -> None:
-        """
-        Inserts a word into the trie.
-        """
-        current = self.root
-        for letter in word:
-            if letter not in current.children:
-                current.children[letter] = TrieNode()
-            current = current.children[letter]
-        current.is_word = True
-        
-        
-    # 若整个单词遍历完的位置is_word标记为真，说明是一个完整单词
-    def search(self, word: str) -> bool:
-        """
-        Returns if the word is in the trie.
-        """
-        current = self.root
-        for letter in word:
-            if letter not in current.children:
-                return False
-            current = current.children[letter]
-        return current.is_word
-        
+    //插入单词
+    public void insert(String word){
+        Trie root = this;
+        char w[] = word.toCharArray();
+        for(int i = 0; i < w.length; i++){
+            // 不存在: 创建一个新的节点，并将它与父节点的相连
+            if(root.next[w[i]-'a'] == null) root.next[w[i]-'a']=new Trie();
+            // 存在: 移动到树的下一个子层,继续搜索下一个键字符。
+            root = root.next[w[i]-'a'];
+        }
+        // 达到最后一个字符，标记匹配
+        root.is_string = true;
+    }
+
+    //查找单词
+    public boolean search(String word){
+        Trie root = this;
+        char w[] = word.toCharArray();
+        for(int i = 0; i < w.length; i++){
+            if(root.next[w[i]-'a'] == null) return false;
+            root = root.next[w[i]-'a'];
+        }
+        return root.is_string;
+    }
     
-    # start_with不需要检查完整的单词，只要是单词的前面某一部分就可以
-    def startsWith(self, prefix: str) -> bool:
-        """
-        Returns if there is any word in the trie that starts with the given prefix.
-        """
-        current = self.root
-        for letter in prefix:
-            if letter not in current.children:
-                return False
-            current = current.children[letter]
-        return True
-
-
-# Your Trie object will be instantiated and called as such:
-# obj = Trie()
-# obj.insert(word)
-# param_2 = obj.search(word)
-# param_3 = obj.startsWith(prefix)
-```
-
-使用defaultdict代替dict：
-```python
-from collections import defaultdict
-
-class TrieNode:
-    def __init__(self):
-        self.is_word = False
-        self.children = defaultdict(TrieNode)
-        
-class Trie:
-
-    def __init__(self):
-        """
-        Initialize your data structure here.
-        """
-        self.root = TrieNode()
-        
-
-    # 插入单词后将单词结束位置的is_word标记为真
-    def insert(self, word: str) -> None:
-        """
-        Inserts a word into the trie.
-        """
-        current = self.root
-        for letter in word:
-            current = current.children[letter]
-        current.is_word = True
-        
-        
-    # 若整个单词遍历完的位置is_word标记为真，说明是一个完整单词
-    def search(self, word: str) -> bool:
-        """
-        Returns if the word is in the trie.
-        """
-        current = self.root
-        for letter in word:
-            current = current.children.get(letter)
-            if not current:
-                return False
-        return current.is_word
-        
-    
-    # start_with不需要检查完整的单词，只要是单词的前面某一部分就可以
-    def startsWith(self, prefix: str) -> bool:
-        """
-        Returns if there is any word in the trie that starts with the given prefix.
-        """
-        current = self.root
-        for letter in prefix:
-            current = current.children.get(letter)
-            if not current:
-                return False
-        return True
-
-
-# Your Trie object will be instantiated and called as such:
-# obj = Trie()
-# obj.insert(word)
-# param_2 = obj.search(word)
-# param_3 = obj.startsWith(prefix)
+    //查找前缀
+    public boolean startsWith(String prefix){
+        Trie root = this;
+        char p[] = prefix.toCharArray();
+        for(int i = 0;i<p.length;++i){
+            if(root.next[p[i]-'a'] == null)return false;
+            root = root.next[p[i]-'a'];
+        }
+        // 和查找单词的唯一区别：前缀匹配就能返回true，不需要达到单词末尾
+        return true;
+    }
+}
 ```
